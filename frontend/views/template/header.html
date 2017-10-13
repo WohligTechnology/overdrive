@@ -1,5 +1,9 @@
-<header hide-on-scroll>
-    <nav class="navbar navbar-default navbar-fixed-top">
+<img ng-src="img/header-banner.jpg" class="img-responsive h_bannerimg">
+<header>
+
+    <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+    <nav class="navbar navbar-default navbar-inverse cust-nav" data-spy="affix" data-offset-top="450">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
@@ -8,7 +12,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a>
+
+                <!-- <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a> -->
             </div>
             <div class="collapse navbar-collapse" id="nav-collapse">
                 <div ng-include="template.menu" class="template menu"></div>
