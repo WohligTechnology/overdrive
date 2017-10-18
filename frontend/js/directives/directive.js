@@ -24,7 +24,7 @@ myApp.directive('img', function ($compile, $parse) {
             replace: false,
             link: function (scope, element, attr) {
                 var $element = $(element);
-                var lastScrollTop = 0;
+                var lastScrollTop = 450;
                 $(window).scroll(function (event) {
                     var st = $(this).scrollTop();
                     if (st > lastScrollTop) {
@@ -32,7 +32,7 @@ myApp.directive('img', function ($compile, $parse) {
                     } else {
                         $(element).removeClass('nav-up');
                     }
-                    lastScrollTop = st;
+                    // lastScrollTop = st;
                 });
             }
         };

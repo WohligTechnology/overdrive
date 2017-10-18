@@ -1,6 +1,10 @@
 <div class="home">
-    <div class="b1 block gray-bg">
+    <div id="overview" class="b1 block gray-bg">
+        <!-- <div class="anime1">
+            <div class="redanime">anime</div>
+        </div> -->
         <div class="inside_b1 container-fluid">
+
             <div class="h">OVERVIEW
             </div>
             <hr>
@@ -24,7 +28,11 @@
 
         </div>
     </div>
-    <div class="b2 block backimg1 container-fluid ">
+    <div id="award" class="b2 block1 backimg1 container-fluid ">
+        <!-- animation -->
+        <div class="anime2">
+            <div class="redanime2">anime</div>
+        </div>
         <div class="inside_b2 ">
             <div class="text-center h side_hr"><span>AWARDS CATEGORY</span></div>
             <div class="sliderbike1">
@@ -32,7 +40,8 @@
                     <slides>
                         <slide ng-repeat="s in mySlides">
                             <div>
-                                <img ng-src="{{s.url}}" class="img-full" noloading="true">
+                                <img ng-src="{{s.url1}}" class="img-full middle-img" noloading="true">
+                                <img ng-src="{{s.url}}" class="img-full not-middle" noloading="true">
                                 <div class="bike-name">{{s.name}}</div>
                             </div>
                         </slide>
@@ -44,37 +53,49 @@
             </div>
         </div>
     </div>
-    <div class="b3 block1 gray-bg container-fluid">
+    <div id="socialmedia" class="b3 block1 block-lrg gray-bg container-fluid">
         <div class="inside_b3">
             <div class="h left-h">SOCIAL MEDIA</div>
             <hr class="left-hr">
             <div class="row feed_div">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4">
                     <div class="text-center socialblock">
                         <div class="icon"> <img src="img/icon/facebook.png" class="img-responsive"> </div>
-                        <div class="feed"> <img src="img/icon/1.png" class="img-responsive"></div>
+                        <div class="feed">
+                            <!-- <img src="img/icon/1.png" class="img-responsive"> -->
+                            <iframe src="https://www.facebook.com/v2.10/plugins/page.php?adapt_container_width=false&app_id=113869198637480&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fp0HGCYXNu7N.js%3Fversion%3D42%23cb%3Df21609b5293b20c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff1c0dc69f0a7d28%26relation%3Dparent.parent&container_width=613&hide_cover=false&href=https%3A%2F%2Fwww.facebook.com%2Foverdrive.ie%2F&locale=en_US&sdk=joey&show_facepile=true&small_header=true&tabs=timeline"
+                                width="340" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"
+                                class="social_frame"></iframe>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4">
                     <div class="text-center socialblock">
                         <div class="icon"> <img src="img/icon/twitter.png" class="img-responsive"> </div>
-                        <div class="feed"> <img src="img/icon/2.jpg" class="img-responsive"></div>
+                        <div class="feed">
+                            <!-- <img src="img/icon/2.jpg" class="img-responsive"> -->
+                            <a class="twitter-timeline social_frame" data-width="350" data-height="400" href="https://twitter.com/odmag?ref_src=twsrc%5Etfw">Tweets by odmag</a>
+                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-4">
                     <div class="text-center socialblock">
                         <div class="icon"> <img src="img/icon/instagram.png" class="img-responsive"> </div>
-                        <div class="feed"> <img src="img/icon/3.png" class="img-responsive"></div>
+                        <div class="feed">
+                            <img src="img/icon/3.png" class="img-responsive social_frame">
+                            <!-- <iframe src="https://www.instagram.com/odmag/" width="300" height="500"> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="b4 block1  backimg2 container-fluid">
+    <div id="games" class="b4 block1  blockb4-tab backimg2 container-fluid">
         <div class="inside_b4">
             <div class="h side_hr text-center"><span>Games</span></div>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5 col-sm-5">
                     <div class="fnt b4-txt">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien eget dolor porttitor viverra. Vivamus volutpat quis
                         quam eu aliquet. Nulla aliquet, arcu ac consectetur volutpat, orci erat pretium lorem, eu cursus
@@ -84,13 +105,19 @@
                         ligula. In bibendum ante sed magna vehicula ullamcorper. Fusce mattis non velit sit amet maximus.
                         Nullam sed fermentum mi.</div>
                 </div>
-                <div class="col-md-7">
-                    <div class=""><img src="img/letsrace.png" class="img-responsive b4_img_text"></div>
-                    <img src="img/car2.png" class="smoke_car"></div>
+                <div class="col-md-7 col-sm-7">
+                    <div class="b4_racetext"><img src="img/letsrace.png" class="img-responsive b4_img_text"></div>
+                    <div class="b4_flotimg">
+                        <img src="img/car2.png" class="smoke_car">
+                    </div>
+                </div>
+                <!-- <div class="col-md-12">
+                    <div class="b4_flotimg text-right"><img src="img/car2.png" class="smoke_car"></div>
+                </div> -->
             </div>
         </div>
     </div>
-    <div class="b5 block-min gray-bg  container-fluid">
+    <div id="jurors" class="b5 block-min gray-bg  container-fluid">
         <div class="inside_b5">
             <div class="h left-h"> JURORS</div>
             <hr class="left-hr">
@@ -117,7 +144,7 @@
             </div>
         </div>
     </div>
-    <div class="b6 block-min  backimg1 container-fluid">
+    <div id="winnner" class="b6 block-min  backimg1 container-fluid">
         <div class="inside_b6">
             <div class="text-center h side_hr"><span>WINNERS 2016</span></div>
             <div class="bikeslider2">
@@ -126,7 +153,7 @@
                         <slide ng-repeat="s in myWinner">
                             <div>
                                 <img ng-src="{{s.url}}" class="img-responsive " noloading="true">
-                                <div class="bike-name">{{s.name}}</div>
+                                <div class="b6-bike-name">{{s.name}}</div>
                             </div>
                         </slide>
                     </slides>
@@ -137,7 +164,7 @@
             </div>
         </div>
     </div>
-    <div class="b7 block1 gray-bg container-fluid">
+    <div id="gallery" class="b7 block1 gray-bg container-fluid">
         <div class="inside_b7">
             <div class="h text-right right-h"> GALLERY</div>
             <hr class="right-hr">
@@ -147,8 +174,8 @@
 
 
                     <uib-tabset active="active" class="custom-tab">
-                        <uib-tab index="$index" ng-repeat="tab in gallerytabs" heading="{{tab.title}}" disable="tab.disabled">
-                            <div ng-repeat="pic in tab.gallery">
+                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled">
+                            <div ng-repeat="pic in tab.gallery track by $index">
                                 <div ng-if="$index<6" class="col-md-4 col-xs-4 tab-pd"><img class="img-responsive gallery_img" ng-src="{{pic}}">
                                 </div>
                             </div>
@@ -161,7 +188,7 @@
 
         </div>
     </div>
-    <div class="b8 block  backimg1 container-fluid">
+    <div id="partner" class="b8 block  backimg1 container-fluid">
         <div class="inside_b8">
             <div class=" text-center h side_hr"><span>PARTNERS</span></div>
             <div class="b8_div"><img src="img/partner.png" class="img-responsive"></div>
@@ -174,4 +201,6 @@
 
         </div>
     </div>
+
+
 </div>

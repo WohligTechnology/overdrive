@@ -1,10 +1,10 @@
 <img ng-src="img/header-banner.jpg" class="img-responsive h_bannerimg">
-<header>
+<header hide-on-scroll ng-controller="navCtrl">
 
     <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
-    <nav class="navbar navbar-default navbar-inverse cust-nav" data-spy="affix" data-offset-top="450">
+    <nav class="navbar navbar-default navbar-inverse cust-nav">
 
-        <div class="container">
+        <div class="container_fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -15,7 +15,7 @@
 
                 <!-- <a class="navbar-brand" ui-sref="home"><img src="/img/logo.png" alt="logo" width="20"> </a> -->
             </div>
-            <div class="collapse navbar-collapse" id="nav-collapse">
+            <div class="collapse navbar-collapse text-center" id="nav-collapse">
                 <div ng-include="template.menu" class="template menu"></div>
             </div>
         </div>

@@ -1,3 +1,129 @@
- @media (max-width: $screen-sm-max) {
-     // Tablet
- }
+@media (max-width: $screen-sm-max) {
+    // Tablet.
+    //transform animation doest work well with position fixed(navbar) so removing animation on tablet
+    .anime1 {
+        display: none;
+    }
+    .anime2 {
+        display: none;
+    } //---navbar ----//
+    .cust-nav .navbar-nav>li>a {
+        font-size: 10px;
+        padding: 12px 10px;
+    } // ---home---- //
+    .block {
+        height: 480px;
+    }
+    .block-min {
+        height: 370px;
+    }
+    .block1 {
+        height: auto;
+    } //block1
+    .inside_b1 {
+        width: 80%;
+        height: 510px;
+    }
+    .inside_b1 .h {
+        margin-top: 20px;
+    }
+    .h {
+        font-size: 18px;
+    }
+    .fnt {
+        font-size: 14px;
+    } //block2
+    .inside_b2 {
+        margin-top: 25px;
+        .side_hr:before {
+            width: 32%;
+        }
+        .side_hr:after {
+            width: 32%;
+        }
+    } //block3
+    .feed {
+        width: 100%;
+        overflow: scroll;
+        padding-bottom: 30px;
+    }
+    .social_frame {
+        height: 330px !important;
+    }
+    .twitter-timeline {
+        height: 330px !important;
+    } //block4
+    .inside_b4 {
+        .b4-txt {
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+        .smoke_car {
+            left: -50px;
+        }
+        .side_hr:before {
+            right: -15px;
+        }
+        .side_hr:after {
+            left: -15px;
+        }
+    }
+    .blockb4-tab {
+        height: 350px;
+    } //block5
+    .profile_slider_img {
+        width: 95px;
+        height: 95px;
+    }
+    .pro_name {
+        font-size: 14px;
+    }
+    .b5_slider {
+        height: 150px;
+    }
+    .socialblock .icon img {
+        width: 90px;
+    } //block 6 
+    .inside_b6 {
+        .side_hr:after {
+            width: 36%;
+        }
+        .side_hr:before {
+            width: 36%;
+        }
+    }
+    .bikeslider2 img {
+        width: 140px;
+        height: 140px;
+    }
+    .bikeslider2 {
+        padding: 10px;
+    }
+    .nav-tabs {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .nav-tabs>li>a {
+        padding: 2px 20px;
+    }
+    .custom-tab .tab-content {
+        left: -40px;
+    }
+    .more-btn2 {
+        left: -40px;
+    }
+    .gallery_img {
+        height: 140px;
+    }
+    .custom-tab .tab-content {
+        height: 290px;
+    } //block 8
+    .inside_b8 .b8_div {
+        padding: 40px;
+    }
+    .blockb8-tab {
+        height: 300px;
+    }
+}

@@ -1,8 +1,10 @@
 myApp.factory('NavigationService', function () {
     var navigation = [{
-            name: "THE AWARDS",
+            // name: "THE AWARDS",
+            name: "OVERVIEW",
             classis: "active",
-            anchor: "home",
+            // anchor: "home",
+            link: "overview",
             subnav: []
             // subnav: [{
             //     name: "Subnav1",
@@ -12,39 +14,56 @@ myApp.factory('NavigationService', function () {
         }, {
             name: "AWARDS CATEGORIES",
             classis: "active",
-            anchor: "form",
+            // anchor: "form",.
+            link: "award",
+            subnav: []
+        },
+        {
+            name: "SOCIAL MEDIA",
+            classis: "active",
+            // anchor: "form",
+            link: "socialmedia",
+            subnav: []
+        }, {
+            name: "GAMES",
+            classis: "active",
+            // anchor: "games",
+            link: "games",
             subnav: []
         },
         {
             name: "JURORS",
             classis: "active",
-            anchor: "form",
-            subnav: []
-        }, {
-            name: "WINNERS",
-            classis: "active",
-            anchor: "form",
+            // anchor: "grid",
+            link: "jurors",
             subnav: []
         },
         {
+            name: "WINNERS",
+            classis: "active",
+            // anchor: "grid",
+            link: "winnner",
+            subnav: []
+        }, {
             name: "GALLERY",
             classis: "active",
-            anchor: "grid",
+            // anchor: "grid",
+            link: "gallery",
             subnav: []
-        }, ,
-        {
-            name: "GAMES",
+        }, {
+            name: "PARTNERS",
             classis: "active",
-            anchor: "grid",
+            // anchor: "grid",
+            link: "partner",
             subnav: []
-        }, ,
+        },
         {
             name: "VOTE NOW",
             classis: "active",
             anchor: "grid",
             highlight: true,
             subnav: []
-        }
+        },
     ];
 
     return {

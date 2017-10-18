@@ -10096,16 +10096,25 @@ header {
 .cust-nav {
   background-color: #909090;
   border: 0px;
-  margin: 0px; }
+  margin: 0px;
+  z-index: 100; }
 
 .cust-nav .navbar-nav > li > a {
   color: #ffffff;
   font-size: 14px;
-  padding: 12px 25px; }
+  padding: 12px 15px; }
 
 .cust-nav .navbar-nav > .active > a {
   color: #ffffff;
   background-color: #909090; }
+
+.cust-nav .navbar-nav {
+  float: unset;
+  display: inline-block; }
+
+.cust-nav .navbar-nav > li {
+  float: unset;
+  display: inline-block; }
 
 hr {
   border-color: #848484; }
@@ -10141,6 +10150,9 @@ body {
 
 .block-min {
   height: 450px; }
+
+.block-lrg {
+  height: 610px; }
 
 .h {
   font-size: 20px; }
@@ -10247,7 +10259,8 @@ body {
     margin-right: 10px; }
   .inside_b1 .b1_img img {
     width: 100%;
-    margin-top: 70px; }
+    margin-top: 70px;
+    max-height: 400px; }
   .inside_b1 .b1-txt {
     height: 340px;
     overflow: hidden;
@@ -10263,8 +10276,25 @@ body {
 .inside_b2 {
   margin-top: 50px; }
 
+.middle-img {
+  display: none; }
+
+.not-middle {
+  display: block;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6); }
+
+.swiper-slide-next .middle-img {
+  display: block; }
+
+.swiper-slide-next .bike-name {
+  margin-top: 0px; }
+
+.swiper-slide-next .not-middle {
+  display: none; }
+
 .sliderbike1 {
-  margin: 85px 0px; }
+  margin: 35px 0px; }
 
 .swiper-slide {
   background: rgba(255, 255, 255, 0); }
@@ -10293,23 +10323,25 @@ body {
   width: 42%; }
 
 .inside_b4 .b4-txt {
-  width: 350px;
+  width: 100%;
   word-break: break-all;
   position: relative;
   z-index: 5; }
 
-.inside_b4 .b4_img_text {
-  padding: 75px;
-  margin-left: -25px;
-  padding-top: 25px; }
-
 .inside_b4 .smoke_car {
-  position: relative;
-  top: -30px;
-  left: -166px;
-  /* width: 801px; */
-  width: 140%;
+  position: absolute;
+  top: 20px;
+  left: -100px;
+  width: 100%;
   z-index: 2; }
+
+.inside_b4 .b4_flotimg {
+  position: relative; }
+
+.inside_b4 .b4_racetext {
+  width: 70%;
+  margin-top: 3%;
+  margin-left: 10%; }
 
 .inside_b4 {
   margin: 0px auto;
@@ -10363,6 +10395,12 @@ body {
   width: 40%; }
 
 .bike-name {
+  color: #d4d4d4;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: -40px; }
+
+.b6-bike-name {
   color: #d4d4d4;
   font-size: 16px;
   padding: 10px; }
@@ -10474,6 +10512,113 @@ body {
 .affix + .container-fluid {
   padding-top: 70px; }
 
+.nav-up {
+  -webkit-transform: none;
+  transform: none;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  right: 0px;
+  left: 0px; }
+
+header {
+  -webkit-transition: none;
+  transition: none; }
+
+.navbar-nav .active {
+  color: red !important; }
+
+.anim {
+  color: black;
+  background: red;
+  -webkit-animation: cssAnimation 2.7736s 20s infinite;
+  animation: cssAnimation 2.7736s 20s infinite; }
+
+.anime1 {
+  position: absolute;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  -webkit-transform: rotate(0deg) scale(0.5) skew(85deg) translate(0%, 50%);
+          transform: rotate(0deg) scale(0.5) skew(85deg) translate(0%, 50%); }
+
+.anime2 {
+  position: absolute;
+  z-index: 3;
+  margin-top: 90px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(15, 15, 12, 0);
+  -webkit-transform: rotate(0deg) scale(0.5) skew(85deg) translate(0%, 50%);
+          transform: rotate(0deg) scale(0.5) skew(85deg) translate(0%, 50%); }
+
+.redanime2 {
+  background: red;
+  color: red;
+  text-shadow: 3px -2px 30px #ffff25;
+  -webkit-animation: move1 1s linear 1s infinite;
+  animation: move1 1s linear 1s infinite; }
+
+.redanime {
+  background: white;
+  color: white;
+  text-shadow: 3px -2px 30px #ffff25;
+  -webkit-animation: move 1s linear 1s infinite alternate;
+  animation: move 1s linear 1s infinite alternate; }
+
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%); }
+  to {
+    -webkit-transform: translate(0%, 600%);
+            transform: translate(0%, 600%); } }
+
+@keyframes move {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%); }
+  to {
+    -webkit-transform: translate(0%, 600%);
+            transform: translate(0%, 600%); } }
+
+@-webkit-keyframes move1 {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    opacity: 1; }
+  to {
+    -webkit-transform: translate(0%, 600%);
+            transform: translate(0%, 600%);
+    opacity: 0; } }
+
+@keyframes move1 {
+  from {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+    opacity: 1; }
+  to {
+    -webkit-transform: translate(0%, 600%);
+            transform: translate(0%, 600%);
+    opacity: 0; } }
+
+@-webkit-keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(0deg) scale(0.5) skew(86deg) translate(0%, 50%);
+            transform: rotate(0deg) scale(0.5) skew(86deg) translate(0%, 50%); }
+  to {
+    -webkit-transform: rotate(0deg) scale(1.1) skew(87deg) translate(-196px);
+            transform: rotate(0deg) scale(1.1) skew(87deg) translate(-196px); } }
+
+@keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(0deg) scale(0.5) skew(86deg) translate(0%, 50%);
+            transform: rotate(0deg) scale(0.5) skew(86deg) translate(0%, 50%); }
+  to {
+    -webkit-transform: rotate(0deg) scale(1.1) skew(87deg) translate(-196px);
+            transform: rotate(0deg) scale(1.1) skew(87deg) translate(-196px); } }
+
 #fancybox-loading,
 .fancybox-close,
 .fancybox-next span,
@@ -10513,3 +10658,89 @@ body {
 
 .fancybox-nav.fancybox-prev span {
   background-image: url(../img/prev.png); }
+
+@media (max-width: 991px) {
+  .anime1 {
+    display: none; }
+  .anime2 {
+    display: none; }
+  .cust-nav .navbar-nav > li > a {
+    font-size: 10px;
+    padding: 12px 10px; }
+  .block {
+    height: 480px; }
+  .block-min {
+    height: 370px; }
+  .block1 {
+    height: auto; }
+  .inside_b1 {
+    width: 80%;
+    height: 510px; }
+  .inside_b1 .h {
+    margin-top: 20px; }
+  .h {
+    font-size: 18px; }
+  .fnt {
+    font-size: 14px; }
+  .inside_b2 {
+    margin-top: 25px; }
+    .inside_b2 .side_hr:before {
+      width: 32%; }
+    .inside_b2 .side_hr:after {
+      width: 32%; }
+  .feed {
+    width: 100%;
+    overflow: scroll;
+    padding-bottom: 30px; }
+  .social_frame {
+    height: 330px !important; }
+  .twitter-timeline {
+    height: 330px !important; }
+  .inside_b4 .b4-txt {
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box; }
+  .inside_b4 .smoke_car {
+    left: -50px; }
+  .inside_b4 .side_hr:before {
+    right: -15px; }
+  .inside_b4 .side_hr:after {
+    left: -15px; }
+  .blockb4-tab {
+    height: 350px; }
+  .profile_slider_img {
+    width: 95px;
+    height: 95px; }
+  .pro_name {
+    font-size: 14px; }
+  .b5_slider {
+    height: 150px; }
+  .socialblock .icon img {
+    width: 90px; }
+  .inside_b6 .side_hr:after {
+    width: 36%; }
+  .inside_b6 .side_hr:before {
+    width: 36%; }
+  .bikeslider2 img {
+    width: 140px;
+    height: 140px; }
+  .bikeslider2 {
+    padding: 10px; }
+  .nav-tabs {
+    margin-left: 0px;
+    margin-right: 0px; }
+  .nav-tabs > li > a {
+    padding: 2px 20px; }
+  .custom-tab .tab-content {
+    left: -40px; }
+  .more-btn2 {
+    left: -40px; }
+  .gallery_img {
+    height: 140px; }
+  .custom-tab .tab-content {
+    height: 290px; }
+  .inside_b8 .b8_div {
+    padding: 40px; }
+  .blockb8-tab {
+    height: 300px; } }

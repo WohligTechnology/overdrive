@@ -5,16 +5,24 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         $scope.mySlides = [{
             url: 'img/slider/1.png',
-            name: "name1"
+            url1: 'img/slider/1-m.png',
+            name: "CARS"
         }, {
             url: 'img/slider/2.png',
-            name: "name2"
+            url1: 'img/slider/2-m.png',
+            name: "SCOOTERS"
         }, {
             url: 'img/slider/3.png',
-            name: "name3"
+            url1: 'img/slider/3-m.png',
+            name: "MOTOBIKES"
         }];
-
-
+        $scope.facebookid = "Fodmag";
+        $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
+        window.scrollBy({
+            top: 100, // could be negative value
+            left: 0,
+            behavior: 'smooth'
+        });
 
         $scope.myWinner = [{
             url: 'img/slider/car1.jpg',
@@ -52,19 +60,19 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             },
             {
                 title: "2015",
-                gallery: ['img/gallery/2016/gal6.jpg', 'img/gallery/2016/gal4.jpg']
+                gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
             },
             {
                 title: "2014",
-                gallery: ['img/gallery/2016/gal6.jpg', 'img/gallery/2016/gal4.jpg']
+                gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
             },
             {
                 title: "2013",
-                gallery: ['img/gallery/2016/gal6.jpg', 'img/gallery/2016/gal4.jpg']
+                gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
             },
             {
                 title: "2012",
-                gallery: ['img/gallery/2016/gal6.jpg', 'img/gallery/2016/gal4.jpg']
+                gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
             }
         ]
         var abc = _.times(100, function (n) {
@@ -80,7 +88,14 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
     })
-
+    .controller('navCtrl', function ($scope, $location, $anchorScroll) {
+        $scope.scrollTo = function (id) {
+            document.querySelector('#' + id).scrollIntoView({
+                behavior: 'smooth'
+            });
+            console.log(document.querySelector('#' + id));
+        }
+    })
     .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout, toastr, $http) {
         $scope.template = TemplateService.getHTML("content/form.html");
         TemplateService.title = "Form"; //This is the Title of the Website

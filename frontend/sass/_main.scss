@@ -123,17 +123,28 @@ header {
     background-color: #909090;
     border: 0px;
     margin: 0px;
+    z-index: 100;
 }
 
 .cust-nav .navbar-nav>li>a {
     color: #ffffff; // text-shadow: 1px 0px 10px #c6c6c6;
     font-size: 14px;
-    padding: 12px 25px;
+    padding: 12px 15px;
 }
 
 .cust-nav .navbar-nav>.active>a {
     color: #ffffff;
     background-color: #909090;
+}
+
+.cust-nav .navbar-nav {
+    float: unset;
+    display: inline-block;
+}
+
+.cust-nav .navbar-nav>li {
+    float: unset;
+    display: inline-block;
 }
 
 hr {
@@ -177,6 +188,10 @@ body {
 
 .block-min {
     height: 450px;
+}
+
+.block-lrg {
+    height: 610px;
 }
 
 .h {
@@ -301,6 +316,7 @@ body {
         img {
             width: 100%;
             margin-top: 70px;
+            max-height: 400px;
         }
     }
     .b1-txt {
@@ -323,9 +339,30 @@ body {
     margin-top: 50px;
 }
 
+.middle-img {
+    display: none;
+}
+
+.not-middle {
+    display: block;
+    transform: scale(.6);
+}
+
+.swiper-slide-next {
+    .middle-img {
+        display: block;
+    }
+    .bike-name {
+        margin-top: 0px;
+    }
+    .not-middle {
+        display: none;
+    }
+}
+
 .sliderbike1 {
     // background-image: url("../img/background1.jpg");
-    margin: 85px 0px;
+    margin: 35px 0px;
 }
 
 .swiper-slide {
@@ -370,23 +407,35 @@ body {
         width: 42%;
     }
     .b4-txt {
-        width: 350px;
+        width: 100%;
         word-break: break-all;
         position: relative;
         z-index: 5;
     }
     .b4_img_text {
-        padding: 75px;
-        margin-left: -25px;
-        padding-top: 25px;
+        // padding: 75px;
+        // margin-left: -25px;
+        // padding-top: 25px;
     }
     .smoke_car {
-        position: relative;
-        top: -30px;
-        left: -166px;
-        /* width: 801px; */
-        width: 140%;
+        // position: relative;
+        // top: -124px;
+        // left: 0;
+        // width: 70%;
+        // z-index: 2;
+        position: absolute;
+        top: 20px;
+        left: -100px;
+        width: 100%;
         z-index: 2;
+    }
+    .b4_flotimg {
+        position: relative;
+    }
+    .b4_racetext {
+        width: 70%;
+        margin-top: 3%;
+        margin-left: 10%;
     }
 }
 
@@ -457,6 +506,13 @@ body {
 }
 
 .bike-name {
+    color: #d4d4d4;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: -40px;
+}
+
+.b6-bike-name {
     color: #d4d4d4;
     font-size: 16px;
     padding: 10px;
@@ -592,3 +648,105 @@ body {
 .affix+.container-fluid {
     padding-top: 70px;
 }
+
+.nav-up {
+    -webkit-transform: none;
+    transform: none;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+header {
+    transition: none;
+}
+
+.navbar-nav {
+    .active {
+        color: red !important;
+    }
+}
+
+.feed {
+    // height: 300px;
+    // overflow: scroll;
+}
+
+//animation
+.anim {
+    color: black;
+    background: red;
+    -webkit-animation: cssAnimation 2.7736s 20s infinite;
+    -moz-animation: cssAnimation 2.7736s 20s infinite;
+    -o-animation: cssAnimation 2.7736s 20s infinite;
+    animation: cssAnimation 2.7736s 20s infinite;
+}
+
+.anime1 {
+    position: absolute;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(0deg) scale(0.5) skew(85deg) translate(0%, 50%); // -webkit-animation: cssAnimation 1s linear 1s infinite;
+    // animation: cssAnimation 1s linear 1s infinite;
+}
+
+.anime2 {
+    position: absolute;
+    z-index: 3;
+    margin-top: 90px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(15, 15, 12, 0);
+    transform: rotate(0deg) scale(0.5) skew(85deg) translate(0%, 50%);
+}
+
+.redanime2 {
+    background: red;
+    color: red;
+    text-shadow: 3px -2px 30px rgba(255, 255, 37, 1);
+    -webkit-animation: move1 1s linear 1s infinite;
+    animation: move1 1s linear 1s infinite;
+}
+
+.redanime {
+    background: white;
+    color: white;
+    text-shadow: 3px -2px 30px rgba(255, 255, 37, 1);
+    -webkit-animation: move 1s linear 1s infinite alternate;
+    animation: move 1s linear 1s infinite alternate;
+}
+
+@keyframes move {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(0%, 600%);
+    }
+}
+
+@keyframes move1 {
+    from {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+    to {
+        transform: translate(0%, 600%);
+        opacity: 0;
+    }
+}
+
+@keyframes cssAnimation {
+    from {
+        transform: rotate(0deg) scale(0.5) skew(86deg) translate(0%, 50%);
+    }
+    to {
+        transform: rotate(0deg) scale(1.1) skew(87deg) translate(-196px);
+    }
+}
+
+//end of animation
