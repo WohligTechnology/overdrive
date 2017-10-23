@@ -9,10 +9,10 @@
             </div>
             <hr>
             <div class="row b1_divide">
-                <div class="b1_img col-md-7 col-sm-7 col-xs-7">
+                <div class="b1_img col-md-7 col-sm-7 col-xs-12">
                     <img src="img/b1-car.png" class="img-responsive">
                 </div>
-                <div class="col-md-5 col-sm-5 col-xs-5">
+                <div class="col-md-5 col-sm-5 col-xs-12">
                     <div class="b1-txt fnt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget arcu eget lacus congue rutrum ac id
                         maassa. Duis sed euismod risus. Fusce quis luctus enim. Curabitur posuere metus vel turpis rhoncus
                         bibendum. In porttitor purus et d risus. Fusce quis luctus enim. Curabitur posuere metus vel turpis
@@ -95,7 +95,7 @@
         <div class="inside_b4">
             <div class="h side_hr text-center"><span>Games</span></div>
             <div class="row">
-                <div class="col-md-5 col-sm-5">
+                <div class="col-md-5 col-sm-5 col-xs-12">
                     <div class="fnt b4-txt">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at sapien eget dolor porttitor viverra. Vivamus volutpat quis
                         quam eu aliquet. Nulla aliquet, arcu ac consectetur volutpat, orci erat pretium lorem, eu cursus
@@ -105,7 +105,7 @@
                         ligula. In bibendum ante sed magna vehicula ullamcorper. Fusce mattis non velit sit amet maximus.
                         Nullam sed fermentum mi.</div>
                 </div>
-                <div class="col-md-7 col-sm-7">
+                <div class="col-md-7 col-sm-7 col-xs-12">
                     <div class="b4_racetext"><img src="img/letsrace.png" class="img-responsive b4_img_text"></div>
                     <div class="b4_flotimg">
                         <img src="img/car2.png" class="smoke_car">
@@ -144,7 +144,7 @@
             </div>
         </div>
     </div>
-    <div id="winnner" class="b6 block-min  backimg1 container-fluid">
+    <div id="winnner" class="b6 block-min block6-tab backimg1 container-fluid">
         <div class="inside_b6">
             <div class="text-center h side_hr"><span>WINNERS 2016</span></div>
             <div class="bikeslider2">
@@ -169,14 +169,12 @@
             <div class="h text-right right-h"> GALLERY</div>
             <hr class="right-hr">
             <div class="row">
-                <div class="col-md-5 col-xs-5"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
-                <div class="col-md-7 col-xs-7">
-
-
+                <div class="col-md-5 col-sm-5 col-xs-12 hide-xs"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
                     <uib-tabset active="active" class="custom-tab">
                         <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled">
                             <div ng-repeat="pic in tab.gallery track by $index">
-                                <div ng-if="$index<6" class="col-md-4 col-xs-4 tab-pd"><img class="img-responsive gallery_img" ng-src="{{pic}}">
+                                <div ng-if="$index<6" class="col-md-4 col-sm-4 col-xs-6 tab-pd"><img class="img-responsive gallery_img" ng-src="{{pic}}">
                                 </div>
                             </div>
 
@@ -188,7 +186,7 @@
 
         </div>
     </div>
-    <div id="partner" class="b8 block  backimg1 container-fluid">
+    <div id="partner" class="b8 block  backimg1 blockb8-tab -container-fluid">
         <div class="inside_b8">
             <div class=" text-center h side_hr"><span>PARTNERS</span></div>
             <div class="b8_div"><img src="img/partner.png" class="img-responsive"></div>

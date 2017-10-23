@@ -94,6 +94,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 behavior: 'smooth'
             });
             console.log(document.querySelector('#' + id));
+
+        }
+        $scope.clic = function () {
+            if ($('#nav-collapse').hasClass('in')) {
+                $('.collapse').collapse('toggle');
+            }
+        };
+
+        $scope.navblur = function () {
+            if ($('#nav-collapse').hasClass('in')) {
+                $('.collapse').collapse('toggle');
+            }
         }
     })
     .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout, toastr, $http) {
