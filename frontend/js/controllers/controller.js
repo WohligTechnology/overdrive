@@ -16,12 +16,16 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             url1: 'img/slider/3-m.png',
             name: "MOTOBIKES"
         }];
+
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
         window.scrollBy({
             top: 100, // could be negative value
             left: 0,
             behavior: 'smooth'
+        });
+        $('.inside_b1').scroll(function () {
+            console.log("run");
         });
 
         $scope.myWinner = [{

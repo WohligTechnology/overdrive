@@ -24,7 +24,7 @@ myApp.directive('img', function ($compile, $parse) {
             replace: false,
             link: function (scope, element, attr) {
                 var $element = $(element);
-                var lastScrollTop = 450;
+                var lastScrollTop = 850;
                 $(window).scroll(function (event) {
                     var st = $(this).scrollTop();
                     if (st > lastScrollTop) {
@@ -33,6 +33,29 @@ myApp.directive('img', function ($compile, $parse) {
                         $(element).removeClass('nav-up');
                     }
                     // lastScrollTop = st;
+                });
+            }
+        };
+    })
+    .directive('scrollAnimation', function ($document) {
+        return {
+            restrict: 'EA',
+            replace: false,
+            link: function (scope, element, attr) {
+                var $element = $(element);
+                var lastScrollTop = 600;
+                $(window).scroll(function (event) {
+                    // lastScrollTop = st;
+                    h = $(this).scrollTop() - 500;
+                    $('.blade1').css("height", h);
+                    h2 = $(this).scrollTop() - 1300;
+                    $('.blade2').css("height", h2);
+                    h3 = $(this).scrollTop() - 2400;
+                    $('.blade3').css("height", h3);
+                    h4 = $(this).scrollTop() - 3100;
+                    $('.blade4').css("height", h4);
+                    console.log($(this).scrollTop());
+
                 });
             }
         };

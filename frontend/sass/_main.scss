@@ -152,16 +152,17 @@ hr {
 }
 
 .backimg1 {
-    background-image: url('../img/background1.jpg');
+    background-image: url('../img/background1.gif');
+    background-size: contain;
 }
 
 .backimg2 {
-    background-image: url('../img/background2.png');
+    background-image: url('../img/background2.gif');
     background-position: bottom, top;
 }
 
 .h_bannerimg {
-    height: 450px;
+    height: 850px;
     width: 100%;
     object-fit: cover;
 }
@@ -188,6 +189,7 @@ body {
 
 .block-min {
     height: 450px;
+    width: 100%;
 }
 
 .block-lrg {
@@ -477,6 +479,8 @@ body {
     margin-left: auto;
     margin-right: 50px;
     margin-top: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .profile_slider_img {
@@ -720,6 +724,10 @@ header {
     animation: move 1s linear 1s infinite alternate;
 }
 
+.feed {
+    overflow: hidden;
+}
+
 @keyframes move {
     from {
         transform: translate(0%, 0%);
@@ -750,3 +758,65 @@ header {
 }
 
 //end of animation
+.rel {
+    position: relative;
+}
+
+.front {
+    z-index: 12;
+}
+
+.smoke {
+    position: absolute;
+    z-index: 5000;
+    /* bottom: 0; */
+    top: 327px;
+    left: 20px;
+    width: 170px;
+}
+
+.blade1 {
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+    z-index: 10;
+    left: -130px;
+    top: 100px;
+    max-height: 450px;
+    transition: all 1s;
+}
+
+.blade2 {
+    position: absolute;
+    width: 40%;
+    /* top: 0; */
+    margin-top: -3px;
+    left: 25%;
+    overflow: hidden;
+    height: 0px;
+    max-height: 800px;
+    transition: all 1s;
+}
+
+.blade3 {
+    position: absolute;
+    /* height: 100%; */
+    width: 25%;
+    /* top: 0; */
+    left: 45%;
+    z-index: 1;
+    max-height: 550px;
+    height: 0px;
+    transition: all 1s;
+    overflow: hidden
+}
+
+.blade4 {
+    position: absolute;
+    transform: translate(3%, 0%);
+    width: 80%;
+    height: 0px;
+    overflow: hidden;
+    max-height: 1000px;
+    transition: all 1s;
+}
