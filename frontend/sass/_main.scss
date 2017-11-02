@@ -768,10 +768,10 @@ header {
 
 .smoke {
     position: absolute;
-    z-index: 5000;
+    z-index: 4;
     /* bottom: 0; */
-    top: 327px;
-    left: 20px;
+    top: 295px;
+    left: -9px;
     width: 170px;
 }
 
@@ -780,7 +780,7 @@ header {
     height: 0px;
     overflow: hidden;
     z-index: 10;
-    left: -130px;
+    left: -133px;
     top: 100px;
     max-height: 450px;
     transition: all 1s;
@@ -819,4 +819,14 @@ header {
     overflow: hidden;
     max-height: 1000px;
     transition: all 1s;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background-image: url("../img/arrow_right.png") !important;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background-image: url("../img/arrow_left.png") !important;
 }

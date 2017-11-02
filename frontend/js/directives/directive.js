@@ -54,7 +54,7 @@ myApp.directive('img', function ($compile, $parse) {
                     $('.blade3').css("height", h3);
                     h4 = $(this).scrollTop() - 3100;
                     $('.blade4').css("height", h4);
-                    console.log($(this).scrollTop());
+                    // console.log($(this).scrollTop());
 
                 });
             }
