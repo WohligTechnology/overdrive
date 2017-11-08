@@ -1,0 +1,50 @@
+{
+    "title": "Create Overview",
+    "name": "Awardcategory",
+    "jsonPage": "viewOverview",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Overview"],
+    "fields": [{
+        "name": "Description",
+        "type": "text",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
+        "id": "description",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Img",
+        "type": "image",
+        "tableRef": "img",
+        "size": "250 x 250",
+        "placeholder": "Upload photo",
+        "id": "img",
+        "view": true,
+        "disabled": true,
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitOverview",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewOverview"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewOverview"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Overview/save"
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "title": "Create Jurors",
+    "name": "Jurors",
+    "jsonPage": "viewJurors",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Jurors"],
+    "fields": [{
+        "name": "Description",
+        "type": "text",
+        "tableRef": "description",
+        "placeholder": "Enter Description",
+        "id": "description",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Img",
+        "type": "image",
+        "tableRef": "img",
+        "size": "250 x 250",
+        "placeholder": "Upload photo",
+        "id": "img",
+        "view": true,
+        "disabled": true,
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+    {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "name",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitJurors",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewJurors"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewJurors"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Jurors/save"
+    }
+}
