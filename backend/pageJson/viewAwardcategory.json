@@ -1,0 +1,50 @@
+{
+    "title": "Awardcategory",
+    "description": "List of Awardcategoris",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Img",
+        "isSort": "",
+        "tableRef": "img",
+        "type": "image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editAwardcategory",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Awardcategory",
+        "content": "Are you sure you want to delete Awardcategory?",
+        "api": "awardcategory/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createAwardcategory"
+    }],
+    "apiCall": {
+        "url": "Awardcategory/search",
+        "params": "_id"
+    }
+}

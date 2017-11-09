@@ -6,19 +6,46 @@
  */
 
 module.exports = {
+    // index: function (req, res) {
+    //     var fileNames = [];
+    //     req.file("file").upload({
+    //         // ...any other options here... 
+    //         // adapter: require('skipper-gclouds'),
+    //         projectId: 'wohligerp',
+    //         keyFilename: 'keyFile.json',
+    //         bucket: 'wohlig',
+    //         public: true,
+    //     }, function (err, data) {
+    //         res.callback(err, _.map(data, function (n) {
+    //             return n.fd;
+    //         }));
+    //     });
+    // },
     index: function (req, res) {
         var fileNames = [];
         req.file("file").upload({
-            // ...any other options here... 
-            // adapter: require('skipper-gclouds'),
-            projectId: 'wohligerp',
-            keyFilename: 'keyFile.json',
-            bucket: 'wohlig',
-            public: true,
-        }, function (err, data) {
-            res.callback(err, _.map(data, function (n) {
-                return n.fd;
-            }));
+            maxBytes: 10485760 // 10 MB Storage 1 MB = 10^6
+        }, function (err, uploadedFile) {
+            //console.log(err);
+            //console.log(uploadedFile);
+            if (err) {
+                res.callback(err);
+            } else if (uploadedFile && uploadedFile.length > 0) {
+                async.concat(uploadedFile, function (n, callback) {
+                    Config.uploadFile(n.fd, function (err, value) {
+                        if (err) {
+                            callback(err);
+                        } else {
+                            callback(null, value.name);
+                        }
+                    });
+                }, res.callback);
+            } else {
+                res.callback(null, {
+                    value: false,
+                    data: "No files selected"
+                });
+            }
         });
     },
     readFile: function (req, res) {

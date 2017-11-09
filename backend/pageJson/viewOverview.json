@@ -1,0 +1,50 @@
+{
+    "title": "Overview",
+    "description": "List of Overviews",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Description",
+        "isSort": "",
+        "tableRef": "description"
+    }, {
+        "name": "Img",
+        "isSort": "",
+        "tableRef": "img",
+        "type": "image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editOverview",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Overview",
+        "content": "Are you sure you want to delete Overview?",
+        "api": "overview/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createOverview"
+    }],
+    "apiCall": {
+        "url": "Overview/search",
+        "params": "_id"
+    }
+}

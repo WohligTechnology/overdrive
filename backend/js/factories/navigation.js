@@ -11,7 +11,46 @@ myApp.factory('NavigationService', function ($http) {
         classis: "active",
         sref: "#!/page/viewUser//",
         icon: "phone"
-    }];
+    },
+    {
+        name: "Overview",
+        classis: "active",
+        sref: "#!/page/viewOverview//",
+        
+    },
+    {
+        name: "Award Category",
+        classis: "active",
+        sref: "#!/page/viewAwardcategory//",
+      
+    },
+    {
+        name: "Jurors",
+        classis: "active",
+        sref: "#!/page/viewJurors//",
+       
+    },
+    {
+        name: "Winners",
+        classis: "active",
+        sref: "#!/page/viewWinners//",
+       
+    },
+    {
+        name: "Gallery",
+        classis: "active",
+        sref: "#!/page/viewGallery//",
+        
+    },
+    {
+        name: "Partners",
+        classis: "active",
+        sref: "#!/page/viewPartners//",
+        
+    }
+    
+    
+    ];
 
     return {
         getnav: function () {

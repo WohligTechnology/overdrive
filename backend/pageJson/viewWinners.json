@@ -1,0 +1,55 @@
+{
+    "title": "Winners",
+    "description": "List of Winners",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Img",
+        "isSort": "",
+        "tableRef": "img",
+        "type": "image"
+    },
+    {
+        "name": "Winner Name",
+        "isSort": "",
+        "tableRef": "wname"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editWinners",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Winners",
+        "content": "Are you sure you want to delete Winners?",
+        "api": "winners/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createWinners"
+    }],
+    "apiCall": {
+        "url": "Winners/search",
+        "params": "_id"
+    }
+}

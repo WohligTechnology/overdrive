@@ -1,0 +1,46 @@
+{
+    "title": "Partners",
+    "description": "List of Partners",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Logo",
+        "isSort": "",
+        "tableRef": "logo",
+        "type": "image"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editPartners",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Partners",
+        "content": "Are you sure you want to delete Partners?",
+        "api": "partners/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createPartners"
+    }],
+    "apiCall": {
+        "url": "Partners/search",
+        "params": "_id"
+    }
+}

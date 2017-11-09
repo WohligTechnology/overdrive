@@ -1,0 +1,42 @@
+{
+    "title": "Create Partners",
+    "name": "Partners",
+    "jsonPage": "viewPartners",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Partners"],
+    "fields": [{
+        "name": "logo",
+        "type": "image",
+        "tableRef": "logo",
+        "size": "250 x 250",
+        "placeholder": "Upload photo",
+        "id": "logo",
+        "view": true,
+        "disabled": true,
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitPartners",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPartners"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewPartners"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Partners/save"
+    }
+}

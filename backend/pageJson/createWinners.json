@@ -1,0 +1,59 @@
+{
+    "title": "Create Winners",
+    "name": "Winners",
+    "jsonPage": "viewWinners",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Winners"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "name",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Img",
+        "type": "image",
+        "tableRef": "img",
+        "size": "250 x 250",
+        "placeholder": "Upload photo",
+        "id": "img",
+        "view": true,
+        "disabled": true,
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+    {
+        "name": "Winner Name",
+        "type": "text",
+        "tableRef": "wname",
+        "placeholder": "Enter Winner Name",
+        "id": "wname",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitWinners",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewWinners"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewWinners"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Winners/save"
+    }
+}
