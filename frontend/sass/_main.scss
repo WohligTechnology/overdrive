@@ -783,7 +783,6 @@ header {
     left: -133px;
     top: 100px;
     max-height: 450px;
-    transition: all 1s;
 }
 
 .blade2 {
@@ -795,7 +794,6 @@ header {
     overflow: hidden;
     height: 0px;
     max-height: 800px;
-    transition: all 1s;
 }
 
 .blade3 {
@@ -807,7 +805,6 @@ header {
     z-index: 1;
     max-height: 550px;
     height: 0px;
-    transition: all 1s;
     overflow: hidden
 }
 
@@ -818,7 +815,6 @@ header {
     height: 0px;
     overflow: hidden;
     max-height: 1000px;
-    transition: all 1s;
 }
 
 .swiper-button-next,
@@ -829,4 +825,36 @@ header {
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     background-image: url("../img/arrow_left.png") !important;
+}
+
+.cust-transition {
+    transition: all 2s;
+}
+
+#gallery {
+    .swiper-container1 {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 500px!important;
+        height: 350px;
+        border: 2px solid white;
+    }
+    .swiper-pagination-bullets {
+        display: none;
+    }
+    .swiper-button-prev {
+        background: url("../img/previous-home.png");
+        width: 60px;
+        height: 60px
+    }
+    .swiper-button-next {
+        background: url("../img/next-home.png");
+        width: 60px;
+        height: 60px
+    }
 }

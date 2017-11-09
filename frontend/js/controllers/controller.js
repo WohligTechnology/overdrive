@@ -17,6 +17,26 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             name: "MOTOBIKES"
         }];
 
+        $timeout(function () {
+            mySwiper = new Swiper('.swiper-container1', {
+                pagination: '.swiper-pagination',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                loop: true,
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflow: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 1000,
+                    modifier: 1,
+                    slideShadows: true,
+                }
+            });
+        }, 300)
+
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
         // window.scrollBy({

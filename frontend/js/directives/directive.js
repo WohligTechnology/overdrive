@@ -46,16 +46,35 @@ myApp.directive('img', function ($compile, $parse) {
                 var lastScrollTop = 600;
                 $(window).scroll(function (event) {
                     // lastScrollTop = st;
-                    h = $(this).scrollTop() - 500;
-                    $('.blade1').css("height", h);
-                    h2 = $(this).scrollTop() - 1300;
-                    $('.blade2').css("height", h2);
-                    h3 = $(this).scrollTop() - 2400;
-                    $('.blade3').css("height", h3);
-                    h4 = $(this).scrollTop() - 3100;
-                    $('.blade4').css("height", h4);
-                    // console.log($(this).scrollTop());
-
+                    // h = $(this).scrollTop() - 500;
+                    // $('.blade1').css("height", h);
+                    // h2 = $(this).scrollTop() - 1300; 
+                    // $('.blade2').css("height", h2);
+                    // h3 = $(this).scrollTop() - 2400;
+                    // $('.blade3').css("height", h3);
+                    // h4 = $(this).scrollTop() - 3100;
+                    // $('.blade4').css("height", h4);
+                    console.log($(this).scrollTop());
+                    if ($(this).scrollTop() < 100) {
+                        $('.cust-transition').css("transition", "none")
+                        $('.blade1').css("height", '0%');
+                        $('.blade2').css("height", '0%');
+                        $('.blade3').css("height", '0%');
+                        $('.blade4').css("height", '0%');
+                    }
+                    if ($(this).scrollTop() > 750) {
+                        $('.blade1').css("height", '100%');
+                        $('.cust-transition').css("transition", "all 2s")
+                    }
+                    if ($(this).scrollTop() > 1700) {
+                        $('.blade2').css("height", '800px');
+                    }
+                    if ($(this).scrollTop() > 2600) {
+                        $('.blade3').css("height", '100%');
+                    }
+                    if ($(this).scrollTop() > 3500) {
+                        $('.blade4').css("height", '1000px');
+                    }
                 });
             }
         };

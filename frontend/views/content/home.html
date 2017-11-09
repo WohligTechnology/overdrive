@@ -5,7 +5,7 @@
         </div> -->
 
         <div class="inside_b1 container-fluid">
-            <div class="blade1">
+            <div class="blade1 cust-transition">
                 <img class="img1 img-responsive" src="img/background/blade1.png">
             </div>
             <div class="h">OVERVIEW
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="blade2">
+    <div class="blade2 cust-transition">
         <img class="img1 img-responsive" src="img/background/blade2.png">
     </div>
     <div id="socialmedia" class="b3 block1 block-lrg gray-bg container-fluid">
@@ -126,7 +126,7 @@
     </div>
     <div id="jurors" class="b5 block-min gray-bg rel over-hidden container-fluid">
         <div class="inside_b5">
-            <div class="blade3">
+            <div class="blade3 cust-transition">
                 <img class="img1 img-responsive" src="img/background/blade2.png">
             </div>
             <div class="h left-h"> JURORS</div>
@@ -154,7 +154,7 @@
             </div>
         </div>
     </div>
-    <div class="blade4">
+    <div class="blade4 cust-transition">
         <img class="img1 img-responsive" src="img/background/blade3.png">
     </div>
     <div id="winnner" class="b6 block-min block6-tab backimg1 container-fluid">
@@ -187,11 +187,21 @@
                 <div class="col-md-7 col-sm-7 col-xs-12">
                     <uib-tabset active="active" class="custom-tab">
                         <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled">
-                            <div ng-repeat="pic in tab.gallery track by $index">
+                            <!-- <div ng-repeat="pic in tab.gallery track by $index">
                                 <div ng-if="$index<6" class="col-md-4 col-sm-4 col-xs-6 tab-pd"><img class="img-responsive gallery_img" ng-src="{{pic}}">
                                 </div>
+                            </div> -->
+                            <div class="swiper-container1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
+                                        <img class="img-responsive gallery_img" ng-src="{{pic}}">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev hidden-sm hidden-xs"></div>
+                                <div class="swiper-button-next hidden-sm hidden-xs"></div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
                             </div>
-
                         </uib-tab>
                     </uib-tabset>
                     <div class="text-right more-btn2">VIEW MORE </div>
