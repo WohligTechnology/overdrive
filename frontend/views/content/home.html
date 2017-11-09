@@ -14,10 +14,12 @@
             <div class="row b1_divide">
 
                 <div class="b1_img col-md-7 col-sm-7 col-xs-12">
-                    <img src="img/b1-car.png" class="img-responsive rel front">
+                    <!--<img src="img/b1-car.png" class="img-responsive rel front">-->
+                    <class="img-responsive rel front" ng-repeat="i in overviewData track by $index"><img ng-src="{{i.img|uploadpath}}">
                 </div>
                 <div class="col-md-5 col-sm-5 col-xs-12">
-                    <div class="b1-txt fnt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget arcu eget lacus congue rutrum ac id
+                    <div class="b1-txt fnt" ng-repeat="text in overviewData track by $index">{{text.description}}</div>
+                    <!--<div class="b1-txt fnt"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget arcu eget lacus congue rutrum ac id
                         maassa. Duis sed euismod risus. Fusce quis luctus enim. Curabitur posuere metus vel turpis rhoncus
                         bibendum. In porttitor purus et d risus. Fusce quis luctus enim. Curabitur posuere metus vel turpis
                         rhoncus bibendum. In porttitor purus et condimentum elementum. Nam ex dui, vehicula et pellentesque
@@ -25,7 +27,7 @@
                         quam, sed auctor lorem dignissim ut. Ut efficitur eros ut diam fermentum cursus. condimentum elementum.
                         Nam ex dui, vehicula et pellentesque et, fermentum id velit. Nam vitae nisl id nibh sodales tincidunt
                         et vel magna. Mauris ultricies quam quam, sed auctor lorem dignissim ut. Ut efficitur eros ut diam
-                        fermentum cursus. Nam</div>
+                        fermentum cursus. Nam</div>-->
                     <!--<div class="pull-right more-btn">MORE</div>-->
                 </div>
             </div>
@@ -165,7 +167,7 @@
                             <div>
                                 <div class="b6-bike-name">{{s.name}}</div>
                                 <img ng-src="{{s.url}}" class="img-responsive " noloading="true">
-                                 <div class="b6-bike-name">{{s.winner_name}}</div>
+                                <div class="b6-bike-name">{{s.winner_name}}</div>
                             </div>
                         </slide>
                     </slides>
@@ -200,12 +202,15 @@
     </div>
     <div id="partner" class="b8 block  backimg1 blockb8-tab -container-fluid rel">
         <div class="inside_b8">
-            <div class=" text-center h side_hr"><span>PARTNERS</span></div><pre>{{partnerImg}}</pre>
+            <div class=" text-center h side_hr"><span>PARTNERS</span></div>
             <!--<div class="b8_div"><img src="img/partner.png" class="img-responsive"></div>-->
-            <div class="b8_div" ng-repeat="img in partnerImg.logo track by $index"><img src="{{img}}" class="img-responsive"></div>
+            <!--<div class="b8_div" ng-repeat="img in partnerImg track by $index"><img ng-src="{{img.logo|uploadpath}}" class="img-responsive"></div>-->
+
+<ul class="b8_div">
+        <li ng-repeat="img in partnerImg track by $index"><img ng-src="{{img.logo|uploadpath}}" class="img-responsive"></li>
+      </ul>
+
         </div>
-
-
     </div>
     <!-- <div class="b9 block container-fluid">
         <div class="inside_b9">

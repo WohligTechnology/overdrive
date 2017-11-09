@@ -47,19 +47,19 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         }];
 
 
-        $scope.slider_profile = [{
-            url: 'img/slider/profile.jpg',
-            name: "Bertand Dsouza"
-        }, {
-            url: 'img/slider/profile1.jpg',
-            name: "Armaan Ibrahim"
-        }, {
-            url: 'img/slider/profile2.jpg',
-            name: "Anand Dharmaraj"
-        }, {
-            url: 'img/slider/profile3.jpg',
-            name: "Narayan Rupani"
-        }, ];
+        // $scope.slider_profile = [{
+        //     url: 'img/slider/profile.jpg',
+        //     name: "Bertand Dsouza"
+        // }, {
+        //     url: 'img/slider/profile1.jpg',
+        //     name: "Armaan Ibrahim"
+        // }, {
+        //     url: 'img/slider/profile2.jpg',
+        //     name: "Anand Dharmaraj"
+        // }, {
+        //     url: 'img/slider/profile3.jpg',
+        //     name: "Narayan Rupani"
+        // }, ];
 
         $scope.partners = {
 
@@ -98,37 +98,34 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
         NavigationService.callApi("Partners/search", function (data) {
-            console.log("data",data);
+            console.log("partner data",data);
             $scope.partnerImg = data.data.results;
-            console.log("sss", $scope.partnerImg)
-            // console.log("sss", data.result.logo)
         });
 
 
 NavigationService.callApi("Overview/search", function (data) {
-    console.log("datarr",data);
-
+    console.log("overview data",data);
+$scope.overviewData = data.data.results;
 });
 
 
 
 NavigationService.callApi("Jurors/search", function (data) {
-    console.log("data",data);
+    console.log("juror data",data);
+    $scope.slider_profile = data.data.results;
 
 });
 
 
 
 NavigationService.callApi("Winners/search", function (data) {
-    console.log("data",data);
+    console.log("winner data",data);
+     $scope.winnerData = data.data.results;
 
 });
 
 
-NavigationService.callApi("Winners/search", function (data) {
-    console.log("data",data);
 
-});
 
 
 

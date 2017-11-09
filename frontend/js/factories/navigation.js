@@ -1,3 +1,6 @@
+var imgurl = adminurl + "upload/";
+var imgpath = imgurl + "readFile";
+
 myApp.factory('NavigationService', function ($http) {
     var navigation = [{
             // name: "THE AWARDS",
@@ -71,6 +74,8 @@ myApp.factory('NavigationService', function ($http) {
             return navigation;
         },
 
+
+      
 
         callApi: function (url, callback) {
             $http.post(adminurl + url).then(function (data) {
