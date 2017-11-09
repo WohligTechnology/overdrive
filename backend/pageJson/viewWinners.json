@@ -11,7 +11,13 @@
     }, {
         "name": "Img",
         "isSort": "",
-        "tableRef": "img"
+        "tableRef": "img",
+        "type": "image"
+    },
+    {
+        "name": "Winner Name",
+        "isSort": "",
+        "tableRef": "wname"
     }],
     "action": [{
         "name": "edit",

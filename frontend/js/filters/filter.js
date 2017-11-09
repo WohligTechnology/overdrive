@@ -10,6 +10,31 @@ myApp.filter('myFilter', function () {
         return output;
     };
 
+    .filter('serverimage', function () {
+        return function (input, width, height, style) {
+            if (input) {
+                if (input.substr(0, 4) == "http") {
+                    return input;
+                } else {
+                    image = imgpath + "?file=" + input;
+                    if (width) {
+                        image += "&width=" + width;
+                    }
+                    if (height) {
+                        image += "&height=" + height;
+                    }
+                    if (style) {
+                        image += "&style=" + style;
+                    }
+                    return image;
+                }
+
+            } else {
+                return ;
+            }
+        };
+    });
+
 });
 
 myApp.filter('indianCurrency', function () {

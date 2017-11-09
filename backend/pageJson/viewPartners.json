@@ -7,7 +7,8 @@
     "fields": [{
         "name": "Logo",
         "isSort": "",
-        "tableRef": "logo"
+        "tableRef": "logo",
+        "type": "image"
     }],
     "action": [{
         "name": "edit",

@@ -8,10 +8,10 @@
     "fields": [{
         "name": "logo",
         "type": "image",
-        "tableRef": "photo",
+        "tableRef": "logo",
         "size": "250 x 250",
         "placeholder": "Upload photo",
-        "id": "img",
+        "id": "logo",
         "view": true,
         "disabled": true,
         "validation": ["required", "trim", "unique"],

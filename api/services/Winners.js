@@ -5,6 +5,10 @@ var schema = new Schema({
     },
     img: {
         type: String,
+    },
+    wname: {
+        type: String,
+        required: true
     }
 });
 

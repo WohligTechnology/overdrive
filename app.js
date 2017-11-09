@@ -27,7 +27,7 @@ global["database"] = "overdrive";
 
 mongoose.Promise = global.Promise;
 
-global.mongourl = "mongodb://localhost:27017/";
+global.mongourl = "mongodb://localhost:27017/"+database;
 mongoose.connect(mongourl, {
     useMongoClient: true
 }, function (err, db) {

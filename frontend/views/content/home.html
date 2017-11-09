@@ -26,7 +26,7 @@
                         Nam ex dui, vehicula et pellentesque et, fermentum id velit. Nam vitae nisl id nibh sodales tincidunt
                         et vel magna. Mauris ultricies quam quam, sed auctor lorem dignissim ut. Ut efficitur eros ut diam
                         fermentum cursus. Nam</div>
-                    <div class="pull-right more-btn">MORE</div>
+                    <!--<div class="pull-right more-btn">MORE</div>-->
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <div class="redanime2">anime</div>
         </div> -->
         <div class="inside_b2 ">
-            <div class="text-center h side_hr"><span>AWARDS CATEGORY</span></div>
+            <div class="text-center h side_hr"><span>VIEWERS AWARDS CATEGORY</span></div>
             <div class="sliderbike1">
                 <swiper autoplay="5000" effect="slide" slides-per-view="3" loop="true">
                     <slides>
@@ -163,8 +163,9 @@
                     <slides>
                         <slide ng-repeat="s in myWinner">
                             <div>
-                                <img ng-src="{{s.url}}" class="img-responsive " noloading="true">
                                 <div class="b6-bike-name">{{s.name}}</div>
+                                <img ng-src="{{s.url}}" class="img-responsive " noloading="true">
+                                 <div class="b6-bike-name">{{s.winner_name}}</div>
                             </div>
                         </slide>
                     </slides>
@@ -199,8 +200,9 @@
     </div>
     <div id="partner" class="b8 block  backimg1 blockb8-tab -container-fluid rel">
         <div class="inside_b8">
-            <div class=" text-center h side_hr"><span>PARTNERS</span></div>
-            <div class="b8_div"><img src="img/partner.png" class="img-responsive"></div>
+            <div class=" text-center h side_hr"><span>PARTNERS</span></div><pre>{{partnerImg}}</pre>
+            <!--<div class="b8_div"><img src="img/partner.png" class="img-responsive"></div>-->
+            <div class="b8_div" ng-repeat="img in partnerImg.logo track by $index"><img src="{{img}}" class="img-responsive"></div>
         </div>
 
 
