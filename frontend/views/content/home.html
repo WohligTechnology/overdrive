@@ -161,9 +161,22 @@
                 <swiper autoplay="5000" effect="slide" slides-per-view="4" loop="true">
                     <slides>
                         <slide ng-repeat="s in myWinner track by $index">
-                            <div>
+                             
+                            <div class="flipDiv">
                                 <div class="b6-bike-name">{{s.name}}</div>
-                                <img ng-src="{{s.img|uploadpath}}" class="img-responsive " noloading="true">
+                                <figure>
+                                    <div class="front">
+                                       
+                                        <img ng-src="{{s.img|uploadpath}}" class="img-responsive " noloading="true">
+                                    </div>
+                                    <figcaption>
+                                        <div class="descrip">
+                                            <p class="text-center">
+                                              Description
+                                            </p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </slide>
                     </slides>
@@ -216,7 +229,7 @@
                                 <img src="img/partner/CNBC logo.png" class="img-responsive">
                             </div>
                         </div>
-                          <div class="col-md-6">
+                        <div class="col-md-6">
                             <div class="round-img">
                                 <img src="img/partner/CNBC logo.png" class="img-responsive">
                             </div>

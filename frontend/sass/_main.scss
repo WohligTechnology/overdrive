@@ -177,6 +177,16 @@ body {
     background-color: white !important;
     margin: 2px;
     text-shadow: none !important;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    transition: all ease .3s;
+    &:hover {
+        -webkit-transform: scale(.95);
+        -moz-transform: scale(.95);
+        -ms-transform: scale(.95);
+        -o-transform: scale(.95);
+        transform: scale(.95);
+    }
 }
 
 .block {
@@ -529,6 +539,7 @@ body {
         height: 180px;
         object-fit: cover;
         border: 5px solid #9a1205;
+        margin: 0 60px;
     }
 }
 
@@ -864,12 +875,97 @@ header {
 
 //scss by snehal
 .round-img {
-    width: 300px;
-    height: 300px;
-    border: 3px solid red;
-    border-radius: 50%;
-    margin: 0 auto;
+   width: 300px;
+   height: 300px;
+   border: 3px solid red;
+   border-radius: 50%;
+   margin: 0 auto;
+   background: white;
 }
-.partner-img{
+
+.partner-img {
     margin: 50px 0;
+}
+
+//
+.flipDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.flipDiv figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.flipDiv figure .front {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.flipDiv figure figcaption {
+    background: black;
+    display: block;
+    position: absolute;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flipDiv figure h2 {
+    font-family: 'Lato';
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+}
+
+.flipDiv figure p {
+    display: block;
+    font-family: 'Robotor';
+    font-size: 16px;
+    margin: 0;
+    color: white !important;
+    text-align: center;
+    padding: 0 70px;
+}
+
+.flipDiv figure figcaption {
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 340px;
+    margin: 0px 60px 0 60px;
+    text-align: center;
+    backface-visibility: hidden;
+    @include transform(rotateY(-180deg));
+    @include transition(all 0.5s);
+}
+
+.flipDiv .descrip {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flipDiv figure .front {
+    backface-visibility: hidden;
+    @include transition(all 0.5s);
+}
+
+.flipDiv figure:hover .front,
+figure.hover .front {
+    @include transform(rotateY(180deg));
+    z-index: 0;
+}
+
+.flipDiv figure:hover figcaption,
+figure.hover figcaption {
+    @include transform(rotateY(0));
 }
