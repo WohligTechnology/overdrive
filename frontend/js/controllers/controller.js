@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
@@ -117,11 +117,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
 
-        NavigationService.callApi("Partners/search", function (data) {
-            console.log("partner data",data);
-            $scope.partnerImg = data.data.results;
-        });
-
 
 NavigationService.callApi("Overview/search", function (data) {
     console.log("overview data",data);
@@ -133,6 +128,7 @@ $scope.overviewData = data.data.results;
 NavigationService.callApi("Jurors/search", function (data) {
     console.log("juror data",data);
     $scope.slider_profile = data.data.results;
+    $scope.selectedDescription=$scope.slider_profile[0].description;
 });
 
 
@@ -148,6 +144,22 @@ NavigationService.callApi("Awardcategory/search", function (data) {
      $scope.mySlides = data.data.results;
 });
 
+
+NavigationService.callApi("Partners/search", function (data) {
+    console.log("Partners data",data);
+     $scope.partners = data.data.results;
+});
+
+
+// $scope.changeDescription = function (description) {
+//         $scope.description = description;
+//     }
+
+
+$scope.changeDescription = function (data) {
+        console.log("dd",data);
+        $scope.selectedDescription=data.description;
+    }
 
 
 
