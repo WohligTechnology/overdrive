@@ -3,19 +3,19 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
 
-        $scope.mySlides = [{
-            url: 'img/slider/1.png',
-            url1: 'img/slider/1-m.png',
-            name: "CARS"
-        }, {
-            url: 'img/slider/2.png',
-            url1: 'img/slider/2-m.png',
-            name: "SCOOTERS"
-        }, {
-            url: 'img/slider/3.png',
-            url1: 'img/slider/3-m.png',
-            name: "MOTOBIKES"
-        }];
+        // $scope.mySlides = [{
+        //     url: 'img/slider/1.png',
+        //     url1: 'img/slider/1-m.png',
+        //     name: "CARS"
+        // }, {
+        //     url: 'img/slider/2.png',
+        //     url1: 'img/slider/2-m.png',
+        //     name: "SCOOTERS"
+        // }, {
+        //     url: 'img/slider/3.png',
+        //     url1: 'img/slider/3-m.png',
+        //     name: "MOTOBIKES"
+        // }];
 
         $timeout(function () {
             mySwiper = new Swiper('.swiper-container1', {
@@ -133,7 +133,6 @@ $scope.overviewData = data.data.results;
 NavigationService.callApi("Jurors/search", function (data) {
     console.log("juror data",data);
     $scope.slider_profile = data.data.results;
-
 });
 
 
@@ -141,7 +140,12 @@ NavigationService.callApi("Jurors/search", function (data) {
 NavigationService.callApi("Winners/search", function (data) {
     console.log("winner data",data);
      $scope.myWinner = data.data.results;
+});
 
+
+NavigationService.callApi("Awardcategory/search", function (data) {
+    console.log("awardcategory data",data);
+     $scope.mySlides = data.data.results;
 });
 
 
