@@ -142,7 +142,7 @@
                     <slides>
                         <slide ng-repeat="s in slider_profile track by $index">
                             <div>
-                                <li ng-click="changeDescription(s)">
+                                <li ng-click="changeDescription(s)"  class="jurors-slider">
                                 <img ng-src="{{s.img|uploadpath}}" class="profile_slider_img img-responsive" noloading="true"></li>
                                 <div class="pro_name">{{s.name}}</div>
                             </div>
@@ -200,10 +200,6 @@
                 <div class="col-md-7 col-sm-7 col-xs-12">
                     <uib-tabset active="active" class="custom-tab">
                         <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled">
-                            <!-- <div ng-repeat="pic in tab.gallery track by $index">
-                                <div ng-if="$index<6" class="col-md-4 col-sm-4 col-xs-6 tab-pd"><img class="img-responsive gallery_img" ng-src="{{pic}}">
-                                </div>
-                            </div> -->
                             <div class="swiper-container1">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
@@ -212,7 +208,6 @@
                                 </div>
                                 <div class="swiper-button-prev hidden-sm hidden-xs"></div>
                                 <div class="swiper-button-next hidden-sm hidden-xs"></div>
-                                <!-- Add Pagination -->
                                 <div class="swiper-pagination"></div>
                             </div>
                         </uib-tab>

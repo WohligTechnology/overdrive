@@ -871,6 +871,7 @@ header {
     //     width: 60px;
     //     height: 60px
     // }
+ 
 }
 
 //scss by snehal
@@ -968,4 +969,8 @@ figure.hover .front {
 .flipDiv figure:hover figcaption,
 figure.hover figcaption {
     @include transform(rotateY(0));
+}
+
+.jurors-slider{
+    cursor:pointer;
 }

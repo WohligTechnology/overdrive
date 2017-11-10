@@ -18,32 +18,35 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         // }];
 
         $timeout(function () {
-            mySwiper = new Swiper('.swiper-container1', {
+            swiper1 = new Swiper('.swiper-container1', {
                 pagination: '.swiper-pagination',
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                loop: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
                 effect: 'coverflow',
+                 loop: true,
                 grabCursor: true,
                 centeredSlides: true,
                 slidesPerView: 'auto',
-                coverflow: {
+                coverflowEffect: {
                     rotate: 50,
                     stretch: 0,
-                    depth: 1000,
+                    depth: 1200,
                     modifier: 1,
                     slideShadows: true,
-                }
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
             });
         }, 300)
 
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
-        // window.scrollBy({
-        //     top: 100, // could be negative value
-        //     left: 0,
-        //     behavior: 'smooth'
-        // });
+            // window.scrollBy({
+            //     top: 100, // could be negative value
+            //     left: 0,
+            //     behavior: 'smooth'
+            // });
         $('.inside_b1').scroll(function () {
             console.log("run");
         });
@@ -85,26 +88,21 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
             },
             $scope.gallerytabs = [{
-                    title: "2016",
-                    gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-                },
-                {
-                    title: "2015",
-                    gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-                },
-                {
-                    title: "2014",
-                    gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-                },
-                {
-                    title: "2013",
-                    gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-                },
-                {
-                    title: "2012",
-                    gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-                }
-            ]
+                title: "2016",
+                gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+            }, {
+                title: "2015",
+                gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+            }, {
+                title: "2014",
+                gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+            }, {
+                title: "2013",
+                gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+            }, {
+                title: "2012",
+                gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+            }]
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -118,48 +116,48 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
 
-NavigationService.callApi("Overview/search", function (data) {
-    console.log("overview data",data);
-$scope.overviewData = data.data.results;
-});
+        NavigationService.callApi("Overview/search", function (data) {
+            console.log("overview data", data);
+            $scope.overviewData = data.data.results;
+        });
 
 
 
-NavigationService.callApi("Jurors/search", function (data) {
-    console.log("juror data",data);
-    $scope.slider_profile = data.data.results;
-    $scope.selectedDescription=$scope.slider_profile[0].description;
-});
+        NavigationService.callApi("Jurors/search", function (data) {
+            console.log("juror data", data);
+            $scope.slider_profile = data.data.results;
+            $scope.selectedDescription = $scope.slider_profile[0].description;
+        });
 
 
 
-NavigationService.callApi("Winners/search", function (data) {
-    console.log("winner data",data);
-     $scope.myWinner = data.data.results;
-});
+        NavigationService.callApi("Winners/search", function (data) {
+            console.log("winner data", data);
+            $scope.myWinner = data.data.results;
+        });
 
 
-NavigationService.callApi("Awardcategory/search", function (data) {
-    console.log("awardcategory data",data);
-     $scope.mySlides = data.data.results;
-});
+        NavigationService.callApi("Awardcategory/search", function (data) {
+            console.log("awardcategory data", data);
+            $scope.mySlides = data.data.results;
+        });
 
 
-NavigationService.callApi("Partners/search", function (data) {
-    console.log("Partners data",data);
-     $scope.partners = data.data.results;
-});
+        NavigationService.callApi("Partners/search", function (data) {
+            console.log("Partners data", data);
+            $scope.partners = data.data.results;
+        });
 
 
-// $scope.changeDescription = function (description) {
-//         $scope.description = description;
-//     }
+        // $scope.changeDescription = function (description) {
+        //         $scope.description = description;
+        //     }
 
 
-$scope.changeDescription = function (data) {
-        console.log("dd",data);
-        $scope.selectedDescription=data.description;
-    }
+        $scope.changeDescription = function (data) {
+            console.log("dd", data);
+            $scope.selectedDescription = data.description;
+        }
 
 
 
@@ -212,9 +210,9 @@ $scope.changeDescription = function (data) {
         $scope.navigation = NavigationService.getNavigation();
     })
 
-    // Example API Controller
-    .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
-        apiService.getDemo($scope.formData, function (data) {
-            console.log(data);
-        });
+// Example API Controller
+.controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+    apiService.getDemo($scope.formData, function (data) {
+        console.log(data);
     });
+});
