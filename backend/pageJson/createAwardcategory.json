@@ -28,10 +28,10 @@
     {
         "name": "Imgsmall",
         "type": "image",
-        "tableRef": "img",
+        "tableRef": "imgsmall",
         "size": "250 x 250",
         "placeholder": "Upload photo",
-        "id": "img",
+        "id": "imgsmall",
         "view": true,
         "disabled": true,
         "validation": ["required", "trim", "unique"],

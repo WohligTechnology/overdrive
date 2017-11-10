@@ -41,10 +41,10 @@
             <div class="sliderbike1">
                 <swiper autoplay="5000" effect="slide" slides-per-view="3" loop="true">
                     <slides>
-                        <slide ng-repeat="s in mySlides">
+                        <slide ng-repeat="s in mySlides track by $index">
                             <div>
-                                <img ng-src="{{s.url1}}" class="img-full middle-img" noloading="true">
-                                <img ng-src="{{s.url}}" class="img-full not-middle" noloading="true">
+                                <img ng-src="{{s.img|uploadpath}}" class="img-full middle-img" noloading="true">
+                                <img ng-src="{{s.imgsmall|uploadpath}}" class="img-full not-middle" noloading="true">
                                 <div class="bike-name">{{s.name}}</div>
                             </div>
                         </slide>
@@ -128,18 +128,22 @@
             </div>
             <div class="h left-h"> JURORS</div>
             <hr class="left-hr">
-            <div class="text-left fnt b5_text">
+            <!--<div class="text-left fnt b5_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet arcu id lacus aliquam imperdiet. Vestibulum ante
                 ipsum primis in faucibus orci luctus et ultrices posuere cubilia Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Vivamus imperdiet arcu id lacus aliquam imperdiet. Vestibulum ante ipsum primis in faucibus
                 orci
+            </div>-->
+            <div class="text-left fnt b5_text showDscription">
+              {{selectedDescription}}
             </div>
             <div class="row text-right b5_slider">
                 <swiper autoplay="5000" effect="slide" slides-per-view="3" loop="true">
                     <slides>
                         <slide ng-repeat="s in slider_profile track by $index">
                             <div>
-                                <img ng-src="{{s.img|uploadpath}}" class="profile_slider_img img-responsive" noloading="true">
+                                <li ng-click="changeDescription(s)">
+                                <img ng-src="{{s.img|uploadpath}}" class="profile_slider_img img-responsive" noloading="true"></li>
                                 <div class="pro_name">{{s.name}}</div>
                             </div>
                         </slide>
@@ -223,7 +227,7 @@
             <div class="inside_b8">
                 <div class=" text-center h side_hr"><span>PARTNERS</span></div>
                 <div class="partner-img">
-                    <div class="row">
+                    <!--<div class="row">
                         <div class="col-md-6">
                             <div class="round-img">
                                 <img src="img/partner/CNBC logo.png" class="img-responsive">
@@ -232,6 +236,13 @@
                         <div class="col-md-6">
                             <div class="round-img">
                                 <img src="img/partner/CNBC logo.png" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-md-6" ng-repeat="s in partners track by $index" >
+                            <div class="round-img" >
+                                <img ng-src="{{s.logo|uploadpath}}" class="img-responsive">
                             </div>
                         </div>
                     </div>

@@ -24,6 +24,17 @@
         "disabled": true,
         "validation": ["required", "trim", "unique"],
         "url": ""
+    },{
+        "name": "Imgsmall",
+        "type": "image",
+        "tableRef": "imgsmall",
+        "size": "250 x 250",
+        "placeholder": "Upload photo",
+        "id": "imgsmall",
+        "view": true,
+        "disabled": true,
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",
