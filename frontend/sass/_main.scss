@@ -546,8 +546,9 @@ body {
     position: relative;
     top: -70px;
     left: -80px;
-    border: 6px solid white;
     height: 312px;
+    overflow: hidden;
+    border: none;
 }
 
 .nav-tabs>li>a {
@@ -613,12 +614,14 @@ body {
 }
 
 .gallery_img {
-    width: 100%;
-    height: 150px;
-    padding: 0px;
-    padding: 0px;
-    border: 3px solid white;
-} //navbar
+    // width: 100%;
+    // height: 150px;
+    // padding: 0px;
+    // padding: 0px;
+    // border: 3px solid white;
+}
+
+//navbar
 .nav-tabs>li {
     background-color: rgba(243, 60, 60, 0.55);
     margin: 10px;
@@ -834,27 +837,39 @@ header {
 #gallery {
     .swiper-container1 {
         width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        // padding-top: 50px;
+        // padding-bottom: 50px;
     }
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        width: 500px!important;
-        height: 350px;
+        width: 350px!important;
+        height: 270px;
         border: 2px solid white;
     }
     .swiper-pagination-bullets {
         display: none;
     }
-    .swiper-button-prev {
-        background: url("../img/previous-home.png");
-        width: 60px;
-        height: 60px
-    }
-    .swiper-button-next {
-        background: url("../img/next-home.png");
-        width: 60px;
-        height: 60px
-    }
+    // .swiper-button-prev {
+    //     background: url("../img/previous-home.png");
+    //     width: 60px;
+    //     height: 60px
+    // }
+    // .swiper-button-next {
+    //     background: url("../img/next-home.png");
+    //     width: 60px;
+    //     height: 60px
+    // }
+}
+
+//scss by snehal
+.round-img {
+    width: 300px;
+    height: 300px;
+    border: 3px solid red;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.partner-img{
+    margin: 50px 0;
 }
