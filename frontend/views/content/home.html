@@ -171,12 +171,12 @@
                                 <figure>
                                     <div class="front">
                                        
-                                        <img ng-src="{{s.img|uploadpath}}" class="img-responsive " noloading="true">
+                                        <img ng-src="{{s.img|uploadpath}}" class="img-responsive" noloading="true">
                                     </div>
                                     <figcaption>
                                         <div class="descrip">
                                             <p class="text-center">
-                                              Description
+                                             {{s.wname}}
                                             </p>
                                         </div>
                                     </figcaption>
@@ -199,11 +199,14 @@
                 <div class="col-md-5 col-sm-5 col-xs-12 hide-xs"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
                 <div class="col-md-7 col-sm-7 col-xs-12">
                     <uib-tabset active="active" class="custom-tab">
-                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled">
+                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.year}}" disable="tab.disabled" ng-click="changeGallery(tab)">
                             <div class="swiper-container1">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
+                                    <!--<div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
                                         <img class="img-responsive gallery_img" ng-src="{{pic}}">
+                                    </div>-->
+                                    <div class="swiper-slide" ng-repeat="pic in tab.gallery track by $index">
+                                        <img ng-src="{{pic}}" class="img-responsive">
                                     </div>
                                 </div>
                                 <div class="swiper-button-prev hidden-sm hidden-xs"></div>

@@ -20,10 +20,10 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $timeout(function () {
             swiper1 = new Swiper('.swiper-container1', {
                 pagination: '.swiper-pagination',
-                    nextButton: '.swiper-button-next',
-                    prevButton: '.swiper-button-prev',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
                 effect: 'coverflow',
-                 loop: true,
+                loop: true,
                 grabCursor: true,
                 centeredSlides: true,
                 slidesPerView: 'auto',
@@ -42,11 +42,11 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
-            // window.scrollBy({
-            //     top: 100, // could be negative value
-            //     left: 0,
-            //     behavior: 'smooth'
-            // });
+        // window.scrollBy({
+        //     top: 100, // could be negative value
+        //     left: 0,
+        //     behavior: 'smooth'
+        // });
         $('.inside_b1').scroll(function () {
             console.log("run");
         });
@@ -158,10 +158,17 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("dd", data);
             $scope.selectedDescription = data.description;
         }
-
-
-
-
+        $scope.changeDescription = function (data) {
+            console.log("dd", data);
+            $scope.selectedDescription = data.description;
+        }
+        NavigationService.callApi("Gallery/search", function (data) {
+            console.log("Gallery data", data);
+            $scope.gallerytabs = data.data.results;
+        });
+$scope.changeGallery = function (tab) {
+            console.log("tab", tab);
+        }
 
     })
     .controller('navCtrl', function ($scope, $location, $anchorScroll) {
@@ -210,9 +217,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
     })
 
-// Example API Controller
-.controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
-    apiService.getDemo($scope.formData, function (data) {
-        console.log(data);
+    // Example API Controller
+    .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+        apiService.getDemo($scope.formData, function (data) {
+            console.log(data);
+        });
     });
-});
