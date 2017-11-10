@@ -48,23 +48,23 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("run");
         });
 
-        $scope.myWinner = [{
-            url: 'img/slider/car1.jpg',
-            name: "BEST CAR",
-            winner_name: "John"
-        }, {
-            url: 'img/slider/car2.jpg',
-            name: "BEST BIKE",
-            winner_name: "Tom"
-        }, {
-            url: 'img/slider/car3.jpg',
-            name: "BEST MUV",
-            winner_name: "Ricky"
-        }, {
-            url: 'img/slider/car4.jpg',
-            name: "BEST SUV",
-            winner_name: "Vicky"
-        }];
+        // $scope.myWinner = [{
+        //     url: 'img/slider/car1.jpg',
+        //     name: "BEST CAR",
+        //     winner_name: "John"
+        // }, {
+        //     url: 'img/slider/car2.jpg',
+        //     name: "BEST BIKE",
+        //     winner_name: "Tom"
+        // }, {
+        //     url: 'img/slider/car3.jpg',
+        //     name: "BEST MUV",
+        //     winner_name: "Ricky"
+        // }, {
+        //     url: 'img/slider/car4.jpg',
+        //     name: "BEST SUV",
+        //     winner_name: "Vicky"
+        // }];
 
 
         // $scope.slider_profile = [{
@@ -140,7 +140,7 @@ NavigationService.callApi("Jurors/search", function (data) {
 
 NavigationService.callApi("Winners/search", function (data) {
     console.log("winner data",data);
-     $scope.winnerData = data.data.results;
+     $scope.myWinner = data.data.results;
 
 });
 
