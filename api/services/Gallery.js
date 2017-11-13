@@ -3,9 +3,11 @@ var schema = new Schema({
         type: String,
         required: true
     },
-    img: {
-        type: String,
-    }
+    img: [{
+         images: {
+            type: String
+        }
+    }]
 });
 
 schema.plugin(deepPopulate, {});

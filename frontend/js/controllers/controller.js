@@ -149,9 +149,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
 
 
-        // $scope.changeDescription = function (description) {
-        //         $scope.description = description;
-        //     }
 
 
         $scope.changeDescription = function (data) {

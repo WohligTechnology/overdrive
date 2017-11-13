@@ -14,16 +14,22 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Img",
-        "type": "image",
+        "name": "Image",
+        "type": "box",
         "tableRef": "img",
-        "size": "250 x 250",
-        "placeholder": "Upload photo",
-        "id": "img",
-        "view": true,
-        "disabled": true,
-        "validation": ["required", "trim", "unique"],
-        "url": ""
+        "validation": ["required", "trim", ""],
+         "field": [{
+                "name": "Images",
+                "type": "image",
+                "tableRef": "images",
+                "placeholder": "Enter Image",
+                "id": "images",
+                "size": "750× 458px",
+                "validation": ["", "trim", ""],
+                "onView": true,
+                "view": true,
+                "url": ""
+            }]
     }],
     "action": [{
         "name": "submit",
