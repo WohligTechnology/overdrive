@@ -5,14 +5,15 @@
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
+        "name": "Year",
+        "isSort": "",
+        "tableRef": "year"
+    },
+    {
         "name": "Img",
         "isSort": "",
         "tableRef": "img",
         "type": "image"
-    }, {
-        "name": "Year",
-        "isSort": "",
-        "tableRef": "year"
     }],
     "action": [{
         "name": "edit",
