@@ -60,13 +60,6 @@ myApp.factory('NavigationService', function ($http) {
             link: "partner",
             subnav: []
         },
-        {
-            name: "VOTE NOW",
-            classis: "active",
-            anchor: "grid",
-            highlight: true,
-            subnav: []
-        },
     ];
 
     return {

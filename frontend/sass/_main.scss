@@ -171,24 +171,6 @@ body {
     padding-top: 0px;
 }
 
-.nav_highlight {
-    color: red !important;
-    font-weight: bold;
-    background-color: white !important;
-    margin: 2px;
-    text-shadow: none !important;
-    -webkit-transition: all ease .3s;
-    -o-transition: all ease .3s;
-    transition: all ease .3s;
-    &:hover {
-        -webkit-transform: scale(.95);
-        -moz-transform: scale(.95);
-        -ms-transform: scale(.95);
-        -o-transform: scale(.95);
-        transform: scale(.95);
-    }
-}
-
 .block {
     height: 500px;
 }
@@ -622,14 +604,8 @@ body {
     position: absolute;
     top: -140px;
     height: 520px;
-}
+        z-index: 9;
 
-.gallery_img {
-    // width: 100%;
-    // height: 150px;
-    // padding: 0px;
-    // padding: 0px;
-    // border: 3px solid white;
 }
 
 //navbar
@@ -690,6 +666,9 @@ header {
 .feed {
     // height: 300px;
     // overflow: scroll;
+    iframe{
+        border:5px solid black !important;
+    }
 }
 
 //animation
@@ -779,7 +758,10 @@ header {
 .front {
     z-index: 12;
 }
-
+#winnner{
+    position: relative;
+    z-index: 9;
+}
 .smoke {
     position: absolute;
     z-index: 4;
@@ -793,7 +775,7 @@ header {
     position: absolute;
     height: 0px;
     overflow: hidden;
-    z-index: 10;
+    z-index: 0;
     left: -133px;
     top: 100px;
     max-height: 450px;
@@ -813,11 +795,11 @@ header {
 .blade3 {
     position: absolute;
     /* height: 100%; */
-    width: 25%;
+    width: 35%;
     /* top: 0; */
-    left: 45%;
+    left: 53%;
     z-index: 1;
-    max-height: 550px;
+    max-height: 523px;
     height: 0px;
     overflow: hidden
 }
@@ -829,6 +811,7 @@ header {
     height: 0px;
     overflow: hidden;
     max-height: 1000px;
+    z-index: 0;
 }
 
 .swiper-button-next,
@@ -871,17 +854,16 @@ header {
     //     width: 60px;
     //     height: 60px
     // }
- 
 }
 
 //scss by snehal
 .round-img {
-   width: 300px;
-   height: 300px;
-   border: 3px solid red;
-   border-radius: 50%;
-   margin: 0 auto;
-   background: white;
+    width: 300px;
+    height: 300px;
+    border: 3px solid red;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: white;
 }
 
 .partner-img {
@@ -912,11 +894,21 @@ header {
 
 .flipDiv figure figcaption {
     background: black;
+    border: 5px solid #9a1205;
     display: block;
     position: absolute;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 180px;
+    margin: 0px 60px 0 60px;
+    text-align: center;
+    backface-visibility: hidden;
+    @include transform(rotateY(-180deg));
+    @include transition(all 0.5s);
 }
 
 .flipDiv figure h2 {
@@ -936,23 +928,15 @@ header {
     padding: 0 70px;
 }
 
-.flipDiv figure figcaption {
-    top: 0;
-    left: 0;
-    width: 180px;
-    height: 340px;
-    margin: 0px 60px 0 60px;
-    text-align: center;
-    backface-visibility: hidden;
-    @include transform(rotateY(-180deg));
-    @include transition(all 0.5s);
-}
-
 .flipDiv .descrip {
     position: absolute;
-    top: 25%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
+    p {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 600;
+    }
 }
 
 .flipDiv figure .front {
@@ -971,6 +955,37 @@ figure.hover figcaption {
     @include transform(rotateY(0));
 }
 
-.jurors-slider{
-    cursor:pointer;
+.jurors-slider {
+    cursor: pointer;
+}
+
+.nav_highlight {
+    position: fixed;
+    bottom: 38px;
+    right: 10px;
+    font-size: 20px;
+    z-index: 3;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 5px 0px;
+    cursor: pointer;
+    border: 5px solid red;
+    -webkit-transition: all ease .3s;
+    transition: all ease .3s;
+    color: red !important;
+    font-weight: bold;
+    background-color: white !important;
+    margin: 2px;
+    text-shadow: none !important;
+    -webkit-transition: all ease .3s;
+    transition: all ease .3s;
+    &:hover {
+        -webkit-transform: scale(.95);
+        -moz-transform: scale(.95);
+        -ms-transform: scale(.95);
+        -o-transform: scale(.95);
+        transform: scale(.95);
+    }
 }
