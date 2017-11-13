@@ -19,7 +19,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         $timeout(function () {
             swiper1 = new Swiper('.swiper-container1', {
-                pagination: '.swiper-pagination',
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
                 effect: 'coverflow',
