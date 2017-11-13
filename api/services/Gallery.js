@@ -2,9 +2,17 @@ var schema = new Schema({
     year: {
         type: String
     },
-   img: {
-        type: String
-    },
+    img: [{
+        image: {
+            type: String
+        },
+        sequence:{
+            type: Number
+        },
+        title: {
+            type: String
+        }
+    }],
 });
 
 schema.plugin(deepPopulate, {});

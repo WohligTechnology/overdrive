@@ -8,12 +8,6 @@
         "name": "Year",
         "isSort": "",
         "tableRef": "year"
-    },
-    {
-        "name": "Img",
-        "isSort": "",
-        "tableRef": "img",
-        "type": "image"
     }],
     "action": [{
         "name": "edit",

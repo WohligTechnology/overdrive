@@ -83,23 +83,23 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     name: "Narayan Rupani"
         // }, ];
 
-        
-            // $scope.gallerytabs = [{
-            //     title: "2016",
-            //     gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-            // }, {
-            //     title: "2015",
-            //     gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-            // }, {
-            //     title: "2014",
-            //     gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-            // }, {
-            //     title: "2013",
-            //     gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-            // }, {
-            //     title: "2012",
-            //     gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-            // }]
+
+        // $scope.gallerytabs = [{
+        //     title: "2016",
+        //     gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2015",
+        //     gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2014",
+        //     gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2013",
+        //     gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2012",
+        //     gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }]
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -146,8 +146,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
 
 
-
-
         $scope.changeDescription = function (data) {
             console.log("dd", data);
             $scope.selectedDescription = data.description;
@@ -160,8 +158,10 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("Gallery data", data);
             $scope.gallerytabs = data.data.results;
         });
-$scope.changeGallery = function (tab) {
+        $scope.changeGallery = function (tab) {
+            console.log("year clicked");
             console.log("tab", tab);
+            $scope.selectedImages = tab.img;
         }
 
     })

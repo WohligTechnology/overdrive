@@ -167,10 +167,9 @@
                         <slide ng-repeat="s in myWinner track by $index">
                              
                             <div class="flipDiv">
-                                <div class="b6-bike-name">{{s.name}}</div>
+                               
                                 <figure>
                                     <div class="front">
-                                       
                                         <img ng-src="{{s.img|uploadpath}}" class="img-responsive" noloading="true">
                                     </div>
                                     <figcaption>
@@ -181,6 +180,7 @@
                                         </div>
                                     </figcaption>
                                 </figure>
+                                 <div class="b6-bike-name"><p>{{s.name}}</p></div>
                             </div>
                         </slide>
                     </slides>
@@ -191,7 +191,7 @@
             </div>
         </div>
     </div>
-    <div id="gallery" class="b7 block1 gray-bg container-fluid">
+    <!--<div id="gallery" class="b7 block1 gray-bg container-fluid">
         <div class="inside_b7">
             <div class="h text-right right-h"> GALLERY</div>
             <hr class="right-hr">
@@ -202,11 +202,40 @@
                         <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.year}}" disable="tab.disabled" ng-click="changeGallery(tab)">
                             <div class="swiper-container1">
                                 <div class="swiper-wrapper">
-                                    <!--<div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
+                                    <div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
                                         <img class="img-responsive gallery_img" ng-src="{{pic}}">
-                                    </div>-->
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev hidden-sm hidden-xs"></div>
+                                <div class="swiper-button-next hidden-sm hidden-xs"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                    <div class="text-right more-btn2">VIEW MORE </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+
+
+ <div id="gallery" class="b7 block1 gray-bg container-fluid">
+        <div class="inside_b7">
+            <div class="h text-right right-h"> GALLERY</div>
+            <hr class="right-hr">
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-xs-12 hide-xs"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <uib-tabset active="active" class="custom-tab">
+                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.year}}" ng-click="changeGallery(tab)">
+                            <div class="swiper-container1">
+                                <div class="swiper-wrapper">
                                     <div class="swiper-slide" ng-repeat="pic in tab.gallery track by $index">
-                                        <img ng-src="{{pic}}" class="img-responsive">
+                                        <img class="img-responsive gallery_img" ng-src="{{pic}}">
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="swiper-button-prev hidden-sm hidden-xs"></div>
@@ -220,6 +249,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+
     <div id="partner" class="b8 block  backimg1 blockb8-tab -container-fluid rel">
         <div class="container">
             <div class="inside_b8">

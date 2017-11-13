@@ -423,7 +423,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         }
 
         // Set multiple checkbox field
-        $scope.setSelectedItem = function (item) {
+        $scope.setSelectedboxItem = function (item) {
             if (typeof $scope.formData[$scope.type.tableRef] === 'undefined')
                 $scope.formData[$scope.type.tableRef] = [];
             var index = _.findIndex($scope.formData[$scope.type.tableRef], function (doc) {
@@ -452,7 +452,68 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             }
 
         }
-        // BOX
+        // // BOX
+        // if ($scope.type.type == "date") {
+        //     $scope.formData[$scope.type.tableRef] = moment($scope.formData[$scope.type.tableRef]).toDate();
+        // }
+        // if ($scope.type.type == "password") {
+        //     $scope.formData[$scope.type.tableRef] = "";
+        // }
+        // if ($scope.type.type == "youtube") {
+        //     $scope.youtube = {};
+        //     $scope.changeYoutubeUrl = function (string) {
+        //         if (string) {
+        //             $scope.formData[$scope.type.tableRef] = "";
+        //             var result = getJsonFromUrl(string);
+        //             if (result && result.v) {
+        //                 $scope.formData[$scope.type.tableRef] = result.v;
+        //             } else {
+        //                 $scope.formData[$scope.type.tableRef] = string;
+        //             }
+        //         }
+
+        //     };
+        // }
+        // if ($scope.type.type == "box") {
+
+        //     if (!_.isArray($scope.formData[$scope.type.tableRef]) && $scope.formData[$scope.type.tableRef] === '') {
+        //         $scope.formData[$scope.type.tableRef] = [];
+        //         $scope.model = [];
+        //     } else {
+        //         if ($scope.formData[$scope.type.tableRef]) {
+        //             $scope.model = $scope.formData[$scope.type.tableRef];
+        //         }
+        //     }
+        //     $scope.search = {
+        //         text: ""
+        //     };
+        // }
+        // $scope.state = "";
+        // $scope.createBox = function (state) {
+        //     $scope.state = state;
+        //     $scope.model.push({});
+        //     $scope.editBox("Create", $scope.model[$scope.model.length - 1]);
+        // };
+        // $scope.editBox = function (state, data) {
+        //     $scope.state = state;
+        //     $scope.data = data;
+        //     var modalInstance = $uibModal.open({
+        //         animation: $scope.animationsEnabled,
+        //         templateUrl: 'views/modal/modal.html',
+        //         size: 'lg',
+        //         scope: $scope
+        //     });
+        //     $scope.close = function (value) {
+        //         callback(value);
+        //         modalInstance.close("cancel");
+        //     };
+        // };
+        // $scope.deleteBox = function (index, data) {
+        //     console.log(data);
+        //     data.splice(index, 1);
+        // };
+
+// BOX
         if ($scope.type.type == "date") {
             $scope.formData[$scope.type.tableRef] = moment($scope.formData[$scope.type.tableRef]).toDate();
         }
@@ -497,6 +558,14 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         $scope.editBox = function (state, data) {
             $scope.state = state;
             $scope.data = data;
+            if (!$scope.formData[$scope.type.tableRef]) {
+                $scope.formData[$scope.type.tableRef] = []
+            }
+
+            // if (state == 'Create') {
+            //     $scope.formData[$scope.type.tableRef].push(data);
+            // }
+
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
                 templateUrl: 'views/modal/modal.html',
@@ -512,6 +581,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
             console.log(data);
             data.splice(index, 1);
         };
+
 
         //  TAGS STATIC AND FROM TABLE
         $scope.refreshTags = function (search) {
