@@ -10930,6 +10930,8 @@ body {
        object-fit: cover;
     border: 5px solid #9a1205;
     margin: 0 60px; }
+  .bikeslider2 .swiper-button-next, .bikeslider2 .swiper-button-prev {
+    top: 35% !important; }
 
 .tab-pd {
   padding: 0px; }
@@ -11198,12 +11200,12 @@ header {
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   background-image: url("../img/arrow_right.png") !important;
-  top: 35%; }
+  top: 50% !important; }
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   background-image: url("../img/arrow_left.png") !important;
-  top: 35%; }
+  top: 50% !important; }
 
 .cust-transition {
   -webkit-transition: all 2s;
