@@ -820,13 +820,13 @@ header {
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
     background-image: url("../img/arrow_right.png") !important;
-    // top:35%;
+    top:50%;
 }
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     background-image: url("../img/arrow_left.png") !important; 
-    // top:35%;
+    top:50%;
 }
 
 .cust-transition {

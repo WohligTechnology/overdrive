@@ -222,16 +222,16 @@
 
 
 
- <div id="gallery" class="b7 block1 gray-bg container-fluid">
+ <div id="gallery" class="b7 block1 gray-bg container-fluid" ng-init="bubble=true">
         <div class="inside_b7">
             <div class="h text-right right-h"> GALLERY</div>
             <hr class="right-hr">
             <div class="row">
                 <div class="col-md-5 col-sm-5 col-xs-12 hide-xs"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
                 <div class="col-md-7 col-sm-7 col-xs-12">
-                      <uib-tabset active="active" class="custom-tab">
-                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled" select="swiperInitialize();">
-                            <div class="swiper-container1 {{'swiper'+$index}}">
+                      <uib-tabset active="active" class="custom-tab" >
+                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.title}}" disable="tab.disabled" select="swiperInitialize();" ng-click="bubble=true">
+                            <div class="swiper-container1" ng-if="bubble">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" style="background-image:url({{pic}})" ng-repeat="pic in tab.gallery track by $index">
                                         <img class="img-responsive gallery_img" ng-src="{{pic}}">

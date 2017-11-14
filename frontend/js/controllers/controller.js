@@ -17,10 +17,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     name: "MOTOBIKES"
         // }];
           $scope.swiperInitialize = function(e){
-
-
-              
-         
         $timeout(function () {
             swiper1 = new Swiper('.swiper-container1', {
                 nextButton: '.swiper-button-next',
@@ -31,6 +27,11 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 centeredSlides: true,
                 slidesPerView: 'auto',
                 paginationClickable: true,
+                allowTouchMove:false,
+                 navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+      },
                 coverflowEffect: {
                     rotate: 50,
                     stretch: 0,
@@ -42,7 +43,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                     el: '.swiper-pagination',
                 },
             });
+                
         }, 100);
+        
        }
 
 
