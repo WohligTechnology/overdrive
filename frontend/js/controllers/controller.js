@@ -16,7 +16,11 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     url1: 'img/slider/3-m.png',
         //     name: "MOTOBIKES"
         // }];
+          $scope.swiperInitialize = function(e){
 
+
+              
+         
         $timeout(function () {
             swiper1 = new Swiper('.swiper-container1', {
                 nextButton: '.swiper-button-next',
@@ -26,6 +30,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 grabCursor: true,
                 centeredSlides: true,
                 slidesPerView: 'auto',
+                paginationClickable: true,
                 coverflowEffect: {
                     rotate: 50,
                     stretch: 0,
@@ -37,69 +42,38 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                     el: '.swiper-pagination',
                 },
             });
-        }, 300)
+        }, 100);
+       }
+
 
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
-        // window.scrollBy({
-        //     top: 100, // could be negative value
-        //     left: 0,
-        //     behavior: 'smooth'
-        // });
+            // window.scrollBy({
+            //     top: 100, // could be negative value
+            //     left: 0,
+            //     behavior: 'smooth'
+            // });
         $('.inside_b1').scroll(function () {
             console.log("run");
         });
 
-        // $scope.myWinner = [{
-        //     url: 'img/slider/car1.jpg',
-        //     name: "BEST CAR",
-        //     winner_name: "John"
-        // }, {
-        //     url: 'img/slider/car2.jpg',
-        //     name: "BEST BIKE",
-        //     winner_name: "Tom"
-        // }, {
-        //     url: 'img/slider/car3.jpg',
-        //     name: "BEST MUV",
-        //     winner_name: "Ricky"
-        // }, {
-        //     url: 'img/slider/car4.jpg',
-        //     name: "BEST SUV",
-        //     winner_name: "Vicky"
-        // }];
-
-
-        // $scope.slider_profile = [{
-        //     url: 'img/slider/profile.jpg',
-        //     name: "Bertand Dsouza"
-        // }, {
-        //     url: 'img/slider/profile1.jpg',
-        //     name: "Armaan Ibrahim"
-        // }, {
-        //     url: 'img/slider/profile2.jpg',
-        //     name: "Anand Dharmaraj"
-        // }, {
-        //     url: 'img/slider/profile3.jpg',
-        //     name: "Narayan Rupani"
-        // }, ];
-
-
-        // $scope.gallerytabs = [{
-        //     title: "2016",
-        //     gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2015",
-        //     gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2014",
-        //     gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2013",
-        //     gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2012",
-        //     gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }]
+        $scope.gallerytabs = [{
+            title: "2016",
+            gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        }, {
+            title: "2015",
+            gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        }, {
+            title: "2014",
+            gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        }, {
+            title: "2013",
+            gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        }, {
+            title: "2012",
+            gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        }]
+     
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -109,9 +83,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             i++;
             console.log("This is a button Click");
         };
-
-
-
 
         NavigationService.callApi("Overview/search", function (data) {
             console.log("overview data", data);
@@ -151,18 +122,18 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.selectedDescription = data.description;
         }
         $scope.changeDescription = function (data) {
-            console.log("dd", data);
-            $scope.selectedDescription = data.description;
-        }
-        NavigationService.callApi("Gallery/search", function (data) {
-            console.log("Gallery data", data);
-            $scope.gallerytabs = data.data.results;
-        });
-        $scope.changeGallery = function (tab) {
-            console.log("year clicked");
-            console.log("tab", tab);
-            $scope.selectedImages = tab.img;
-        }
+                console.log("dd", data);
+                $scope.selectedDescription = data.description;
+            }
+            // NavigationService.callApi("Gallery/search", function (data) {
+            //     console.log("Gallery data", data);
+            //     $scope.gallerytabs = data.data.results;
+            // });
+            // $scope.changeGallery = function (tab) {
+            //     console.log("year clicked");
+            //     console.log("tab", tab);
+            //     $scope.selectedImages = tab.img;
+            // }
 
     })
     .controller('navCtrl', function ($scope, $location, $anchorScroll) {
@@ -211,9 +182,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
     })
 
-    // Example API Controller
-    .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
-        apiService.getDemo($scope.formData, function (data) {
-            console.log(data);
-        });
+// Example API Controller
+.controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+    apiService.getDemo($scope.formData, function (data) {
+        console.log(data);
     });
+});
