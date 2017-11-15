@@ -176,7 +176,7 @@ body {
 }
 
 .block1 {
-    height: 550px
+    height: 700px
 }
 
 .block-min {
@@ -411,20 +411,16 @@ body {
         // margin-left: -25px;
         // padding-top: 25px;
     }
-    .smoke_car {
-        // position: relative;
-        // top: -124px;
-        // left: 0;
-        // width: 70%;
-        // z-index: 2;
-        position: absolute;
-        top: 20px;
-        left: -100px;
-        width: 100%;
-        z-index: 2;
-    }
+    // .smoke_car {
+    //     position: absolute;
+    //     top: 75px;
+    //     left: -100px;
+    //     width: 100%;
+    //     z-index: 2;
+    // }
     .b4_flotimg {
         position: relative;
+        width: 550px;
     }
     .b4_racetext {
         width: 70%;
@@ -504,7 +500,7 @@ body {
 .bike-name {
     color: #d4d4d4;
     font-size: 16px;
-    padding: 10px;
+    padding: 0 10px;
     margin-top: -40px;
 }
 
@@ -523,8 +519,9 @@ body {
         border: 5px solid #9a1205;
         margin: 0 60px;
     }
-    .swiper-button-next,.swiper-button-prev{
-        top:35% !important;
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: 35% !important;
     }
 }
 
@@ -607,8 +604,7 @@ body {
     position: absolute;
     top: -140px;
     height: 520px;
-        z-index: 9;
-
+    z-index: 9;
 }
 
 //navbar
@@ -669,8 +665,8 @@ header {
 .feed {
     // height: 300px;
     // overflow: scroll;
-    iframe{
-        border:5px solid black !important;
+    iframe {
+        border: 5px solid black !important;
     }
 }
 
@@ -761,16 +757,17 @@ header {
 .front {
     z-index: 12;
 }
-#winnner{
+
+#winnner {
     position: relative;
     z-index: 9;
 }
+
 .smoke {
     position: absolute;
     z-index: 4;
-    /* bottom: 0; */
-    top: 295px;
-    left: -9px;
+    bottom: 0;
+    left: 35px;
     width: 170px;
 }
 
@@ -820,13 +817,13 @@ header {
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
     background-image: url("../img/arrow_right.png") !important;
-    top:50% !important;
+    top: 50% !important;
 }
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-    background-image: url("../img/arrow_left.png") !important; 
-    top:50% !important;
+    background-image: url("../img/arrow_left.png") !important;
+    top: 50% !important;
 }
 
 .cust-transition {
@@ -992,5 +989,94 @@ figure.hover figcaption {
         -ms-transform: scale(.95);
         -o-transform: scale(.95);
         transform: scale(.95);
+    }
+}
+
+.barz {
+    display: block;
+    width: auto;
+    height: 18rem;
+    position: relative;
+    font-size: 10px;
+    overflow: hidden;
+    li {
+        display: inline-block;
+        width: .5rem;
+        height: 100%;
+        margin:1.2rem 2.5rem;
+        border-radius: 2px;
+        list-style: none;
+        background-image: -webkit-linear-gradient(95deg, #561209, #eee);
+        transform: translateY(4.5rem);
+        animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1);
+        @for $i from 1 through 4 {
+            $time: random(12) * 0.1;
+            &:nth-of-type(#{$i}) {
+                animation-delay: $time + s;
+            }
+        }
+        .percent-label{
+            position: absolute;
+            left: -5px;
+            top:-14px;
+            color:white;
+        }
+    }
+
+}
+
+@keyframes bounce {
+    0% {
+       @include transform(translateY(4.5rem));
+    }
+    50% {
+       @include transform(translateY(.25rem));
+    }
+    100% {
+       @include transform(translateY(4.5rem));
+    }
+}
+
+.brand-icon {
+    li {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        margin: 0 1px;
+        border: 2px solid red;
+    }
+    .yamaha {
+        padding: 4px 5px;
+    }
+    .volkswagen {
+        padding: 5px 5px;
+    }
+    .honda {
+        padding: 10px 5px;
+    }
+    .hyundai {
+        padding: 13px 5px;
+    }
+}
+
+.leadership {
+    margin-top: 150px;
+}
+
+.music-section {
+    margin-top: 64px;
+}
+
+.bike-name {
+    p {
+        font-size: 23px;
+        color: white;
+    }
+}
+.back-games{
+    ul{
+        padding: 0;
     }
 }

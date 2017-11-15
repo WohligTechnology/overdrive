@@ -16,7 +16,21 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     url1: 'img/slider/3-m.png',
         //     name: "MOTOBIKES"
         // }];
-          $scope.swiperInitialize = function(e){
+
+        $scope.ongame = function () {
+            console.log("inside ongame")
+            $timeout(function () {
+                $(".barz>li").css("-webkit-animation", "none");
+                $(".barz>li").css("-moz-animation", "none");
+                $(".barz>li").css("-ms-animation", "none");
+                $(".barz>li").css("animation", "none");
+                // $(".barz>li").css("transform", "translateY(0)");
+            }, 2000)
+        }
+        $scope.swiperInitialize = function(e){
+$scope.galleryImg = e.img;
+
+
         $timeout(function () {
             swiper1 = new Swiper('.swiper-container1', {
                 nextButton: '.swiper-button-next',
@@ -60,23 +74,23 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("run");
         });
 
-        $scope.gallerytabs = [{
-            title: "2016",
-            gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        }, {
-            title: "2015",
-            gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        }, {
-            title: "2014",
-            gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        }, {
-            title: "2013",
-            gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        }, {
-            title: "2012",
-            gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        }]
-     
+        // $scope.gallerytabs = [{
+        //     title: "2016",
+        //     gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2015",
+        //     gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2014",
+        //     gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2013",
+        //     gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }, {
+        //     title: "2012",
+        //     gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
+        // }]
+
         var abc = _.times(100, function (n) {
             return n;
         });
@@ -128,15 +142,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 console.log("dd", data);
                 $scope.selectedDescription = data.description;
             }
-            // NavigationService.callApi("Gallery/search", function (data) {
-            //     console.log("Gallery data", data);
-            //     $scope.gallerytabs = data.data.results;
-            // });
-            // $scope.changeGallery = function (tab) {
-            //     console.log("year clicked");
-            //     console.log("tab", tab);
-            //     $scope.selectedImages = tab.img;
-            // }
+          
+
+NavigationService.callApi("Gallery/search", function (data) {
+                console.log("Gallery data", data);
+                $scope.gallerytabs = data.data.results;
+            });
 
     })
     .controller('navCtrl', function ($scope, $location, $anchorScroll) {

@@ -10659,7 +10659,7 @@ body {
   height: 500px; }
 
 .block1 {
-  height: 550px; }
+  height: 700px; }
 
 .block-min {
   height: 450px;
@@ -10842,15 +10842,9 @@ body {
   position: relative;
   z-index: 5; }
 
-.inside_b4 .smoke_car {
-  position: absolute;
-  top: 20px;
-  left: -100px;
-  width: 100%;
-  z-index: 2; }
-
 .inside_b4 .b4_flotimg {
-  position: relative; }
+  position: relative;
+  width: 550px; }
 
 .inside_b4 .b4_racetext {
   width: 70%;
@@ -10913,7 +10907,7 @@ body {
 .bike-name {
   color: #d4d4d4;
   font-size: 16px;
-  padding: 10px;
+  padding: 0 10px;
   margin-top: -40px; }
 
 .b6-bike-name {
@@ -10930,7 +10924,8 @@ body {
        object-fit: cover;
     border: 5px solid #9a1205;
     margin: 0 60px; }
-  .bikeslider2 .swiper-button-next, .bikeslider2 .swiper-button-prev {
+  .bikeslider2 .swiper-button-next,
+  .bikeslider2 .swiper-button-prev {
     top: 35% !important; }
 
 .tab-pd {
@@ -11152,9 +11147,8 @@ header {
 .smoke {
   position: absolute;
   z-index: 4;
-  /* bottom: 0; */
-  top: 295px;
-  left: -9px;
+  bottom: 0;
+  left: 35px;
   width: 170px; }
 
 .blade1 {
@@ -11343,6 +11337,99 @@ figure.hover figcaption {
   .nav_highlight:hover {
     -webkit-transform: scale(0.95);
     transform: scale(0.95); }
+
+.barz {
+  display: block;
+  width: auto;
+  height: 18rem;
+  position: relative;
+  font-size: 10px;
+  overflow: hidden; }
+  .barz li {
+    display: inline-block;
+    width: .5rem;
+    height: 100%;
+    margin: 1.2rem 2.5rem;
+    border-radius: 2px;
+    list-style: none;
+    background-image: -webkit-linear-gradient(95deg, #561209, #eee);
+    -webkit-transform: translateY(4.5rem);
+            transform: translateY(4.5rem);
+    -webkit-animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1);
+            animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1); }
+    .barz li:nth-of-type(1) {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
+    .barz li:nth-of-type(2) {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .barz li:nth-of-type(3) {
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
+    .barz li:nth-of-type(4) {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .barz li .percent-label {
+      position: absolute;
+      left: -5px;
+      top: -14px;
+      color: white; }
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(4.5rem);
+    transform: translateY(4.5rem); }
+  50% {
+    -webkit-transform: translateY(0.25rem);
+    transform: translateY(0.25rem); }
+  100% {
+    -webkit-transform: translateY(4.5rem);
+    transform: translateY(4.5rem); } }
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(4.5rem);
+    transform: translateY(4.5rem); }
+  50% {
+    -webkit-transform: translateY(0.25rem);
+    transform: translateY(0.25rem); }
+  100% {
+    -webkit-transform: translateY(4.5rem);
+    transform: translateY(4.5rem); } }
+
+.brand-icon li {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 1px;
+  border: 2px solid red; }
+
+.brand-icon .yamaha {
+  padding: 4px 5px; }
+
+.brand-icon .volkswagen {
+  padding: 5px 5px; }
+
+.brand-icon .honda {
+  padding: 10px 5px; }
+
+.brand-icon .hyundai {
+  padding: 13px 5px; }
+
+.leadership {
+  margin-top: 150px; }
+
+.music-section {
+  margin-top: 64px; }
+
+.bike-name p {
+  font-size: 23px;
+  color: white; }
+
+.back-games ul {
+  padding: 0; }
 
 #fancybox-loading,
 .fancybox-close,
