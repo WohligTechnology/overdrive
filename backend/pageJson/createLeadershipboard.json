@@ -1,0 +1,39 @@
+{
+    "title": "Create Leadershipboard",
+    "name": "Leadershipboard",
+    "jsonPage": "viewLeadershipboard",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Leadershipboard"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "name",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitLeadershipboard",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewLeadershipboard"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewLeadershipboard"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Leadershipboard/save"
+    }
+}
