@@ -24,6 +24,12 @@ myApp.factory('NavigationService', function ($http) {
         sref: "#!/page/viewAwardcategory//",
       
     },
+     {
+        name: "Leadershipboard",
+        classis: "active",
+        sref: "#!/page/viewLeadershipboard//",
+       
+    },
     {
         name: "Jurors",
         classis: "active",

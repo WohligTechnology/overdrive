@@ -11361,14 +11361,22 @@ figure.hover figcaption {
     -webkit-animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1);
             animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1); }
     .barz li:nth-of-type(1) {
+<<<<<<< HEAD
       -webkit-animation-delay: 0.5s;
               animation-delay: 0.5s; }
     .barz li:nth-of-type(2) {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
+=======
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
+    .barz li:nth-of-type(2) {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
+>>>>>>> 3c3e0fd2583ec3e8e195a5eec007f1d35956ea97
     .barz li:nth-of-type(3) {
-      -webkit-animation-delay: 0.9s;
-              animation-delay: 0.9s; }
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
     .barz li:nth-of-type(4) {
       -webkit-animation-delay: 0.6s;
               animation-delay: 0.6s; }

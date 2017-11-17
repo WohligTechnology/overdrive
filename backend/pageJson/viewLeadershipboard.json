@@ -1,0 +1,45 @@
+{
+    "title": "Leadershipboard",
+    "description": "List of Leadershipboards",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editLeadershipboard",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Leadershipboard",
+        "content": "Are you sure you want to delete Leadershipboard?",
+        "api": "leadershipboard/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createLeadershipboard"
+    }],
+    "apiCall": {
+        "url": "Leadershipboard/search",
+        "params": "_id"
+    }
+}
