@@ -13,7 +13,30 @@
         "id": "name",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }],
+    },
+{
+        "name": "Ratings",
+        "type": "box",
+        "tableRef": "ratings",
+        "validation": ["", "trim", ""],
+        "fields": [{
+            "name": "Image",
+            "type": "image",
+            "tableRef": "img",
+            "placeholder": "Enter image",
+            "id": "img",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "onView": true
+        },{
+        "name": "Percentage",
+        "type": "text",
+        "tableRef": "percentage",
+        "placeholder": "Enter percentage",
+        "id": "percentage",
+        "url": ""
+    }]
+}],
     "action": [{
         "name": "submit",
         "action": "submitLeadershipboard",

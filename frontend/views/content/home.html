@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div id="award" class="b2 block1 backimg1 container-fluid rel">
+    <div id="award" class="b2 block-awards backimg1 container-fluid rel">
         <!-- animation -->
         <!-- <div class="anime2">
             <div class="redanime2">anime</div>
@@ -103,27 +103,28 @@
             <div class="music-section">
                 <div class="row">
                     <!--/for one field/-->
-                    <div class="col-md-4 col-sm-5 col-xs-12">
+                    <div class="col-md-4 col-sm-5 col-xs-12" ng-repeat="l in Leadershipboard track by $index">
                         <div class="text-center bike-name">
-                            <p class="text-uppercase">motobikes</p>
+                            <p class="text-uppercase">{{l.name}}</p>
                         </div>
                         <div class="back-games text-center">
                             <ul class="barz">
-                                <li style="transform:translateY(50%)"><span class="percent-label">50%</span></li>
-                                <li style="transform:translateY(60%)"><span class="percent-label">40%</span></li>
-                                <li style="transform:translateY(70%)"><span class="percent-label">30%</span></li>
-                                <li style="transform:translateY(0%)"><span class="percent-label">100%</span></li>
+                                <li style="transform:translateY({{100 - r.percentage}}%)" ng-repeat="r in l.ratings track by $index"><span class="percent-label">{{r.percentage}}%</span></li>
+                                <!--<li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
+                                <li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
+                                <li style="transform:translateY(90%)"><span class="percent-label">10%</span></li>-->
                             </ul>
                             <ul class="brand-icon">
-                                <li class="volkswagen"><img src="img/leadership/copy.png" class="img-responsive"></li>
-                                <li class="yamaha"><img src="img/leadership/2.png" class="img-responsive"></li>
+                                <li class="volkswagen" ng-repeat="r in l.ratings track by $index" ><img ng-src="{{r.img|uploadpath}}" class="img-responsive"></li>
+                                <!--<li class="yamaha"><img src="img/leadership/2.png" class="img-responsive"></li>
                                 <li class="honda"><img src="img/leadership/3.png" class="img-responsive"></li>
-                                <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>
+                                <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>-->
                             </ul>
                         </div>
                     </div>
                      <!--/for one field/-->
-                    <div class="col-md-4 col-sm-5 col-xs-12">
+
+                    <!--<div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="text-center bike-name">
                             <p class="text-uppercase">cars</p>
                         </div>
@@ -131,8 +132,8 @@
                             <ul class="barz">
                                 <li style="transform:translateY(70%)"><span class="percent-label">30%</span></li>
                                 <li style="transform:translateY(60%)"><span class="percent-label">40%</span></li>
-                                <li style="transform:translateY(50%)"><span class="percent-label">50%</span></li>
-                                <li style="transform:translateY(15%)"><span class="percent-label">85%</span></li>
+                                <li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
+                                <li style="transform:translateY(90%)"><span class="percent-label">10%</span></li>
                             </ul>
                             <ul class="brand-icon">
                                 <li class="volkswagen"><img src="img/leadership/copy.png" class="img-responsive"></li>
@@ -141,15 +142,15 @@
                                 <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-5 col-xs-12">
+                    </div>-->
+                    <!--<div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="text-center bike-name">
-                            <p class="text-uppercase">schooter</p>
+                            <p class="text-uppercase">scooter</p>
                         </div>
                         <div class="back-games text-center">
                             <ul class="barz">
                                 <li style="transform:translateY(90%)"><span class="percent-label">10%</span></li>
-                                <li style="transform:translateY(30%)"><span class="percent-label">70%</span></li>
+                                <li style="transform:translateY(70%)"><span class="percent-label">30%</span></li>
                                 <li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
                                 <li style="transform:translateY(60%)"><span class="percent-label">40%</span></li>
                             </ul>
@@ -160,7 +161,7 @@
                                 <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="row">
@@ -180,7 +181,7 @@
             </div>
         </div>
     </div>
-    <div id="jurors" class="b5 block-min gray-bg rel over-hidden container-fluid">
+    <div id="jurors" class="b5 block-min-jurors gray-bg rel over-hidden container-fluid">
         <div class="inside_b5">
             <div class="blade3 cust-transition">
                 <img class="img1 img-responsive" src="img/background/blade2.png">
@@ -197,7 +198,7 @@
                 {{selectedDescription}}
             </div>
             <div class="row text-right b5_slider">
-                <swiper autoplay="5000" effect="slide" slides-per-view="3" loop="true">
+                <swiper autoplay="5000" effect="slide" slides-per-view="4" loop="true">
                     <slides>
                         <slide ng-repeat="s in slider_profile track by $index">
                             <div>
@@ -251,7 +252,7 @@
         </div>
     </div>
    
-    <div id="gallery" class="b7 block1 gray-bg container-fluid" ng-init="bubble=true">
+    <div id="gallery" class="b7 block-gallery gray-bg container-fluid" ng-init="bubble=true">
         <div class="inside_b7">
             <div class="h text-right right-h"> GALLERY</div>
             <hr class="right-hr">
