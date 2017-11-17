@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
@@ -18,15 +18,24 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         // }];
 
         $scope.ongame = function () {
-            console.log("inside ongame")
+            console.log("inside game enter")
             $timeout(function () {
                 $(".barz>li").css("-webkit-animation", "none");
                 $(".barz>li").css("-moz-animation", "none");
                 $(".barz>li").css("-ms-animation", "none");
                 $(".barz>li").css("animation", "none");
-                // $(".barz>li").css("transform", "translateY(0)");
             }, 2000)
         }
+
+    //     $scope.ongamenot = function () {
+    // console.log("inside ongamenot");
+                 
+    //             $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+    //             $(".barz>li").css("-moz-animation", "");
+    //             $(".barz>li").css("-ms-animation", "");
+    //             $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+              
+    //     }
         $scope.swiperInitialize = function(e){
 $scope.galleryImg = e.img;
 
@@ -149,6 +158,35 @@ NavigationService.callApi("Gallery/search", function (data) {
                 $scope.gallerytabs = data.data.results;
             });
 
+            NavigationService.callApi("Leadershipboard/search", function (data) {
+            console.log("Leadership board data", data);
+            $scope.Leadershipboard = data.data.results;
+            console.log("Leadershipboard", $scope.Leadershipboard);
+
+            _.forEach($scope.Leadershipboard, function (temp) {
+                console.log("temp",temp);
+
+_.forEach(temp.ratings, function (temp1) {
+                console.log("temp1",temp1);
+                $scope.percent = 100-temp1.percentage;
+                console.log("percent",$scope.percent);
+                $scope.motorbike_percentage=[];
+                $scope.scooter_percentage=[];
+                $scope.car_percentage=[];
+
+$scope.motorbike_percentage.push($scope.percent);
+
+
+            });
+
+
+
+            });
+
+
+
+        });
+
     })
     .controller('navCtrl', function ($scope, $location, $anchorScroll) {
         $scope.scrollTo = function (id) {
@@ -169,6 +207,7 @@ NavigationService.callApi("Gallery/search", function (data) {
                 $('.collapse').collapse('toggle');
             }
         }
+
     })
     .controller('FormCtrl', function ($scope, TemplateService, NavigationService, $timeout, toastr, $http) {
         $scope.template = TemplateService.getHTML("content/form.html");
