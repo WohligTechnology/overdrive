@@ -265,7 +265,7 @@
                             <div class="swiper-container1" ng-if="bubble">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide" style="background-image:url({{pic.image|uploadpath}})" ng-repeat="pic in galleryImg track by $index">
-                                        <img class="img-responsive gallery_img" ng-src="{{pic.image|uploadpath}}">
+                                        <!--<img class="img-responsive gallery_img" ng-src="{{pic.image|uploadpath}}">-->
                                     </div>
                                 </div>
                                 <div class="swiper-button-prev hidden-sm hidden-xs"></div>
@@ -281,9 +281,9 @@
         </div>
     </div>
     <div id="partner" class="b8 block  backimg1 blockb8-tab -container-fluid rel">
+        <div class=" text-center h side_hr"><span>PARTNERS</span></div>
         <div class="container">
             <div class="inside_b8">
-                <div class=" text-center h side_hr"><span>PARTNERS</span></div>
                 <div class="partner-img">
                     <!--<div class="row">
                         <div class="col-md-6">
@@ -292,6 +292,9 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <div class="text-center text-uppercase sponser">
+                                <h4>presenting sponsor</h4>
+                            </div>
                             <div class="round-img">
                                 <img src="img/partner/CNBC logo.png" class="img-responsive">
                             </div>
@@ -299,6 +302,9 @@
                     </div>-->
                     <div class="row">
                         <div class="col-md-6" ng-repeat="s in partners track by $index">
+                            <div class="text-center text-uppercase sponser">
+                                <h4>{{s.name}}</h4>
+                            </div>
                             <div class="round-img">
                                 <img ng-src="{{s.logo|uploadpath}}" class="img-responsive">
                             </div>

@@ -16,8 +16,8 @@
     }, {
         "name": "Img",
         "type": "image",
-        "tableRef": "photo",
-        "size": "250 x 250",
+        "tableRef": "img",
+        "size": "253 x 253",
         "placeholder": "Upload photo",
         "id": "img",
         "view": true,

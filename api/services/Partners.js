@@ -1,6 +1,9 @@
 var schema = new Schema({
     logo: {
         type: String,
+    },
+    name: {
+        type: String,
     }
 });
 

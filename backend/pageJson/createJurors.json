@@ -17,7 +17,7 @@
         "name": "Img",
         "type": "image",
         "tableRef": "img",
-        "size": "250 x 250",
+        "size": "253 x 253",
         "placeholder": "Upload photo",
         "id": "img",
         "view": true,

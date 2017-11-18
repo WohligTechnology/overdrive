@@ -9,6 +9,11 @@
         "isSort": "",
         "tableRef": "logo",
         "type": "image"
+    },
+    {
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
     }],
     "action": [{
         "name": "edit",

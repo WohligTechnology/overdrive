@@ -10639,7 +10639,7 @@ hr {
 
 .backimg1 {
   background-image: url("../img/background1.gif");
-  background-size: contain; }
+  background-size: cover; }
 
 .backimg2 {
   background-image: url("../img/background2.gif");
@@ -11158,9 +11158,9 @@ header {
 .smoke {
   position: absolute;
   z-index: 4;
-  bottom: 0;
-  left: 35px;
-  width: 170px; }
+  bottom: 18px;
+  left: 80px;
+  width: 110px; }
 
 .blade1 {
   position: absolute;
@@ -11235,6 +11235,7 @@ header {
   border: 3px solid red;
   border-radius: 50%;
   margin: 0 auto;
+  padding: 30px;
   background: white; }
 
 .partner-img {
@@ -11361,25 +11362,17 @@ figure.hover figcaption {
     -webkit-animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1);
             animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1); }
     .barz li:nth-of-type(1) {
-<<<<<<< HEAD
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s; }
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
     .barz li:nth-of-type(2) {
-      -webkit-animation-delay: 1s;
-              animation-delay: 1s; }
-=======
-      -webkit-animation-delay: 1s;
-              animation-delay: 1s; }
-    .barz li:nth-of-type(2) {
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s; }
->>>>>>> 3c3e0fd2583ec3e8e195a5eec007f1d35956ea97
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
     .barz li:nth-of-type(3) {
-      -webkit-animation-delay: 1s;
-              animation-delay: 1s; }
-    .barz li:nth-of-type(4) {
       -webkit-animation-delay: 0.6s;
               animation-delay: 0.6s; }
+    .barz li:nth-of-type(4) {
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s; }
     .barz li .percent-label {
       position: absolute;
       left: -5px;
@@ -11414,7 +11407,7 @@ figure.hover figcaption {
   height: 50px;
   background: white;
   border-radius: 50%;
-  margin: 0 1px;
+  margin: 0 3px;
   border: 2px solid red; }
 
 .brand-icon .yamaha {
@@ -11479,6 +11472,10 @@ footer .border-white {
 
 .copy-foot {
   padding: 10px 0; }
+
+.sponser h4 {
+  font-size: 20px;
+  color: white; }
 
 #fancybox-loading,
 .fancybox-close,

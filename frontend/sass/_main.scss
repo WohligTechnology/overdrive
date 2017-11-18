@@ -152,7 +152,7 @@ hr {
 
 .backimg1 {
     background-image: url('../img/background1.gif');
-    background-size: contain;
+    background-size: cover;
 }
 
 .backimg2 {
@@ -876,6 +876,7 @@ header {
     border: 3px solid red;
     border-radius: 50%;
     margin: 0 auto;
+    padding: 30px;
     background: white;
 }
 
@@ -1042,7 +1043,7 @@ figure.hover figcaption {
         height: 50px;
         background: white;
         border-radius: 50%;
-        margin: 0 1px;
+        margin: 0 3px;
         border: 2px solid red;
     }
     .yamaha {
@@ -1120,4 +1121,10 @@ footer .border-white {
 }
 .copy-foot{
         padding: 10px 0;
+}
+.sponser{
+h4{
+    font-size: 20px;
+    color:white;
+}
 }
