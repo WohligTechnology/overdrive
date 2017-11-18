@@ -171,7 +171,7 @@ body {
 }
 
 .block {
-       height: 550px;
+       height: 500px;
 }
 
 .block1 {
@@ -322,15 +322,16 @@ body {
     }
     .b1-txt {
         height: 340px;
-        overflow: hidden;
-        word-break: break-all;
-        text-overflow: ellipsis;
+            text-align: left;
+        // overflow: hidden;
+        // word-break: break-all;
+        // text-overflow: ellipsis;
         margin-right: 10px;
         color: black;
         line-height: 20px;
-        display: -webkit-box;
-        -webkit-line-clamp: 17;
-        -webkit-box-orient: vertical;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 17;
+        // -webkit-box-orient: vertical;
     }
 }
 

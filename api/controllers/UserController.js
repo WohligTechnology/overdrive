@@ -4,8 +4,35 @@ var controller = {
         // Every thing is awesome
     },
     loginFacebook: function (req, res) {
+        if (req.query.returnUrl) {
+            req.session.returnUrl = req.query.returnUrl;
+        }
         passport.authenticate('facebook', {
             scope: ['public_profile', 'user_friends', 'email'],
+            failureRedirect: '/'
+        }, res.socialLogin)(req, res);
+    },
+    loginTwitter: function (req, res) {
+        if (req.query.returnUrl) {
+            req.session.returnUrl = req.query.returnUrl;
+        } else {
+
+        }
+
+        passport.authenticate('twitter', {
+            scope: ['openid', 'profile', 'email'],
+            failureRedirect: '/'
+        }, res.socialLogin)(req, res);
+    },
+    loginLinkedIn: function (req, res) {
+        if (req.query.returnUrl) {
+            req.session.returnUrl = req.query.returnUrl;
+        } else {
+
+        }
+
+        passport.authenticate('linkedin', {
+            scope: ['r_basicprofile', 'r_emailaddress'],
             failureRedirect: '/'
         }, res.socialLogin)(req, res);
     },
@@ -22,7 +49,7 @@ var controller = {
             failureRedirect: '/'
         }, res.socialLogin)(req, res);
     },
-    profile: function (req, res) {
+   profile: function (req, res) {
         if (req.body && req.body.accessToken) {
             User.profile(req.body, res.callback);
         } else {
