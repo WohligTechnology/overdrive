@@ -484,6 +484,7 @@ body {
 
 .profile_slider_img {
     /* max-height: 100px; */
+    margin:0 auto;
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -536,6 +537,11 @@ body {
     }
 }
 
+.wohlig-link{
+    a{
+        color:red !important;
+    }
+}
 //end of block 6
 //block 7
 .tab-pd {
