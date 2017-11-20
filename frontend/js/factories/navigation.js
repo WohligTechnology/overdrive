@@ -2,7 +2,14 @@ var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
 
 myApp.factory('NavigationService', function ($http) {
-    var navigation = [{
+    var navigation = [
+         {
+            name: "HOME",
+            classis: "active",
+            anchor: "home",
+            subnav: []
+        },
+        {
             // name: "THE AWARDS",
             name: "OVERVIEW",
             classis: "active",
@@ -77,7 +84,7 @@ myApp.factory('NavigationService', function ($http) {
             });
         },
 
-        apiCallWithData: function (url, formData, callback) {
+        callApiWithData: function (url, formData, callback) {
             $http.post(adminurl + url, formData).then(function (data) {
                 data = data.data;
                 callback(data);

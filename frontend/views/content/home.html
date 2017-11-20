@@ -42,7 +42,7 @@
                 <swiper autoplay="5000" effect="slide" slides-per-view="3" loop="true">
                     <slides>
                         <slide ng-repeat="s in mySlides track by $index">
-                            <div>
+                            <div ng-click="signupOpen();">
                                 <img ng-src="{{s.img|uploadpath}}" class="img-full middle-img" noloading="true">
                                 <img ng-src="{{s.imgsmall|uploadpath}}" class="img-full not-middle" noloading="true">
                                 <div class="bike-name">{{s.name}}</div>

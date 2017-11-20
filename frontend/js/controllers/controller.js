@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location, $uibModal, $state) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
@@ -74,11 +74,11 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
-        // window.scrollBy({
-        //     top: 100, // could be negative value
-        //     left: 0,
-        //     behavior: 'smooth'
-        // });
+            // window.scrollBy({
+            //     top: 100, // could be negative value
+            //     left: 0,
+            //     behavior: 'smooth'
+            // });
         $('.inside_b1').scroll(function () {
             console.log("run");
         });
@@ -169,20 +169,175 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             });
         });
 
-         NavigationService.callApi("Votelog/search", function (data) {
+        NavigationService.callApi("Votelog/search", function (data) {
             console.log("Votelog data", data);
         });
-        
+
         //for vote//
+        $scope.signupOpen = function () {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'views/modal/signup.html',
+                scope: $scope,
+                size: 'md',
 
-       
+            });
+        };
+        //for vote//
+        $scope.companyView = true;
+        $scope.company = [];
+        console.log($stateParams);
+        console.log($state.current.name);
 
+        $scope.awardcategory = function () {
+            NavigationService.callApiWithData('Awardcategory/search', {}, function (data) {
+                var awardcategory = [];
+                $scope.awardcategory = data.data.results;
+            });
+        };
 
+        $scope.awardcategory();
 
+        $scope.getCompany = function (awardcategoryId) {
+            $scope.company = [];
+            NavigationService.callApiWithData('Awardcategory/getOne', {
+                _id: awardcategoryId
+            }, function (data) {
+                if ($.jStorage.get("accessToken")) {
+                    $scope.companyView = false;
+                    $scope.awardcategoryId = awardcategoryId;
+                    $scope.company = data.data.company;
+                    $scope.awardcategoryName = data.data.name;
+                } else {
+                    $scope.companyView = true;
+                    $scope.currentHost = window.location.origin;
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: 'views/content/login.html',
+                        scope: $scope,
+                        size: 'lg',
+                    });
+                }
+            });
+        };
 
+        $scope.companyvote = [];
+        $scope.getCompanyData = function (awardcategoryId) {
+            // console.log(awardcategoryId);
+            NavigationService.callApiWithData('Awardcategory/getOne', {
+                _id: awardcategoryId
+            }, function (data) {
+                $scope.totalVoteCount = 0;
+                $scope.companyvote = data.data.company;
+                _.each($scope.companyvote, function (value) {
+                        $scope.totalVoteCount += value.voteCount;
+                    })
+                    // console.log("$scope.totalVoteCount", $scope.totalVoteCount);
+                $scope.awardcategoryName = data.data.name;
+            });
+        };
 
+        $scope.awardcategoryValue = {
+            boardId: null,
+            value: null
+        };
+        $scope.awardcategoryConfig = {
+            create: true,
+            valueField: 'id',
+            labelField: 'name',
+            placeholder: 'Select a Awardcategory',
+            searchField: ["name"],
+            maxItems: 1,
+            onInitialize: function () {
+                $scope.awardcategory();
+            },
+        };
+        $scope.getCompanyDescription = function (awardcategoryId) {
+            // console.log(awardcategoryId);
+            $scope.company = [];
+            NavigationService.callApiWithData('Awardcategory/getOne', {
+                _id: awardcategoryId
+            }, function (data) {
+                $scope.catDesc = data.data.description;
+            });
+        };
 
+        $scope.submitVote = function () {
+            // console.log($scope.companyId)
+            if (!$scope.companyId) {
+                $scope.errormessage = {
+                    name: "Please select a option"
+                };
+                // console.log($scope.errormessage);
+            } else {
+                var userId = '';
+                var profile = $.jStorage.get("profile");
+                if (profile) {
+                    userId = profile._id
+                }
+                if (userId) {
+                    NavigationService.callApiWithData('VoteLog/AddVoteLog', {
+                        awardcategory: $scope.awardcategoryId,
+                        company: $scope.companyId,
+                        userId: userId
+                    }, function (data) {
+                        // console.log(data);
+                        if ($.jStorage.get("profile").loginProvider == 'facebook') {
+                            $("<a>").attr("href", $scope.facebookurl).attr("target", "_blank")[0].click();
+                            $uibModal.open({
+                                animation: true,
+                                templateUrl: 'views/modal/success.html',
+                                scope: $scope,
+                                size: 'lg',
+                            });
+                        } else if ($.jStorage.get("profile").loginProvider == 'twitter') {
+                            $("<a>").attr("href", $scope.twitterurl).attr("target", "_blank")[0].click();
+                            $uibModal.open({
+                                animation: true,
+                                templateUrl: 'views/modal/success.html',
+                                scope: $scope,
+                                size: 'lg',
+                            });
+                        } else if ($.jStorage.get("profile").loginProvider == 'linkedin') {
+                            console.log($scope.linkedInurl);
+                            $("<a>").attr("href", $scope.linkedInurl).attr("target", "_blank")[0].click();
+                            $uibModal.open({
+                                animation: true,
+                                templateUrl: 'views/modal/success.html',
+                                scope: $scope,
+                                size: 'lg',
+                            });
+                        } else {
+                            $uibModal.open({
+                                animation: true,
+                                templateUrl: 'views/modal/success.html',
+                                scope: $scope,
+                                size: 'lg',
+                            });
+                        }
+                    });
+                } else {
+                    $scope.errormessage = {
+                        name: "Please log in first"
+                    };
+                }
+            }
+        };
 
+        var abc = _.times(100, function (n) {
+            return n;
+        });
+
+        var i = 0;
+        $scope.buttonClick = function () {
+            i++;
+            // console.log("This is a button Click");
+        };
+
+        $scope.voteAgain = function () {
+            $scope.company = [];
+            $scope.compDesc = "";
+        }
 
 
 
@@ -237,9 +392,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
     })
 
-    // Example API Controller
-    .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
-        apiService.getDemo($scope.formData, function (data) {
-            console.log(data);
-        });
+// Example API Controller
+.controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+    apiService.getDemo($scope.formData, function (data) {
+        console.log(data);
     });
+});

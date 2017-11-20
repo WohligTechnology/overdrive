@@ -49,6 +49,7 @@ module.exports = [
 
   // Contorllers
   'frontend/js/controllers/controller.js',
+  'frontend/js/controllers/nomination.js',
   'frontend/js/controllers/header-controller.js',
   'frontend/js/controllers/language-controller.js',
 ];
