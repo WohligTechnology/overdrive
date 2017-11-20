@@ -2,15 +2,16 @@ var schema = new Schema({
     name: {
         type: String,
     },
+    surname: {
+        type: String,
+    },
     email: {
         type: String,
         validate: validators.isEmail(),
         unique: true
 
-    },
-    number: {
-        type: String,
-    },
+    }
+    
 });
 
 schema.plugin(deepPopulate, {});

@@ -2,6 +2,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
+        TemplateService.class = ""; 
 
         // $scope.mySlides = [{
         //     url: 'img/slider/1.png',
@@ -173,7 +174,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("Votelog data", data);
         });
 
-        //for vote//
+       
         $scope.signupOpen = function () {
             $uibModal.open({
                 animation: true,
@@ -183,6 +184,29 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
             });
         };
+
+
+
+$scope.submitUser = function (data) {
+            console.log("submit voter", data);
+            NavigationService.callApiWithData("Voter/saveVoter", data, function (data) {
+                if (data.value == true) {
+                    console.log("value");
+                if (data.data._id) {
+                    console.log("$scope.userId", data.data._id);
+                    $scope.userId = data.data._id;
+                    $state.go('nomination', {
+                        'userId': data.data._id
+                    });
+                } else {
+                    $scope.errorVoterLogin = "Something Went Wrong!!!";
+                }
+                }
+            });
+        }
+
+
+
         //for vote//
         $scope.companyView = true;
         $scope.company = [];
@@ -261,6 +285,15 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 $scope.catDesc = data.data.description;
             });
         };
+
+
+ $scope.changeCompany = function (company) {
+        // console.log(company.companyObj);
+        $scope.companyId = company.companyObj._id;
+        $scope.companyname = company.companyObj.name;
+        // console.log($scope.companyname);
+      
+    };
 
         $scope.submitVote = function () {
             // console.log($scope.companyId)

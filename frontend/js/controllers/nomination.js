@@ -7,5 +7,18 @@
 
         $scope.submitForm = function (data) {
             $scope.formSubmitted = true;
-        }
+        };
+
+// $scope.class = "red";
+ $scope.changeClass = function(){
+   $scope.class = "n_flip";
+ };
+
+
+NavigationService.callApi("Company/search", function (data) {
+            console.log("Company data", data);
+$scope.companyData = data.data.results;
+
+        });
+
     })

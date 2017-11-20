@@ -13,6 +13,15 @@
         "id": "name",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    },
+    {
+        "name": "Surname",
+        "type": "text",
+        "tableRef": "surname",
+        "placeholder": "Enter surname",
+        "id": "surname",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }, {
         "name": "Email",
         "type": "text",
@@ -20,14 +29,6 @@
         "placeholder": "Enter Email",
         "id": "email",
         "validation": ["", "trim", "unique"],
-        "url": ""
-    },{
-        "name": "Number",
-        "type": "text",
-        "tableRef": "number",
-        "placeholder": "Enter number",
-        "id": "number",
-        "validation": ["required", "trim", "unique"],
         "url": ""
     }],
     "action": [{

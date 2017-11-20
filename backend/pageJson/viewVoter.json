@@ -8,16 +8,17 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
+    },
+    {
+        "name": "Surname",
+        "isSort": "",
+        "tableRef": "surname"
     }, {
         "name": "Email",
         "isSort": "",
         "tableRef": "email"
-    },
-    {
-        "name": "Number",
-        "isSort": "",
-        "tableRef": "number"
-    }],
+    }
+    ],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
