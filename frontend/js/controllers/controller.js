@@ -167,7 +167,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         //for vote//
 
-
+NavigationService.callApi("Votelog/search", function (data) {
+            console.log("Votelog data", data);
+        });
 
 
 
