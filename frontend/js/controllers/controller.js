@@ -140,10 +140,14 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("dd", data);
             $scope.selectedDescription = data.description;
         }
-       
+
         NavigationService.callApi("Gallery/search", function (data) {
             console.log("Gallery data", data);
             $scope.gallerytabs = data.data.results;
+        });
+
+        NavigationService.callApi("Company/search", function (data) {
+            console.log("Company data", data);
         });
 
         NavigationService.callApi("Leadershipboard/search", function (data) {
@@ -165,11 +169,16 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             });
         });
 
-        //for vote//
-
-NavigationService.callApi("Votelog/search", function (data) {
+         NavigationService.callApi("Votelog/search", function (data) {
             console.log("Votelog data", data);
         });
+        
+        //for vote//
+
+       
+
+
+
 
 
 
@@ -178,6 +187,7 @@ NavigationService.callApi("Votelog/search", function (data) {
 
 
         //for vote end//
+
 
     })
     .controller('navCtrl', function ($scope, $location, $anchorScroll) {
