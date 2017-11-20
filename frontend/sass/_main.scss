@@ -1354,3 +1354,15 @@ figcaption {
     z-index: 9;
 }
 }
+.knowmore-btn a>button{ 
+    background: #812115;
+    border: none;
+    padding: 8px 20px;
+    color: white;
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 600;
+    &:focus,&:active{
+    outline: none !important;
+    }
+}
