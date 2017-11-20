@@ -174,7 +174,9 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("Votelog data", data);
         });
 
-       
+       $scope.clickVehicle= function(vehicleId){
+           console.log("vehicleId",vehicleId);
+           $scope.vehicleId=vehicleId;
         $scope.signupOpen = function () {
             $uibModal.open({
                 animation: true,
@@ -184,6 +186,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
             });
         };
+       }
+        
 
 
 
