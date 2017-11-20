@@ -989,13 +989,19 @@ figure.hover figcaption {
     height: 100px;
     border-radius: 50%;
     cursor: pointer;
-    -webkit-transition: all ease .3s;
-    transition: all ease .3s;
+    transform: rotate(0deg);
+    -webkit-transition: all ease 0s;
+    transition: all ease 0s;
     text-shadow: none !important;
-    -webkit-transition: all ease .3s;
-    transition: all ease .3s;
+    -webkit-transition: all ease 0s;
+    transition: all ease 0s;
     &:hover {
-        @include transform(scale(.95));
+        @include transform(rotate(360deg));
+    -webkit-transition: all ease .9s;
+    transition: all ease .9s;
+    text-shadow: none !important;
+    -webkit-transition: all ease .9s;
+    transition: all ease .9s;
     }
 }
 
@@ -1128,10 +1134,45 @@ footer .border-white {
 }
 .copy-foot{
         padding: 10px 0;
+        background: black;
+        color:white;
 }
 .sponser{
 h4{
     font-size: 16px;
     color:white;
 }
+}
+.nomination-section{
+margin-top: 85px;
+}
+.wheel{
+    position: relative;
+}
+.nomini-name{
+   background: #812115;
+    /* margin: 0 50px; */
+    padding: 10px 0;
+    position: absolute;
+    top: 42%;
+    left: 12%;
+    height: 50px;
+    width: 200px;
+    p{
+        color:white;
+        font-size: 20px;
+    }
+}
+.submit-btn{
+    button{
+    background: #812115;
+    border: navajowhite;
+    padding: 8px 80px;
+    color: white;
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 600;
+}
+   
+
 }
