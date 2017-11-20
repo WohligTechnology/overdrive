@@ -7,6 +7,7 @@ myApp.factory('NavigationService', function ($http) {
             name: "HOME",
             classis: "active",
             anchor: "home",
+            // link: "home",
             subnav: []
         },
         {

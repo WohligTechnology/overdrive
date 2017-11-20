@@ -10658,7 +10658,7 @@ body {
   height: 500px; }
 
 .block-nomination {
-  height: 517px; }
+  height: 700px; }
 
 .block1 {
   height: 700px; }
@@ -10749,6 +10749,14 @@ body {
   width: 35%;
   color: black;
   border-top: 2px solid #848484; }
+
+.right-nomination {
+  margin: 0px;
+  margin-right: 35px;
+  text-align: right;
+  margin-left: auto;
+  width: 100%;
+  border-top: 2px solid white; }
 
 .more-btn {
   margin: 15px;
@@ -11244,25 +11252,25 @@ header {
 .partner-img {
   margin: 50px 0; }
 
-.flipDiv {
+.bikeslider2 .flipDiv {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   float: left; }
 
-.flipDiv figure {
+.bikeslider2 .flipDiv figure {
   margin: 0;
   padding: 0;
   position: relative;
   cursor: pointer; }
 
-.flipDiv figure .front {
+.bikeslider2 .flipDiv figure .front {
   display: block;
   position: relative;
   z-index: 1; }
 
-.flipDiv figure figcaption {
+.bikeslider2 .flipDiv figure figcaption {
   background: black;
   border: 5px solid #9a1205;
   display: block;
@@ -11282,13 +11290,13 @@ header {
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
 
-.flipDiv figure h2 {
+.bikeslider2 .flipDiv figure h2 {
   font-family: 'Lato';
   color: #fff;
   font-size: 20px;
   text-align: left; }
 
-.flipDiv figure p {
+.bikeslider2 .flipDiv figure p {
   display: block;
   font-family: 'Robotor';
   font-size: 16px;
@@ -11297,30 +11305,30 @@ header {
   text-align: center;
   padding: 0 70px; }
 
-.flipDiv .descrip {
+.bikeslider2 .flipDiv .descrip {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
-  .flipDiv .descrip p {
+  .bikeslider2 .flipDiv .descrip p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600; }
 
-.flipDiv figure .front {
+.bikeslider2 .flipDiv figure .front {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
 
-.flipDiv figure:hover .front,
-figure.hover .front {
+.bikeslider2 .flipDiv figure:hover .front,
+.bikeslider2 figure.hover .front {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   z-index: 0; }
 
-.flipDiv figure:hover figcaption,
-figure.hover figcaption {
+.bikeslider2 .flipDiv figure:hover figcaption,
+.bikeslider2 figure.hover figcaption {
   -webkit-transform: rotateY(0);
   transform: rotateY(0); }
 
@@ -11372,17 +11380,17 @@ figure.hover figcaption {
     -webkit-animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1);
             animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1); }
     .barz li:nth-of-type(1) {
-      -webkit-animation-delay: 0.6s;
-              animation-delay: 0.6s; }
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
     .barz li:nth-of-type(2) {
-      -webkit-animation-delay: 0.3s;
-              animation-delay: 0.3s; }
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
     .barz li:nth-of-type(3) {
-      -webkit-animation-delay: 0.7s;
-              animation-delay: 0.7s; }
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
     .barz li:nth-of-type(4) {
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s; }
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
     .barz li .percent-label {
       position: absolute;
       left: -5px;
@@ -11490,7 +11498,7 @@ footer .border-white {
   color: white; }
 
 .nomination-section {
-  margin: 50px 0; }
+  margin: 20px 0; }
 
 .wheel {
   position: relative; }
@@ -11543,12 +11551,97 @@ footer .border-white {
 .modal-dialog {
   margin: 100px auto; }
 
-.submit-singup button, .submit-singup:hover {
+.submit-singup button {
   border: 1px solid red;
   color: red; }
+  .submit-singup button:hover {
+    border: 1px solid red !important;
+    color: red; }
 
 .nomination .img-none {
   display: none !important; }
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  background: transparent !important; }
+
+.nominations-heading p {
+  color: white;
+  margin: 60px 40px 20px 40px;
+  font-size: 22px; }
+
+.radio-nomination input {
+  margin: 15px 0; }
+
+.nomination-flip .flipDiv {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  float: left; }
+
+.nomination-flip .flipDiv figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  cursor: pointer; }
+
+.nomination-flip .flipDiv figure .front {
+  display: block;
+  position: relative;
+  z-index: 1; }
+
+.nomination-flip .flipDiv figure figcaption {
+  background: black;
+  border: 5px solid #9a1205;
+  display: block;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin: 0px auto;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.nomination-flip .flipDiv figure h2 {
+  font-family: 'Lato';
+  color: #fff;
+  font-size: 20px;
+  text-align: left; }
+
+.nomination-flip .flipDiv .descrip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%; }
+
+.nomination-flip .flipDiv figure .front {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.n_flip .front {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 0; }
+
+.n_flip figcaption {
+  -webkit-transform: rotateY(0) !important;
+          transform: rotateY(0) !important;
+  z-index: 9; }
 
 #fancybox-loading,
 .fancybox-close,
