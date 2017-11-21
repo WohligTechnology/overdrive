@@ -27,7 +27,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             controller: 'HomeCtrl'
         })
          .state('nomination', {
-            url: "/nomination",
+            url: "/nomination/:id",
             templateUrl: tempateURL,
             controller: 'NominationCtrl'
         })

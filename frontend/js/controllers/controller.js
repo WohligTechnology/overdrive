@@ -174,10 +174,26 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("Votelog data", data);
         });
 
-       $scope.clickVehicle= function(vehicleId){
-           console.log("vehicleId",vehicleId);
-           $scope.vehicleId=vehicleId;
-        $scope.signupOpen = function () {
+    //    $scope.clickVehicle= function(vehicleId){
+    //        console.log("vehicleId",vehicleId);
+    //        $scope.vehicleId=vehicleId;
+    //     $scope.signupOpen = function () {
+    //         $uibModal.open({
+    //             animation: true,
+    //             templateUrl: 'views/modal/signup.html',
+    //             scope: $scope,
+    //             size: 'md',
+
+    //         });
+    //     };
+    //    }
+
+
+        $scope.signupOpen = function (vehicleId) {
+            console.log("vehicleId",vehicleId);
+            $scope.vehicleId=vehicleId;
+            $scope.id=$scope.vehicleId;
+            console.log("$stateParams",$scope.id);
             $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/signup.html',
@@ -186,7 +202,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
             });
         };
-       }
+       
         
 
 
@@ -200,7 +216,7 @@ $scope.submitUser = function (data) {
                     console.log("$scope.userId", data.data._id);
                     $scope.userId = data.data._id;
                     $state.go('nomination', {
-                        'userId': data.data._id
+                        'id':$scope.id
                     });
                 } else {
                     $scope.errorVoterLogin = "Something Went Wrong!!!";
