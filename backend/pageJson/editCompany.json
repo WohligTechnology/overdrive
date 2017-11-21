@@ -14,15 +14,36 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
-        "name": "Logo",
+        "name": "Img",
         "type": "image",
-        "tableRef": "logo",
+        "tableRef": "img",
         "size": "250 x 250",
-        "placeholder": "Upload Logo",
-        "id": "logo",
+        "placeholder": "Upload Img",
+        "id": "img",
         "view": true,
         "disabled": false,
         "validation": [],
+        "url": ""
+    },
+    {
+        "name": "Imgback",
+        "type": "image",
+        "tableRef": "imgback",
+        "size": "250 x 250",
+        "placeholder": "Upload Imgback",
+        "id": "imgback",
+        "view": true,
+        "disabled": false,
+        "validation": [],
+        "url": ""
+    },
+    {
+        "name": "Id",
+        "type": "text",
+        "tableRef": "id",
+        "placeholder": "Enter Id",
+        "id": "id",
+        "validation": ["required", "trim", "unique"],
         "url": ""
     }],
     "action": [{

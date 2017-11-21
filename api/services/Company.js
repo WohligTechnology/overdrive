@@ -2,7 +2,13 @@ var schema = new Schema({
   name: {
         type: String, 
     },
-    logo: {
+    img: {
+        type: String
+    },
+    imgback: {
+        type: String
+    },
+    id: {
         type: String
     }
 });

@@ -1,8 +1,12 @@
 <div class="backimg1 container-fluid block-nomination">
     <div class="row">
-        <div class="col-md-4">
+        <!--<div class="col-md-4">
             <img src="img/slider/1-m.png" class="img-responsive">
+        </div>-->
+<div class="col-md-4">
+            <img ng-src="{{singleCatData.img|uploadpath}}" class="img-responsive">
         </div>
+
         <div class="col-md-8">
             <div class="nominations-heading">
                 <div class="text-right">
@@ -22,20 +26,23 @@
                                 <figure>
                                     <div class="front">
                                         <div class="wheel">
-                                            <img src="{{s.img}}" class="img-responsive">
+                                            <img src="img/nomination/wheel.png" class="img-responsive">
                                             <div class="nomini-name">
-                                                <p class="text-center">{{s.name}}</p>
+                                                <p class="text-center text-uppercase">{{s.name}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>
                                         <div class="descrip"> 
-                                          <img src="{{s.imgback}}" class="img-responsive">
+                                          <img src="{{s.imgback|uploadpath}}" class="img-responsive">
                                         </div>
                                     </figcaption>
                                 </figure>
-                                <div class="b6-bike-name text-center">
+                                <!--<div class="b6-bike-name text-center">
                                     <input type="radio" name="abc" ng-click="changeClass($index)" required="">
+                                </div>-->
+                                <div class="b6-bike-name text-center">
+                                    <input type="radio" name="abc" ng-click="changeCompany(s._id)" required="">
                                 </div>
                             </div>
                         </div>
@@ -76,7 +83,7 @@
                 </div>
             </div>
             <div class="submit-btn text-center">
-                <button>SUBMIT</button>
+                <button ng-click="submitVote();">SUBMIT</button>
             </div>
         </div>
     </div>

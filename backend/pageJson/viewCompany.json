@@ -9,11 +9,21 @@
         "isSort": "",
         "tableRef": "name"
     }, {
-        "name": "Logo",
+        "name": "Img",
         "isSort": "",
-        "tableRef": "logo",
+        "tableRef": "img",
         "type": "image"
-    }],
+    }, {
+        "name": "Imgback",
+        "isSort": "",
+        "tableRef": "imgback",
+        "type": "image"
+    },{
+        "name": "Id",
+        "isSort": "",
+        "tableRef": "id"
+    }
+    ],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
