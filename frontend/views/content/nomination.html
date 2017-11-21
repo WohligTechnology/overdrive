@@ -16,33 +16,31 @@
         <div class="container">
             <div class="nomination-section">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="nomination-flip">
-                                  <div class="flipDiv" ng-class="class">
+                    <div class="col-md-3" ng-repeat="s in Nomination track by $index">
+                        <div class="nomination-flip" >
+                                  <div class="flipDiv" ng-class="class[$index]">
                                 <figure>
                                     <div class="front">
                                         <div class="wheel">
-                                            <img src="img/nomination/wheel.png" class="img-responsive">
+                                            <img src="{{s.img}}" class="img-responsive">
                                             <div class="nomini-name">
-                                                <p class="text-center">carkkkkk</p>
+                                                <p class="text-center">{{s.name}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>
-                                        <div class="descrip">
-                                            
-                                 <img src="img/slider/profile2.jpg" class="img-responsive">
-                                         
+                                        <div class="descrip"> 
+                                          <img src="{{s.imgback}}" class="img-responsive">
                                         </div>
                                     </figcaption>
                                 </figure>
                                 <div class="b6-bike-name text-center">
-                                    <input type="radio" name="optradio" ng-click="changeClass()" required="">
+                                    <input type="radio" name="abc" ng-click="changeClass($index)" required="">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <!--<div class="col-md-3">
                         <div class="wheel">
                             <img src="img/nomination/wheel.png" class="img-responsive">
                             <div class="nomini-name">
@@ -74,7 +72,7 @@
                         <div class="text-center radio-nomination">
                             <input type="radio" name="optradio" ng-click="" required="">
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="submit-btn text-center">
