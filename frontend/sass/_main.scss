@@ -1354,7 +1354,7 @@ figcaption {
     z-index: 9;
 }
 }
-.knowmore-btn a>button{ 
+.knowmore-btn a{ 
     background: #812115;
     border: none;
     padding: 8px 20px;
@@ -1364,5 +1364,6 @@ figcaption {
     font-weight: 600;
     &:focus,&:active{
     outline: none !important;
+   text-decoration:none;
     }
 }
