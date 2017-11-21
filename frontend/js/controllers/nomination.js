@@ -114,21 +114,6 @@
      });
    };
 
-   $scope.awardcategoryValue = {
-     boardId: null,
-     value: null
-   };
-   $scope.awardcategoryConfig = {
-     create: true,
-     valueField: 'id',
-     labelField: 'name',
-     placeholder: 'Select a Awardcategory',
-     searchField: ["name"],
-     maxItems: 1,
-     onInitialize: function () {
-       $scope.awardcategory();
-     },
-   };
    $scope.getCompanyDescription = function (awardcategoryId) {
      // console.log(awardcategoryId);
      $scope.company = [];
@@ -171,35 +156,11 @@
      }
    };
 
-   var abc = _.times(100, function (n) {
-     return n;
-   });
-
    var i = 0;
    $scope.buttonClick = function () {
      i++;
      // console.log("This is a button Click");
    };
 
-   $scope.voteAgain = function () {
-     $scope.company = [];
-     $scope.compDesc = "";
-   }
-
    //for vote end//
-
-
-
-  //  $scope.thanksOpen = function () {
-  //    $uibModal.open({
-  //      animation: true,
-  //      templateUrl: 'views/modal/thankyou.html',
-  //      scope: $scope,
-  //      size: 'md',
-
-  //    });
-  //  };
-
-
-
  })
