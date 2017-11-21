@@ -9,19 +9,46 @@
             $scope.formSubmitted = true;
         };
 
-// $scope.class = "red";
- $scope.changeClass = function(){
-   $scope.class = "n_flip";
- };
+$scope.class=[];
+$scope.changeClass = function(index){
+   $scope.class=[];
+  $scope.class[index] = "n_flip";
+};
+   $scope.Nomination = [{
+         img: 'img/nomination/wheel.png',
+         imgback: 'img/slider/1-m.png',
+        name: "CARS",
+        id:1
+        }, {
+          img: 'img/nomination/wheel.png',
+          imgback: 'img/slider/2-m.png',
+           name: "SCOOTERS",
+             id:2
 
+       }, {
+          img: 'img/nomination/wheel.png',
+        imgback: 'img/slider/3-m.png',
+           name: "MOTOBIKES",
+             id:3
+        }, {
+          img: 'img/nomination/wheel.png',
+        imgback: 'img/slider/3-m.png',
+           name: "MOTOB",
+           id:4
+        }];
 
-$scope.id = $stateParams.id;
+$scope.dataId={
+_id : $stateParams.id
+}
+
 console.log("categoryid", $scope.id);
 
-NavigationService.callApi("Company/search",$stateParams.id, function (data) {
+NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId ,function (data) {
 console.log("catdata", data)
-            // $scope.s_name = data.data.data.name;
-            // console.log("sss", $scope.s_name)
+$scope.singleCatData=data.data;
+console.log("singleCatData", $scope.singleCatData)
+            $scope.cImg = data.data.img;
+            console.log("sss", $scope.cImg)
         });
 
 

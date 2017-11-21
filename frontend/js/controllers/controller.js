@@ -174,6 +174,19 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("Votelog data", data);
         });
 
+
+//for category img change//
+
+$scope.smallImgClick=function (data) {
+    console.log("catData",data);
+console.log("big",data.img);
+$scope.catImg=data.img;
+
+}
+
+//for category img change end//
+
+
     //    $scope.clickVehicle= function(vehicleId){
     //        console.log("vehicleId",vehicleId);
     //        $scope.vehicleId=vehicleId;
@@ -187,6 +200,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
     //         });
     //     };
     //    }
+
 
 
         $scope.signupOpen = function (vehicleId) {

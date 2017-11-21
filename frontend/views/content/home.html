@@ -49,6 +49,15 @@
                             </div>
                         </slide>
                     </slides>
+                    <!--<slides>
+                        <slide ng-repeat="s in mySlides track by $index">
+                            <div><pre>{{s._id}}</pre>
+                            <img ng-src="{{s.imgsmall|uploadpath}}" class="img-full not-middle" noloading="true" ng-click="smallImgClick(s)">
+                                <img ng-src="{{catImg}}" class="img-full middle-img" noloading="true"  ng-click="signupOpen(s);">
+                                <div class="bike-name">{{s.name}}</div>
+                            </div>
+                        </slide>
+                    </slides>-->
                     <prev></prev>
                     <next></next>
                     <pagination></pagination>
@@ -307,7 +316,7 @@
                             </div>
                         </div>
                         <div class="text-center knowmore-btn">
-                           <a href="http://hplubricants.in" target="blank"><button class="">know more</button></a>
+                           <a href="http://hplubricants.in" target="blank">know more</a>
                         </div>
                     </div>
                 </div>
