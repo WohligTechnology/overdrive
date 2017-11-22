@@ -13,7 +13,10 @@ $brand-info: #000072 !default;
 .gray-bg {
     background-color: #e6e6e6
 }
-
+@font-face {
+    font-family: 'impact';
+    src: url("../fonts/impact.ttf");
+} 
 body {
     padding-top: 70px;
 }
@@ -340,14 +343,12 @@ body {
     }
     .b1-txt {
         height: 340px;
-        text-align: left;
-        // overflow: hidden;
+        text-align: left; // overflow: hidden;
         // word-break: break-all;
         // text-overflow: ellipsis;
         margin-right: 10px;
         color: black;
-        line-height: 20px;
-        // display: -webkit-box;
+        line-height: 20px; // display: -webkit-box;
         // -webkit-line-clamp: 17;
         // -webkit-box-orient: vertical;
     }
@@ -437,8 +438,7 @@ body {
         // padding: 75px;
         // margin-left: -25px;
         // padding-top: 25px;
-    }
-    // .smoke_car {
+    } // .smoke_car {
     //     position: absolute;
     //     top: 75px;
     //     left: -100px;
@@ -868,8 +868,7 @@ header {
 
 #gallery {
     .swiper-container1 {
-        width: 100%;
-        // padding-top: 50px;
+        width: 100%; // padding-top: 50px;
         // padding-bottom: 50px;
     }
     .swiper-slide {
@@ -881,8 +880,7 @@ header {
     }
     .swiper-pagination-bullets {
         display: none;
-    }
-    // .swiper-button-prev {
+    } // .swiper-button-prev {
     //     background: url("../img/previous-home.png");
     //     width: 60px;
     //     height: 60px
@@ -896,8 +894,8 @@ header {
 
 //scss by snehal
 .round-img {
-    width: 300px;
-    height: 300px;
+    width: 230px;
+    height: 230px;
     border: 3px solid red;
     border-radius: 50%;
     margin: 0 auto;
@@ -1165,7 +1163,7 @@ footer .border-white {
 }
 
 .nomination-section {
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .wheel {
@@ -1204,6 +1202,8 @@ footer .border-white {
     input {
         border-bottom: 1px solid red !important;
         border: none;
+        color: black;
+        background: transparent;
     }
     label {
         margin-bottom: 0px;
@@ -1212,6 +1212,7 @@ footer .border-white {
 
 .signup-bg {
     position: relative;
+    background: rgba(128, 128, 128, 0.52);
     .close-btn {
         position: absolute;
         right: 5px;
@@ -1345,10 +1346,12 @@ footer .border-white {
     padding: 8px 20px;
     color: white;
     font-style: italic;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
+    text-transform: uppercase;
     &:focus,
-    &:active {
+    &:active,
+    &:hover {
         outline: none !important;
         text-decoration: none;
     }
@@ -1358,6 +1361,34 @@ footer .border-white {
     margin: 0 auto;
     width: 50px;
 }
-.thankyou{
-        padding: 0 30px 30px 30px;
+
+.thankyou {
+    .thank-border {
+        border: 2px solid red;
+        padding: 15px 0;
+    }
+    padding: 0 35px 30px 35px;
+    h4 {
+        color: red;
+        letter-spacing: 1px;
+        font-style: italic;
+        font-size: 25px;
+        font-family: 'impact';
+    }
+}
+
+.vehicle-size {
+    width: 255px;
+    margin: 5px auto;
+}
+
+.vehicle-name {
+    p {
+        color: white;
+        font-size: 18px;
+    }
+}
+
+.radio-pointer input {
+    cursor: pointer;
 }

@@ -59,6 +59,12 @@
    });
 
 
+  //  NavigationService.callApi("Awardcategory/search", function (data) {
+  //    console.log("Awardcategory data", data);
+  //    $scope.Nomination = data.data.results;
+  //  });
+
+
    //for vote//
 
    $scope.companyView = true;

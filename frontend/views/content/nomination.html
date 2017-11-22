@@ -3,8 +3,13 @@
         <!--<div class="col-md-4">
             <img src="img/slider/1-m.png" class="img-responsive">
         </div>-->
-<div class="col-md-4">
+        <div class="col-md-4">
+            <div class="vehicle-size">
             <img ng-src="{{singleCatData.img|uploadpath}}" class="img-responsive">
+            </div>
+            <div class="vehicle-name text-center">
+                <p>{{singleCatData.name}}</p>
+            </div>
         </div>
 
         <div class="col-md-8">
@@ -41,7 +46,7 @@
                                 <!--<div class="b6-bike-name text-center">
                                     <input type="radio" name="abc" ng-click="changeClass($index)" required="">
                                 </div>-->
-                                <div class="b6-bike-name text-center">
+                                <div class="b6-bike-name  text-center radio-pointer">
                                     <input type="radio" name="abc" ng-click="changeCompany(s._id,$index)" required="">
                                 </div>
                             </div>
