@@ -9,11 +9,11 @@
      $scope.formSubmitted = true;
    };
 
-   $scope.class = [];
-   $scope.changeClass = function (index) {
-     $scope.class = [];
-     $scope.class[index] = "n_flip";
-   };
+  //  $scope.class = [];
+  //  $scope.changeClass = function (index) {
+  //    $scope.class = [];
+  //    $scope.class[index] = "n_flip";
+  //  };
 
 
    //  $scope.Nomination = [{
@@ -125,7 +125,10 @@
    };
 
 
-   $scope.changeCompany = function (companyId) {
+$scope.class = [];
+   $scope.changeCompany = function (companyId,index) {
+      $scope.class = [];
+     $scope.class[index] = "n_flip";
      console.log("changeCompany", companyId);
      $scope.companyId = companyId;
 
