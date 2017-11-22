@@ -202,20 +202,39 @@ $scope.catImg=data.img;
     //    }
 
 
-
-        $scope.signupOpen = function (vehicleId) {
-            console.log("vehicleId",vehicleId);
-            $scope.vehicleId=vehicleId;
-            $scope.id=$scope.vehicleId;
+$scope.getCompany = function (awardcategoryId) {
+    console.log("catClicked");
+    console.log("awardcategoryId",awardcategoryId);
+    $scope.id=awardcategoryId;
             console.log("$stateParams",$scope.id);
-            $uibModal.open({
+     $scope.company = [];
+     NavigationService.callApiWithData('Awardcategory/getOne', {
+       _id: awardcategoryId
+     }, function (data) {
+      $scope.companyView = true;
+         $scope.currentHost = window.location.origin;
+         $uibModal.open({
                 animation: true,
                 templateUrl: 'views/modal/signup.html',
                 scope: $scope,
                 size: 'md',
 
             });
-        };
+     });
+   };
+        // $scope.signupOpen = function (vehicleId) {
+        //     console.log("vehicleId",vehicleId);
+        //     $scope.vehicleId=vehicleId;
+        //     $scope.id=$scope.vehicleId;
+        //     console.log("$stateParams",$scope.id);
+        //     $uibModal.open({
+        //         animation: true,
+        //         templateUrl: 'views/modal/signup.html',
+        //         scope: $scope,
+        //         size: 'md',
+
+        //     });
+        // };
        
         
 
@@ -256,28 +275,28 @@ $scope.submitUser = function (data) {
 
         $scope.awardcategory();
 
-        $scope.getCompany = function (awardcategoryId) {
-            $scope.company = [];
-            NavigationService.callApiWithData('Awardcategory/getOne', {
-                _id: awardcategoryId
-            }, function (data) {
-                if ($.jStorage.get("accessToken")) {
-                    $scope.companyView = false;
-                    $scope.awardcategoryId = awardcategoryId;
-                    $scope.company = data.data.company;
-                    $scope.awardcategoryName = data.data.name;
-                } else {
-                    $scope.companyView = true;
-                    $scope.currentHost = window.location.origin;
-                    $uibModal.open({
-                        animation: true,
-                        templateUrl: 'views/content/login.html',
-                        scope: $scope,
-                        size: 'lg',
-                    });
-                }
-            });
-        };
+        // $scope.getCompany = function (awardcategoryId) {
+        //     $scope.company = [];
+        //     NavigationService.callApiWithData('Awardcategory/getOne', {
+        //         _id: awardcategoryId
+        //     }, function (data) {
+        //         if ($.jStorage.get("accessToken")) {
+        //             $scope.companyView = false;
+        //             $scope.awardcategoryId = awardcategoryId;
+        //             $scope.company = data.data.company;
+        //             $scope.awardcategoryName = data.data.name;
+        //         } else {
+        //             $scope.companyView = true;
+        //             $scope.currentHost = window.location.origin;
+        //             $uibModal.open({
+        //                 animation: true,
+        //                 templateUrl: 'views/content/login.html',
+        //                 scope: $scope,
+        //                 size: 'lg',
+        //             });
+        //         }
+        //     });
+        // };
 
         $scope.companyvote = [];
         $scope.getCompanyData = function (awardcategoryId) {

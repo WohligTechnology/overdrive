@@ -43,8 +43,6 @@
      _id: $stateParams.id
    }
 
-   console.log("categoryid", $scope.id);
-
    NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
      console.log("catdata", data)
      $scope.singleCatData = data.data;
@@ -81,28 +79,28 @@
 
    $scope.awardcategory();
 
-   $scope.getCompany = function (awardcategoryId) {
-     $scope.company = [];
-     NavigationService.callApiWithData('Awardcategory/getOne', {
-       _id: awardcategoryId
-     }, function (data) {
-       if ($.jStorage.get("accessToken")) {
-         $scope.companyView = false;
-         $scope.awardcategoryId = awardcategoryId;
-         $scope.company = data.data.company;
-         $scope.awardcategoryName = data.data.name;
-       } else {
-         $scope.companyView = true;
-         $scope.currentHost = window.location.origin;
-         $uibModal.open({
-           animation: true,
-           templateUrl: 'views/content/login.html',
-           scope: $scope,
-           size: 'lg',
-         });
-       }
-     });
-   };
+  //  $scope.getCompany = function (awardcategoryId) {
+  //    $scope.company = [];
+  //    NavigationService.callApiWithData('Awardcategory/getOne', {
+  //      _id: awardcategoryId
+  //    }, function (data) {
+  //      if ($.jStorage.get("accessToken")) {
+  //        $scope.companyView = false;
+  //        $scope.awardcategoryId = awardcategoryId;
+  //        $scope.company = data.data.company;
+  //        $scope.awardcategoryName = data.data.name;
+  //      } else {
+  //        $scope.companyView = true;
+  //        $scope.currentHost = window.location.origin;
+  //        $uibModal.open({
+  //          animation: true,
+  //          templateUrl: 'views/content/login.html',
+  //          scope: $scope,
+  //          size: 'lg',
+  //        });
+  //      }
+  //    });
+  //  };
 
    $scope.companyvote = [];
    $scope.getCompanyData = function (awardcategoryId) {
