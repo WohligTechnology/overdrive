@@ -41,7 +41,6 @@ var model = {
                 var Model = this;
                 var voteData = data.body;
                 voteData.userAgentDetails = JSON.stringify(data.headers);
-                //console.log(data.headers);
                 Model.saveData(voteData, function (err, data2) {
                     if (err) {
                         callback(err, data2);
@@ -58,20 +57,13 @@ var model = {
                                     console.log("MatchFound");
                                     value.voteCount = ++value.voteCount;
                                 }
-                                //console.log(value);
                             });
-
-                            //  console.log(awardcategoryData);
-                            //   data.company.voteCount = ++data.company.voteCount;
                             awardcategoryData.save(function (err, data) {
                                 callback(err, data);
                             });
-
                         });
-
                     }
                 });
-
             }
 };
 module.exports = _.assign(module.exports, exports, model);
