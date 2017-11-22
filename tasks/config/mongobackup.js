@@ -3,13 +3,13 @@ module.exports = function (grunt) {
         dump: {
             options: {
                 host: 'localhost',
-                db: 'poker',
+                db: 'overdrive',
                 out: './dump'
             }
         },
         restore: {
             options: {
-                db: 'poker',
+                db: 'overdrive',
                 host: 'localhost',
                 drop: true,
                 path: './dump/overdrive'
