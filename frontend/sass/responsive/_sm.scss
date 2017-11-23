@@ -73,9 +73,10 @@
             left: -15px;
         }
     }
-    .blockb4-tab {
-        height: 350px;
-    } //block5
+    // .blockb4-tab {
+    //     height: 350px;
+    // } 
+    //block5
     .profile_slider_img {
         width: 95px;
         height: 95px;
@@ -143,7 +144,7 @@
     height: 420px;
 }
 .blockb4-tab {
-    height: 700px;
+    height: 625px;
 }
      .inside_b4 .b4_flotimg {
     position: relative;
@@ -176,5 +177,40 @@ footer li{
 }
 .barz li{
         margin: 1.2rem 1.5rem;
+}
+.brand-icon li{
+    width:30px;
+    height:30px;
+}
+.bikeslider2 img{
+    margin: 0 30px;
+}
+.bikeslider2 .swiper-button-next, .bikeslider2 .swiper-button-prev{
+right:0;
+}
+.bikeslider2 .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+left:0;
+}
+.b7_bike{
+    left:-45px;
+}
+.nomini-name{
+    top: 40%;
+    left: 12%;
+    height: 40px;
+    width: 120px;
+}
+.nomini-name p{
+    font-size: 14px;
+}
+.nomination-flip .flipDiv figure figcaption{
+    width:145px;
+    height:145px
+}
+.block-nomination {
+    height: 885px;
+}
+.nomination-section {
+    margin: 80px 0;
 }
 }
