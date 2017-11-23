@@ -5,7 +5,7 @@
         </div>-->
         <div class="col-md-4">
             <div class="vehicle-size">
-            <img ng-src="{{singleCatData.img|uploadpath}}" class="img-responsive">
+                <img ng-src="{{singleCatData.img|uploadpath}}" class="img-responsive">
             </div>
             <div class="vehicle-name text-center">
                 <p>{{singleCatData.name}}</p>
@@ -24,22 +24,23 @@
     <div class="container">
         <div class="container">
             <div class="nomination-section">
+                <!--<pre>{{singleCatData}}</pre>-->
                 <div class="row">
-                    <div class="col-md-3" ng-repeat="s in Nomination track by $index">
-                        <div class="nomination-flip" >
-                                  <div class="flipDiv" ng-class="class[$index]">
+                    <div class="col-md-3" ng-repeat="i in singleCatData.company track by $index">
+                        <div class="nomination-flip">
+                            <div class="flipDiv" ng-class="class[$index]">
                                 <figure>
                                     <div class="front">
                                         <div class="wheel">
                                             <img src="img/nomination/wheel.png" class="img-responsive">
                                             <div class="nomini-name">
-                                                <p class="text-center text-uppercase">{{s.name}}</p>
+                                                <p class="text-center text-uppercase">{{i.companyObj.name}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <figcaption>
-                                        <div class="descrip"> 
-                                          <img src="{{s.imgback|uploadpath}}" class="img-responsive">
+                                        <div class="descrip">
+                                            <img src="{{i.companyObj.imgback|uploadpath}}" class="img-responsive">
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -47,7 +48,7 @@
                                     <input type="radio" name="abc" ng-click="changeClass($index)" required="">
                                 </div>-->
                                 <div class="b6-bike-name  text-center radio-pointer">
-                                    <input type="radio" name="abc" ng-click="changeCompany(s._id,$index)" required="">
+                                    <input type="radio" name="abc" ng-click="changeCompany(i.companyObj._id,$index)" required="">
                                 </div>
                             </div>
                         </div>
