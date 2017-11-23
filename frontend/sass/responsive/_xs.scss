@@ -69,8 +69,8 @@
         padding-top: 20px;
     }
     .inside_b4 .smoke_car {
-            left: -20px;
-             width: 310px;
+        left: -20px;
+        width: 310px;
         top: 0px;
         position: relative;
     } //block 5
@@ -153,9 +153,9 @@
     .footer li {
         padding: 0 15px;
         font-size: 10px;
-        &:before{
-                height: 10px;
-    top: 1px;
+        &:before {
+            height: 10px;
+            top: 1px;
         }
     }
     //scss by snehal
@@ -192,10 +192,10 @@
         height: 200px;
     }
     .b5_text {
-        height: 285px;
+        height: 305px;
     }
     .block-min-jurors {
-        height: 520px;
+        height: 550px;
     }
     .music-section {
         margin-top: 0px;
@@ -211,16 +211,16 @@
         height: 50px;
     }
     .barz li {
-        margin: 0.2rem 2.5rem;
+        margin: 1.2rem 2.5rem;
     }
     .bike-name p {
         font-size: 15px;
     }
     .bikeslider2 .flipDiv figure figcaption {
-          width: 55px;
-    height: 55px;
-    border: 2px solid #9a1205;
-    margin: 0px 12px 0 12px;
+        width: 55px;
+        height: 55px;
+        border: 2px solid #9a1205;
+        margin: 0px 12px 0 12px;
     }
     .swiper-button-prev {
         height: 25px;
@@ -254,13 +254,15 @@
         margin-bottom: 30px;
     }
     #gallery .swiper-slide {
-    width: 337px !important;
-   height: 230px;
-    margin: 50px 30px;
-
+           width: 322px !important;
+    height: 200px;
+    margin: 50px 35px;
+    }
+    .block-gallery {
+    height: 340px;
 }
-// .block-gallery {
-//     height: 370px;
-// }
-
+  .nav-tabs{
+      top:0;
+      margin: 20px;
+  }
 }

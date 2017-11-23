@@ -36,7 +36,7 @@ myApp.factory('NavigationService', function ($http) {
             link: "socialmedia",
             subnav: []
         }, {
-            name: "GAMES",
+            name: "LEADERSHIP BOARD",
             classis: "active",
             // anchor: "games",
             link: "games",

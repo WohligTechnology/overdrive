@@ -424,9 +424,11 @@ body {
 .inside_b4 {
     .side_hr:after {
         width: 42%;
+            left: -25px;
     }
     .side_hr:before {
         width: 42%;
+        right: -25px;
     }
     .b4-txt {
         width: 100%;
@@ -1117,7 +1119,7 @@ header {
 footer li {
     position: relative;
     display: inline;
-    padding: 0 33px;
+    padding: 0 30px;
     a {
         color: black;
         &:hover,
