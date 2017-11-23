@@ -27,7 +27,7 @@ module.exports = {
 
   port: 85,
   realHost: "http://www.overdriveawards.in",
-  emails: ["chintan@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com"]
+  emails: ["chintan@wohlig.com", "jagruti@wohlig.com", "tushar@wohlig.com", "chirag@wohlig.com", "harsh@wohlig.com","sayali.ghule@wohlig.com","rohan@wohlig.com","sohan@wohlig.com"]
 
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
