@@ -13,7 +13,16 @@
         "id": "year",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }
+    },
+    {
+            "name": "Order",
+            "type": "text",
+            "tableRef": "order",
+            "placeholder": "Enter Order",
+            "id": "order",
+            "validation": ["required"],
+            "url": ""
+        }
     ],
     "action": [{
         "name": "submit",

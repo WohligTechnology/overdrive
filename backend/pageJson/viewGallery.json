@@ -8,6 +8,10 @@
         "name": "Year",
         "isSort": "",
         "tableRef": "year"
+    },{
+        "name": "Order",
+        "isSort": "",
+        "tableRef": "order"
     }],
     "action": [{
         "name": "edit",
