@@ -50,7 +50,7 @@
         margin-left: 8px;
     } //block 4
     .blockb4-tab {
-        height: 1185px;
+        height: 1030px;
     }
     .backimg2 {
         background-position: initial;
@@ -69,7 +69,8 @@
         padding-top: 20px;
     }
     .inside_b4 .smoke_car {
-        left: 0px;
+            left: -20px;
+             width: 310px;
         top: 0px;
         position: relative;
     } //block 5
@@ -104,8 +105,8 @@
         font-size: 10px;
     }
     .bikeslider2 img {
-        width: 65px;
-        height: 65px;
+        width: 55px;
+        height: 55px;
         border: 2px solid #9a1205;
     }
     .bikeslider2 {
@@ -216,10 +217,10 @@
         font-size: 15px;
     }
     .bikeslider2 .flipDiv figure figcaption {
-        width: 65px;
-        height: 65px;
-        border: 2px solid #9a1205;
-        margin: 0px 20px 0 20px;
+          width: 55px;
+    height: 55px;
+    border: 2px solid #9a1205;
+    margin: 0px 12px 0 12px;
     }
     .swiper-button-prev {
         height: 25px;
@@ -232,13 +233,13 @@
         width: 25px;
     }
     .bikeslider2 img {
-        margin: 0 18px;
+        margin: 0 16px;
     }
     .bikeslider2 .flipDiv figure p {
         font-size: 8px;
     }
     .footer p {
-        font-size: 10px;
+        font-size: 9px;
     }
     .partner-img {
         margin: 0px 0;
