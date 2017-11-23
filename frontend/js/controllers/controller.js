@@ -300,12 +300,12 @@ $scope.submitUser = function (data) {
 
         $scope.companyvote = [];
         $scope.getCompanyData = function (awardcategoryId) {
-            // console.log(awardcategoryId);
             NavigationService.callApiWithData('Awardcategory/getOne', {
                 _id: awardcategoryId
             }, function (data) {
                 $scope.totalVoteCount = 0;
                 $scope.companyvote = data.data.company;
+                console.log("$scope.companyvote", $scope.companyvote);
                 _.each($scope.companyvote, function (value) {
                         $scope.totalVoteCount += value.voteCount;
                     })
@@ -410,22 +410,11 @@ $scope.submitUser = function (data) {
             }
         };
 
-        var abc = _.times(100, function (n) {
-            return n;
-        });
-
         var i = 0;
         $scope.buttonClick = function () {
             i++;
             // console.log("This is a button Click");
         };
-
-        $scope.voteAgain = function () {
-            $scope.company = [];
-            $scope.compDesc = "";
-        }
-
-
 
         //for vote end//
 
