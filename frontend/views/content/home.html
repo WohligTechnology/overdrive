@@ -42,7 +42,7 @@
                 <swiper autoplay="" effect="slide" slides-per-view="3" loop="true" slideToClickedSlide="true">
                     <slides>
                         <slide ng-repeat="s in mySlides track by $index">
-                            <div >
+                            <div>
                                 <img ng-src="{{s.img|uploadpath}}" class="img-full middle-img" noloading="true" ng-click="getCompany(s._id);">
                                 <img ng-src="{{s.imgsmall|uploadpath}}" class="img-full not-middle" noloading="true">
                                 <div class="bike-name">{{s.name}}</div>
@@ -112,25 +112,45 @@
             <div class="music-section">
                 <div class="row">
                     <!--/for one field/-->
-                    <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in Leadershipboard track by $index">
-                        <div class="text-center bike-name">
-                            <p class="text-uppercase">{{l.name}}</p>
+                    <!--<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in Leadershipboard track by $index">
+                        <div>
+                            <div class="text-center bike-name">
+                                <p class="text-uppercase">{{l.name}}</p>
+                            </div>
+                            <div class="back-games text-center">
+                                <ul class="barz">
+                                    <li style="transform:translateY({{100 - r.percentage}}%)" ng-repeat="r in l.ratings track by $index"><span class="percent-label">{{r.percentage}}%</span></li>
+                                </ul>
+                                <ul class="brand-icon">
+                                    <li class="volkswagen" ng-repeat="r in l.ratings track by $index"><img ng-src="{{r.img|uploadpath}}" class="img-responsive"></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="back-games text-center">
-                            <ul class="barz">
-                                <li style="transform:translateY({{100 - r.percentage}}%)" ng-repeat="r in l.ratings track by $index"><span class="percent-label">{{r.percentage}}%</span></li>
-                                <!--<li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
-                                <li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
-                                <li style="transform:translateY(90%)"><span class="percent-label">10%</span></li>-->
-                            </ul>
-                            <ul class="brand-icon">
-                                <li class="volkswagen" ng-repeat="r in l.ratings track by $index"><img ng-src="{{r.img|uploadpath}}" class="img-responsive"></li>
-                                <!--<li class="yamaha"><img src="img/leadership/2.png" class="img-responsive"></li>
-                                <li class="honda"><img src="img/leadership/3.png" class="img-responsive"></li>
-                                <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>-->
-                            </ul>
+                    </div>-->
+
+
+
+<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
+                        <div>
+                            <div class="text-center bike-name">
+                                <p class="text-uppercase">{{l.name}}</p>
+                            </div>
+                            <div class="back-games text-center" >
+                                <ul class="barz">
+                                    <!--<li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>-->
+                                    <li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>
+                                </ul>
+                                <ul class="brand-icon">
+                                    <li class="volkswagen" ng-repeat="l1 in l.company track by $index"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+
+
+
+
                     <!--/for one field/-->
                     <!--<div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="text-center bike-name">
@@ -316,7 +336,7 @@
                             </div>
                         </div>
                         <div class="text-center knowmore-btn">
-                           <a href="http://hplubricants.in" target="blank">know more</a>
+                            <a href="http://hplubricants.in" target="blank">know more</a>
                         </div>
                     </div>
                 </div>

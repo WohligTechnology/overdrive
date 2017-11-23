@@ -269,7 +269,19 @@ $scope.submitUser = function (data) {
         $scope.awardcategory = function () {
             NavigationService.callApiWithData('Awardcategory/search', {}, function (data) {
                 var awardcategory = [];
+                $scope.totalVoteCount = 0;
                 $scope.awardcategory = data.data.results;
+                 console.log("$scope.awardcategory",$scope.awardcategory);
+                  _.each( $scope.awardcategory, function (value) {
+               console.log("value",value)
+               $scope.companyvote = value.company;
+                    _.each( value.company, function (value1) {
+                        $scope.value1 = value1;
+               console.log("value1",value1)
+               $scope.totalVoteCount += value.voteCount;
+
+            })
+            })
             });
         };
 
@@ -298,8 +310,10 @@ $scope.submitUser = function (data) {
         //     });
         // };
 
+// getCompanyData(awardcategory._id);
         $scope.companyvote = [];
         $scope.getCompanyData = function (awardcategoryId) {
+             console.log("inside award vote");
             NavigationService.callApiWithData('Awardcategory/getOne', {
                 _id: awardcategoryId
             }, function (data) {
@@ -314,21 +328,6 @@ $scope.submitUser = function (data) {
             });
         };
 
-        $scope.awardcategoryValue = {
-            boardId: null,
-            value: null
-        };
-        $scope.awardcategoryConfig = {
-            create: true,
-            valueField: 'id',
-            labelField: 'name',
-            placeholder: 'Select a Awardcategory',
-            searchField: ["name"],
-            maxItems: 1,
-            onInitialize: function () {
-                $scope.awardcategory();
-            },
-        };
         $scope.getCompanyDescription = function (awardcategoryId) {
             // console.log(awardcategoryId);
             $scope.company = [];
@@ -415,6 +414,14 @@ $scope.submitUser = function (data) {
             i++;
             // console.log("This is a button Click");
         };
+
+
+
+
+
+
+
+
 
         //for vote end//
 

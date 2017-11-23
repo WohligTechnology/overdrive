@@ -102,21 +102,19 @@
   //    });
   //  };
 
-   $scope.companyvote = [];
-   $scope.getCompanyData = function (awardcategoryId) {
-     // console.log(awardcategoryId);
-     NavigationService.callApiWithData('Awardcategory/getOne', {
-       _id: awardcategoryId
-     }, function (data) {
-       $scope.totalVoteCount = 0;
-       $scope.companyvote = data.data.company;
-       _.each($scope.companyvote, function (value) {
-         $scope.totalVoteCount += value.voteCount;
-       })
-       // console.log("$scope.totalVoteCount", $scope.totalVoteCount);
-       $scope.awardcategoryName = data.data.name;
-     });
-   };
+  //  $scope.companyvote = [];
+  //  $scope.getCompanyData = function (awardcategoryId) {
+  //    NavigationService.callApiWithData('Awardcategory/getOne', {
+  //      _id: awardcategoryId
+  //    }, function (data) {
+  //      $scope.totalVoteCount = 0;
+  //      $scope.companyvote = data.data.company;
+  //      _.each($scope.companyvote, function (value) {
+  //        $scope.totalVoteCount += value.voteCount;
+  //      })
+  //      $scope.awardcategoryName = data.data.name;
+  //    });
+  //  };
 
    $scope.getCompanyDescription = function (awardcategoryId) {
      // console.log(awardcategoryId);
