@@ -50,7 +50,7 @@
         margin-left: 8px;
     } //block 4
     .blockb4-tab {
-        height: auto;
+        height: 700px;
     }
     .inside_b4 .side_hr:after {
         left: -18px;
@@ -149,4 +149,46 @@
     .footer li{
             padding: 0 18px;
     }
+    //scss by snehal
+    .block-awards {
+    height: 250px;
+}
+.backimg2{
+    background-repeat: no-repeat;
+}
+.wheel {
+    width: 200px;
+    margin: 0 auto;
+}
+.block-nomination {
+    height: 1500px;
+}
+.nomini-name{
+    left:20%;
+}
+.nominations-heading p{
+    text-align: center;
+}
+.vehicle-size {
+    margin: 15px auto;
+}
+.nomination-section {
+    margin: 40px 0;
+}
+.nav_highlight {
+    right: 10px;
+    height:50px;
+    width: 50px;
+}
+.nomination-flip .flipDiv figure figcaption{
+    left: 22%;
+    width: 200px;
+    height: 200px;
+}
+.b5_text{
+    height:285px;
+}
+.block-min-jurors {
+    height: 520px;
+}
 }

@@ -1,9 +1,6 @@
 <div class="backimg1 container-fluid block-nomination">
-    <div class="row">
-        <!--<div class="col-md-4">
-            <img src="img/slider/1-m.png" class="img-responsive">
-        </div>-->
-        <div class="col-md-4">
+    <div class="row hidden-xs">
+        <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="vehicle-size">
                 <img ng-src="{{singleCatData.img|uploadpath}}" class="img-responsive">
             </div>
@@ -11,8 +8,7 @@
                 <p>{{singleCatData.name}}</p>
             </div>
         </div>
-
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-8 col-xs-12">
             <div class="nominations-heading">
                 <div class="text-right">
                     <p>NOMINATIONS</p>
@@ -21,39 +17,61 @@
             </div>
         </div>
     </div>
+    <div class="row hidden-md hidden-sm hidden-lg">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="nominations-heading">
+                <div class="text-right">
+                    <p>NOMINATIONS</p>
+                </div>
+                <hr class="right-nomination">
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="vehicle-size">
+                <img ng-src="{{singleCatData.img|uploadpath}}" class="img-responsive">
+            </div>
+            <div class="vehicle-name text-center">
+                <p>{{singleCatData.name}}</p>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <div class="container">
-            <div class="nomination-section">
-                <!--<pre>{{singleCatData}}</pre>-->
-                <div class="row">
-                    <div class="col-md-3" ng-repeat="i in singleCatData.company track by $index">
-                        <div class="nomination-flip">
-                            <div class="flipDiv" ng-class="class[$index]">
-                                <figure>
-                                    <div class="front">
-                                        <div class="wheel">
-                                            <img src="img/nomination/wheel.png" class="img-responsive">
-                                            <div class="nomini-name">
-                                                <p class="text-center text-uppercase">{{i.companyObj.name}}</p>
-                                            </div>
+        <div class="nomination-section">
+            <!--<pre>{{singleCatData}}</pre>-->
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="i in singleCatData.company track by $index">
+                    <div class="nomination-flip">
+                        <div class="flipDiv" ng-class="class[$index]">
+                            <figure>
+                                <div class="front">
+                                    <div class="wheel">
+                                        <img src="img/nomination/wheel.png" class="img-responsive">
+                                        <div class="nomini-name">
+                                            <p class="text-center text-uppercase">{{i.companyObj.name}}</p>
                                         </div>
                                     </div>
+                                </div>
+                               
                                     <figcaption>
+
+                                        <div>
                                         <div class="descrip">
                                             <img src="{{i.companyObj.imgback|uploadpath}}" class="img-responsive">
                                         </div>
+                                        <div>
                                     </figcaption>
-                                </figure>
-                                <!--<div class="b6-bike-name text-center">
+                                
+                            </figure>
+                            <!--<div class="b6-bike-name text-center">
                                     <input type="radio" name="abc" ng-click="changeClass($index)" required="">
                                 </div>-->
-                                <div class="b6-bike-name  text-center radio-pointer">
-                                    <input type="radio" name="abc" ng-click="changeCompany(i.companyObj._id,$index)" required="">
-                                </div>
+                            <div class="b6-bike-name  text-center radio-pointer">
+                                <input type="radio" name="abc" ng-click="changeCompany(i.companyObj._id,$index)" required="">
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col-md-3">
+                </div>
+                <!--<div class="col-md-3">
                         <div class="wheel">
                             <img src="img/nomination/wheel.png" class="img-responsive">
                             <div class="nomini-name">
@@ -86,11 +104,10 @@
                             <input type="radio" name="optradio" ng-click="" required="">
                         </div>
                     </div>-->
-                </div>
             </div>
-            <div class="submit-btn text-center">
-                <button ng-click="submitVote();">SUBMIT</button>
-            </div>
+        </div>
+        <div class="submit-btn text-center">
+            <button ng-click="submitVote();">SUBMIT</button>
         </div>
     </div>
 </div>
