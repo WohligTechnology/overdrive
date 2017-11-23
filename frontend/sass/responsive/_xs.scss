@@ -49,9 +49,12 @@
     .left-hr {
         margin-left: 8px;
     } //block 4
-    .blockb4-tab {
-        height: 700px;
-    }
+  .blockb4-tab {
+        height: 1185px;
+}
+.backimg2{
+       background-position: initial;
+}
     .inside_b4 .side_hr:after {
         left: -18px;
         top: 22px;
@@ -153,9 +156,7 @@
     .block-awards {
     height: 250px;
 }
-.backimg2{
-    background-repeat: no-repeat;
-}
+
 .wheel {
     width: 200px;
     margin: 0 auto;
@@ -190,5 +191,54 @@
 }
 .block-min-jurors {
     height: 520px;
+}
+.music-section {
+margin-top: 0px;
+}
+.leadership {
+    margin-top: 50px;
+}
+.inside_b4 .b4_flotimg{
+    margin-top: 38px;
+}
+.brand-icon li {
+    width: 50px;
+    height: 50px;
+}
+
+.barz li {
+    margin: 1.2rem 2.5rem;
+}
+.bike-name p {
+    font-size: 15px;
+}
+.bikeslider2 .flipDiv figure figcaption{
+   width: 65px;
+    height: 65px;
+    border:2px solid #9a1205;
+    margin: 0px 20px 0 20px;
+}
+
+.swiper-button-prev{
+    height:25px;
+    width:25px;
+        left: 0px;
+ }
+.swiper-button-next{
+     right:0;
+       height:25px;
+    width:25px;
+ }
+ .bikeslider2 img {
+    margin: 0 18px;
+}
+.bikeslider2 .flipDiv figure p{
+    font-size: 8px;
+}
+.footer p{
+        font-size: 10px;
+}
+.partner-img {
+    margin: 0px 0;
 }
 }
