@@ -23,6 +23,9 @@
     .inside_b1 {
         width: 80%;
         height: 510px;
+        .b1-txt {
+            margin-top: 60px;
+        }
     }
     .inside_b1 .h {
         margin-top: 20px;
@@ -94,10 +97,6 @@
             width: 36%;
         }
     }
-    .bikeslider2 img {
-        width: 140px;
-        height: 140px;
-    }
     .bikeslider2 {
         padding: 10px;
     }
@@ -123,14 +122,59 @@
     .inside_b8 .b8_div {
         padding: 40px;
     }
-    .blockb8-tab {
-        height: 300px;
-    }
-    .smoke,
+  .blockb8-tab {
+    height: 470px;
+}
     .blade1,
     .blade2,
     .blade3,
-    .blade4 {
+    .blade4,
+     {
         display: none;
     }
+    //scss by snehal
+
+    .h_bannerimg {
+        height: auto;
+    }
+
+
+.block-awards {
+    height: 420px;
+}
+.blockb4-tab {
+    height: 700px;
+}
+     .inside_b4 .b4_flotimg {
+    position: relative;
+    width: 350px;
+    margin-top: 75px;
+}
+.smoke {
+    position: absolute;
+    z-index: 4;
+    bottom: 6px;
+    left: 50px;
+    width: 80px;
+}
+.b5_text{
+    width:100%;
+        margin: 0;
+}
+.b5_slider{
+ width:100%;
+}
+.block-min-jurors{
+        height: 400px;
+}
+.bikeslider2 img {
+    width: 120px;
+    height: 120px;
+}
+footer li{
+    padding: 0 9px;
+}
+.barz li{
+        margin: 1.2rem 1.5rem;
+}
 }
