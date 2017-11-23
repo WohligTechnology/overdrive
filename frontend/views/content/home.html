@@ -138,7 +138,7 @@
                             <div class="back-games text-center" >
                                 <ul class="barz">
                                     <!--<li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>-->
-                                    <li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>
+                                    <li style="transform:translateY({{100 - l1.percent}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.percent|number:2}}%</span></li>
                                 </ul>
                                 <ul class="brand-icon">
                                     <li class="volkswagen" ng-repeat="l1 in l.company track by $index"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>

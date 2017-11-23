@@ -2,7 +2,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
-        TemplateService.class = ""; 
+        TemplateService.class = "";
 
         // $scope.mySlides = [{
         //     url: 'img/slider/1.png',
@@ -75,11 +75,11 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         $scope.facebookid = "Fodmag";
         $scope.facebookurl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F" + $scope.facebookid + "%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
-            // window.scrollBy({
-            //     top: 100, // could be negative value
-            //     left: 0,
-            //     behavior: 'smooth'
-            // });
+        // window.scrollBy({
+        //     top: 100, // could be negative value
+        //     left: 0,
+        //     behavior: 'smooth'
+        // });
         $('.inside_b1').scroll(function () {
             console.log("run");
         });
@@ -175,53 +175,37 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         });
 
 
-//for category img change//
+        //for category img change//
 
-$scope.smallImgClick=function (data) {
-    console.log("catData",data);
-console.log("big",data.img);
-$scope.catImg=data.img;
+        $scope.smallImgClick = function (data) {
+            console.log("catData", data);
+            console.log("big", data.img);
+            $scope.catImg = data.img;
 
-}
+        }
 
-//for category img change end//
+        //for category img change end//
+        
+        $scope.getCompany = function (awardcategoryId) {
+            console.log("catClicked");
+            console.log("awardcategoryId", awardcategoryId);
+            $scope.id = awardcategoryId;
+            console.log("$stateParams", $scope.id);
+            $scope.company = [];
+            NavigationService.callApiWithData('Awardcategory/getOne', {
+                _id: awardcategoryId
+            }, function (data) {
+                $scope.companyView = true;
+                $scope.currentHost = window.location.origin;
+                $uibModal.open({
+                    animation: true,
+                    templateUrl: 'views/modal/signup.html',
+                    scope: $scope,
+                    size: 'md',
 
-
-    //    $scope.clickVehicle= function(vehicleId){
-    //        console.log("vehicleId",vehicleId);
-    //        $scope.vehicleId=vehicleId;
-    //     $scope.signupOpen = function () {
-    //         $uibModal.open({
-    //             animation: true,
-    //             templateUrl: 'views/modal/signup.html',
-    //             scope: $scope,
-    //             size: 'md',
-
-    //         });
-    //     };
-    //    }
-
-
-$scope.getCompany = function (awardcategoryId) {
-    console.log("catClicked");
-    console.log("awardcategoryId",awardcategoryId);
-    $scope.id=awardcategoryId;
-            console.log("$stateParams",$scope.id);
-     $scope.company = [];
-     NavigationService.callApiWithData('Awardcategory/getOne', {
-       _id: awardcategoryId
-     }, function (data) {
-      $scope.companyView = true;
-         $scope.currentHost = window.location.origin;
-         $uibModal.open({
-                animation: true,
-                templateUrl: 'views/modal/signup.html',
-                scope: $scope,
-                size: 'md',
-
+                });
             });
-     });
-   };
+        };
         // $scope.signupOpen = function (vehicleId) {
         //     console.log("vehicleId",vehicleId);
         //     $scope.vehicleId=vehicleId;
@@ -235,25 +219,25 @@ $scope.getCompany = function (awardcategoryId) {
 
         //     });
         // };
-       
-        
 
 
 
-$scope.submitUser = function (data) {
+
+
+        $scope.submitUser = function (data) {
             console.log("submit voter", data);
             NavigationService.callApiWithData("Voter/saveVoter", data, function (data) {
                 if (data.value == true) {
                     console.log("value");
-                if (data.data._id) {
-                    console.log("$scope.userId", data.data._id);
-                    $scope.userId = data.data._id;
-                    $state.go('nomination', {
-                        'id':$scope.id
-                    });
-                } else {
-                    $scope.errorVoterLogin = "Something Went Wrong!!!";
-                }
+                    if (data.data._id) {
+                        console.log("$scope.userId", data.data._id);
+                        $scope.userId = data.data._id;
+                        $state.go('nomination', {
+                            'id': $scope.id
+                        });
+                    } else {
+                        $scope.errorVoterLogin = "Something Went Wrong!!!";
+                    }
                 }
             });
         }
@@ -269,19 +253,34 @@ $scope.submitUser = function (data) {
         $scope.awardcategory = function () {
             NavigationService.callApiWithData('Awardcategory/search', {}, function (data) {
                 var awardcategory = [];
-                $scope.totalVoteCount = 0;
+                $scope.totalVote = 0;
                 $scope.awardcategory = data.data.results;
-                 console.log("$scope.awardcategory",$scope.awardcategory);
-                  _.each( $scope.awardcategory, function (value) {
-               console.log("value",value)
-               $scope.companyvote = value.company;
-                    _.each( value.company, function (value1) {
-                        $scope.value1 = value1;
-               console.log("value1",value1)
-               $scope.totalVoteCount += value.voteCount;
+                console.log("$scope.awardcategory", $scope.awardcategory);
+                _.each($scope.awardcategory, function (value) {
+                    console.log("value", value)
+                    // $scope.companyvote = value.company;
+                    // _.each(value.company, function (value1) {
+                    //     $scope.value1 = value1;
+                    //     console.log("value1", value1)
+                    //     console.log("value1.voteCount", value1.voteCount)
+                    //     $scope.totalVote += value1.voteCount;
+                    //     // console.log("totalVote",$scope.totalVote)
+                    // })
+//                     _.each(value.company,function(key){
+//                         console.log("key",key);
+                      
+//                       $scope.totalVote +=key.voteCount;
+//   console.log("$scope.totalVote", $scope.totalVote);
+//                     });
+ value.totalCount= _.sumBy(value.company, 'voteCount');
+ console.log(value.totalCount,"value.totalCount");
+ _.each(value.company,function(n){
+     n.percent =n.voteCount/value.totalCount*100;
+ })
 
-            })
-            })
+                  
+                });
+                 console.log("$scope.awardcategory", $scope.awardcategory);
             });
         };
 
@@ -310,10 +309,10 @@ $scope.submitUser = function (data) {
         //     });
         // };
 
-// getCompanyData(awardcategory._id);
+        // getCompanyData(awardcategory._id);
         $scope.companyvote = [];
         $scope.getCompanyData = function (awardcategoryId) {
-             console.log("inside award vote");
+            console.log("inside award vote");
             NavigationService.callApiWithData('Awardcategory/getOne', {
                 _id: awardcategoryId
             }, function (data) {
@@ -321,9 +320,9 @@ $scope.submitUser = function (data) {
                 $scope.companyvote = data.data.company;
                 console.log("$scope.companyvote", $scope.companyvote);
                 _.each($scope.companyvote, function (value) {
-                        $scope.totalVoteCount += value.voteCount;
-                    })
-                    // console.log("$scope.totalVoteCount", $scope.totalVoteCount);
+                    $scope.totalVoteCount += value.voteCount;
+                })
+                // console.log("$scope.totalVoteCount", $scope.totalVoteCount);
                 $scope.awardcategoryName = data.data.name;
             });
         };
@@ -339,13 +338,13 @@ $scope.submitUser = function (data) {
         };
 
 
- $scope.changeCompany = function (company) {
-        // console.log(company.companyObj);
-        $scope.companyId = company.companyObj._id;
-        $scope.companyname = company.companyObj.name;
-        // console.log($scope.companyname);
-      
-    };
+        $scope.changeCompany = function (company) {
+            // console.log(company.companyObj);
+            $scope.companyId = company.companyObj._id;
+            $scope.companyname = company.companyObj.name;
+            // console.log($scope.companyname);
+
+        };
 
         $scope.submitVote = function () {
             // console.log($scope.companyId)
@@ -474,9 +473,9 @@ $scope.submitUser = function (data) {
         $scope.navigation = NavigationService.getNavigation();
     })
 
-// Example API Controller
-.controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
-    apiService.getDemo($scope.formData, function (data) {
-        console.log(data);
+    // Example API Controller
+    .controller('DemoAPICtrl', function ($scope, TemplateService, apiService, NavigationService, $timeout) {
+        apiService.getDemo($scope.formData, function (data) {
+            console.log(data);
+        });
     });
-});
