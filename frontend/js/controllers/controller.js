@@ -68,7 +68,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                     },
                 });
 
-            }, 100);
+            }, 1000);
 
         }
 

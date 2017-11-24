@@ -10901,7 +10901,7 @@ body {
 
 .b5_slider {
   width: 70%;
-  height: 170px;
+  height: 230px;
   background: black;
   margin-left: auto;
   margin-right: 50px;
@@ -10912,14 +10912,15 @@ body {
 .profile_slider_img {
   /* max-height: 100px; */
   margin: 0 auto;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 5px solid #750901;
   -o-object-fit: cover;
      object-fit: cover; }
   .profile_slider_img:hover {
-    border: 5px solid #750901; }
+    border: 5px solid red;
+    margin: 7px auto; }
 
 .pro_name {
   color: #d4d4d4;
@@ -11395,14 +11396,14 @@ header {
       -webkit-animation-delay: 0.5s;
               animation-delay: 0.5s; }
     .barz li:nth-of-type(2) {
-      -webkit-animation-delay: 1s;
-              animation-delay: 1s; }
+      -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s; }
     .barz li:nth-of-type(3) {
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s; }
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
     .barz li:nth-of-type(4) {
-      -webkit-animation-delay: 0.4s;
-              animation-delay: 0.4s; }
+      -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s; }
     .barz li .percent-label {
       position: absolute;
       left: -5px;
@@ -11501,9 +11502,11 @@ footer .border-white {
   border-bottom: 2px solid black; }
 
 .copy-foot {
-  padding: 10px 0;
+  padding: 8px 0;
   background: black;
   color: white; }
+  .copy-foot p {
+    font-size: 10px; }
 
 .sponser h4 {
   font-size: 16px;

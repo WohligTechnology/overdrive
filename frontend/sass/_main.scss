@@ -495,7 +495,7 @@ body {
 
 .b5_slider {
     width: 70%;
-    height: 170px;
+    height: 230px;
     background: black;
     margin-left: auto;
     margin-right: 50px;
@@ -507,13 +507,14 @@ body {
 .profile_slider_img {
     /* max-height: 100px; */
     margin: 0 auto;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 5px solid #750901;
     object-fit: cover;
     &:hover{
        border: 5px solid red;
+       margin: 7px auto;
     }
 }
 
@@ -1160,9 +1161,12 @@ footer .border-white {
 }
 
 .copy-foot {
-    padding: 10px 0;
+    padding: 8px 0;
     background: black;
     color: white;
+    p{
+        font-size: 10px;
+    }
 }
 
 .sponser {
