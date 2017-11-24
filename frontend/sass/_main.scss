@@ -13,10 +13,12 @@ $brand-info: #000072 !default;
 .gray-bg {
     background-color: #e6e6e6
 }
+
 @font-face {
     font-family: 'impact';
     src: url("../fonts/impact.ttf");
-} 
+}
+
 body {
     padding-top: 70px;
 }
@@ -223,7 +225,7 @@ body {
     display: inline-block;
     text-align: left;
     height: 0px;
-    width: 36%;
+    width: 33%;
     margin: 5px;
     border: 1px solid #a5a5a5;
     vertical-align: middle;
@@ -238,7 +240,7 @@ body {
     display: inline-block;
     text-align: left;
     height: 0px;
-    width: 36%;
+    width: 33%;
     margin: 5px;
     border: 1px solid #a5a5a5;
     vertical-align: middle;
@@ -348,7 +350,7 @@ body {
         // text-overflow: ellipsis;
         margin-right: 10px;
         color: black;
-         margin-top: 120px; // display: -webkit-box;
+        margin-top: 120px; // display: -webkit-box;
         // -webkit-line-clamp: 17;
         // -webkit-box-orient: vertical;
     }
@@ -424,7 +426,7 @@ body {
 .inside_b4 {
     .side_hr:after {
         width: 42%;
-            left: -25px;
+        left: -25px;
     }
     .side_hr:before {
         width: 42%;
@@ -510,6 +512,9 @@ body {
     border-radius: 50%;
     border: 5px solid #750901;
     object-fit: cover;
+    &:hover{
+       border: 5px solid red;
+    }
 }
 
 .pro_name {
@@ -597,7 +602,7 @@ body {
     position: relative;
     top: -35px;
     left: 0px;
-    margin: 50px;
+    margin:70px 50px;
 }
 
 .nav-tabs>li.active>a,
@@ -876,8 +881,8 @@ header {
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        width: 350px!important;
-        height: 270px;
+        width: 400px !important;
+        height: 300px;
         border: 2px solid white;
     }
     .swiper-pagination-bullets {
@@ -988,15 +993,19 @@ header {
 
 .jurors-slider {
     cursor: pointer;
+    transition: all ease 300ms;
+      &:hover{
+          @include transform(scale(1.1));
+      } 
 }
 
 .nav_highlight {
     position: fixed;
-    bottom: 38px;
+    bottom: 5px;
     right: 10px;
     z-index: 3;
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     cursor: pointer;
     transform: rotate(0deg);
@@ -1026,7 +1035,7 @@ header {
         display: inline-block;
         width: .5rem;
         height: calc(100% - 12px);
-        margin:1.2rem 2.5rem;
+        margin: 1.2rem 2.5rem;
         border-radius: 2px;
         list-style: none;
         background-image: -webkit-linear-gradient(95deg, #561209, #eee);
