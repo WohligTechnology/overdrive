@@ -18,25 +18,25 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     name: "MOTOBIKES"
         // }];
 
-        // $scope.ongame = function () {
-        //     console.log("inside game enter")
-        //     $timeout(function () {
-        //         $(".barz>li").css("-webkit-animation", "none");
-        //         $(".barz>li").css("-moz-animation", "none");
-        //         $(".barz>li").css("-ms-animation", "none");
-        //         $(".barz>li").css("animation", "none");
-        //     }, 2000)
-        // }
+        $scope.ongame = function () {
+            console.log("inside game enter")
+            $timeout(function () {
+                $(".barz>li").css("-webkit-animation", "none");
+                $(".barz>li").css("-moz-animation", "none");
+                $(".barz>li").css("-ms-animation", "none");
+                $(".barz>li").css("animation", "none");
+            }, 2000)
+        }
 
-        //     $scope.ongamenot = function () {
-        // console.log("inside ongamenot");
+            $scope.ongamenot = function () {
+        console.log("inside ongamenot");
 
-        //             $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
-        //             $(".barz>li").css("-moz-animation", "");
-        //             $(".barz>li").css("-ms-animation", "");
-        //             $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+                    $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+                    $(".barz>li").css("-moz-animation", "");
+                    $(".barz>li").css("-ms-animation", "");
+                    $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
 
-        //     }
+            }
         $scope.swiperInitialize = function (e) {
             $scope.galleryImg = e.img;
 
