@@ -55,19 +55,15 @@ myApp.directive('img', function ($compile, $parse) {
                     // h4 = $(this).scrollTop() - 3100;
                     // $('.blade4').css("height", h4);
                     console.log($(this).scrollTop());
-                         if($(this).scrollTop() <2400){
-                       $timeout(function () {
+                         if($(this).scrollTop() <2500 || $(this).scrollTop() >2700){
+                     
                      $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
                     $(".barz>li").css("-moz-animation", "");
                     $(".barz>li").css("-ms-animation", "");
                     $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
-            }, 1000)
-        
-                       
+           
                     }
-                    if($(this).scrollTop() >2400){
-
-                           
+                    if($(this).scrollTop() >2500 ||  $(this).scrollTop() <2700){
             $timeout(function () {
                 $(".barz>li").css("-webkit-animation", "none");
                 $(".barz>li").css("-moz-animation", "none");

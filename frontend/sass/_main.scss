@@ -869,7 +869,18 @@ header {
     background-image: url("../img/arrow_left.png") !important;
     top: 50% !important;
 }
+.jurors-slider-main{
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+        right: 0px;
+}
 
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+        left: 0px;
+
+}
+}
 .cust-transition {
     transition: all 2s;
 }
