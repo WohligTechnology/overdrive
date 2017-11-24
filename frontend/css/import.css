@@ -10942,6 +10942,8 @@ body {
   color: #d4d4d4;
   font-size: 16px;
   padding: 10px; }
+  .b6-bike-name p {
+    text-align: center; }
 
 .bikeslider2 {
   padding: 50px; }
@@ -11269,6 +11271,9 @@ header {
 .partner-img {
   margin: 50px 0; }
 
+.descrip-color {
+  color: #9a1205 !important; }
+
 .bikeslider2 .flipDiv {
   position: relative;
   width: 100%;
@@ -11318,7 +11323,7 @@ header {
   font-family: 'Robotor';
   font-size: 16px;
   margin: 0;
-  color: white !important;
+  color: white;
   text-align: center; }
 
 .bikeslider2 .flipDiv .descrip {
@@ -11404,14 +11409,14 @@ header {
       -webkit-animation-delay: 0.4s;
               animation-delay: 0.4s; }
     .barz li:nth-of-type(2) {
-      -webkit-animation-delay: 0.8s;
-              animation-delay: 0.8s; }
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
     .barz li:nth-of-type(3) {
-      -webkit-animation-delay: 0.3s;
-              animation-delay: 0.3s; }
+      -webkit-animation-delay: 1.2s;
+              animation-delay: 1.2s; }
     .barz li:nth-of-type(4) {
-      -webkit-animation-delay: 0.5s;
-              animation-delay: 0.5s; }
+      -webkit-animation-delay: 1s;
+              animation-delay: 1s; }
     .barz li .percent-label {
       position: absolute;
       left: -5px;
@@ -11940,7 +11945,7 @@ footer .border-white {
     margin-left: 6px; }
   .inside_b2 .side_hr:after,
   .inside_b2 .side_hr:before {
-    width: 22%;
+    width: 15%;
     top: 22px; }
   .bike-name {
     font-size: 10px;
@@ -11957,10 +11962,12 @@ footer .border-white {
     background-position: initial; }
   .inside_b4 .side_hr:after {
     left: -18px;
-    top: 22px; }
+    top: 22px;
+    width: 30%; }
   .inside_b4 .side_hr:before {
     right: -18px;
-    top: 22px; }
+    top: 22px;
+    width: 30%; }
   .inside_b4 .b4_racetext {
     width: 70%;
     margin: 0 auto;
@@ -12105,4 +12112,6 @@ footer .border-white {
     height: 340px; }
   .nav-tabs {
     top: 0;
-    margin: 20px; } }
+    margin: 20px; }
+  .inside_b7 {
+    overflow: hidden; } }
