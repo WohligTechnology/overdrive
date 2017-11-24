@@ -925,7 +925,9 @@ header {
 .partner-img {
     margin: 50px 0;
 }
-
+.descrip-color{
+    color:#9a1205 !important;
+}
 //
 .bikeslider2 {
     .flipDiv {
@@ -975,7 +977,7 @@ header {
         font-family: 'Robotor';
         font-size: 16px;
         margin: 0;
-        color: white !important;
+        color: white;
         text-align: center;
     }
     .flipDiv .descrip {

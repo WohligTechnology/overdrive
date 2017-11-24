@@ -33,7 +33,7 @@
     } //block 2
     .inside_b2 .side_hr:after,
     .inside_b2 .side_hr:before {
-        width: 22%;
+           width: 15%;
         top: 22px;
     }
     .bike-name {
@@ -58,10 +58,13 @@
     .inside_b4 .side_hr:after {
         left: -18px;
         top: 22px;
+        width:30%
+        
     }
     .inside_b4 .side_hr:before {
         right: -18px;
         top: 22px;
+    width: 30%;
     }
     .inside_b4 .b4_racetext {
         width: 70%;
@@ -264,5 +267,8 @@
   .nav-tabs{
       top:0;
       margin: 20px;
+  }
+  .inside_b7{
+overflow: hidden;
   }
 }
