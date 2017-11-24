@@ -129,15 +129,15 @@
 
 
 
-<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
+                    <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
                         <div>
                             <div class="text-center bike-name">
                                 <p class="text-uppercase">{{l.name}}</p>
                             </div>
-                            <div class="back-games text-center" >
+                            <div class="back-games text-center">
                                 <ul class="barz">
                                     <!--<li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>-->
-                                    <li style="transform:translateY({{100 - l1.percent}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.percent|number:2}}%</span></li>
+                                    <li style="transform:translateY({{100 - l1.percent}}%)" ng-repeat="l1 in l.company track by $index"><span class="percent-label">{{l1.percent|number:2}}%</span></li>
                                 </ul>
                                 <ul class="brand-icon">
                                     <li class="volkswagen" ng-repeat="l1 in l.company track by $index"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>
@@ -259,8 +259,8 @@
                                     </div>
                                     <figcaption>
                                         <div class="descrip">
-                                              <p class="text-center text-uppercase  descrip-color">
-                                              {{s.bname}}
+                                            <p class="text-center text-uppercase  descrip-color">
+                                                {{s.bname}}
                                             </p>
                                             <p class="text-center text-uppercase">
                                                 {{s.wname}}
@@ -290,7 +290,7 @@
                 <div class="col-md-5 col-sm-5 col-xs-12 hide-xs"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
                 <div class="col-md-7 col-sm-7 col-xs-12">
                     <uib-tabset active="active" class="custom-tab">
-                        <uib-tab index="$index" ng-repeat="tab in gallerytabs track by $index" heading="{{tab.year}}" disable="tab.disabled" select="swiperInitialize(tab);"
+                        <uib-tab index="$index" ng-repeat="tab in gallerytabs| orderBy : '-year' track by $index" heading="{{tab.year}}" disable="tab.disabled" select="swiperInitialize(tab);"
                             ng-click="bubble=true">
                             <div class="swiper-container1" ng-if="bubble">
                                 <div class="swiper-wrapper">
