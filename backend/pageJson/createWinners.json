@@ -33,6 +33,15 @@
         "id": "wname",
         "validation": ["required", "trim", "unique"],
         "url": ""
+    },
+    {
+        "name": "Brand Name",
+        "type": "text",
+        "tableRef": "bname",
+        "placeholder": "Enter Brand Name",
+        "id": "bname",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",

@@ -18,6 +18,11 @@
         "name": "Winner Name",
         "isSort": "",
         "tableRef": "wname"
+    },
+     {
+        "name": "Brand Name",
+        "isSort": "",
+        "tableRef": "bname"
     }],
     "action": [{
         "name": "edit",
