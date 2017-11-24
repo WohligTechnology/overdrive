@@ -9,6 +9,10 @@ var schema = new Schema({
     wname: {
         type: String,
         required: true
+    },
+    bname: {
+        type: String,
+        required: true
     }
 });
 
