@@ -1,24 +1,24 @@
 myApp.directive('img', function ($compile, $parse) {
-        return {
-            restrict: 'E',
-            replace: false,
-            link: function ($scope, element, attrs) {
-                var $element = $(element);
-                if (!attrs.noloading) {
-                    $element.after("<img src='img/loading.gif' class='loading' />");
-                    var $loading = $element.next(".loading");
-                    $element.load(function () {
-                        $loading.remove();
-                        $(this).addClass("doneLoading");
-                    });
-                } else {
-                    $($element).addClass("doneLoading");
-                }
+    return {
+        restrict: 'E',
+        replace: false,
+        link: function ($scope, element, attrs) {
+            var $element = $(element);
+            if (!attrs.noloading) {
+                $element.after("<img src='img/loading.gif' class='loading' />");
+                var $loading = $element.next(".loading");
+                $element.load(function () {
+                    $loading.remove();
+                    $(this).addClass("doneLoading");
+                });
+            } else {
+                $($element).addClass("doneLoading");
             }
-        };
-    })
+        }
+    };
+})
 
-    .directive('hideOnScroll', function ($document) {
+.directive('hideOnScroll', function ($document) {
         return {
             restrict: 'EA',
             replace: false,
@@ -37,7 +37,7 @@ myApp.directive('img', function ($compile, $parse) {
             }
         };
     })
-    .directive('scrollAnimation', function ($document,$timeout) {
+    .directive('scrollAnimation', function ($document, $timeout) {
         return {
             restrict: 'EA',
             replace: false,
@@ -55,23 +55,21 @@ myApp.directive('img', function ($compile, $parse) {
                     // h4 = $(this).scrollTop() - 3100;
                     // $('.blade4').css("height", h4);
                     console.log($(this).scrollTop());
-                         if($(this).scrollTop() <2500 || $(this).scrollTop() >2700){
-                     
-                     $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
-                    $(".barz>li").css("-moz-animation", "");
-                    $(".barz>li").css("-ms-animation", "");
-                    $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
-           
+                    if (($(this).scrollTop() < 2400)) {
+                        $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+                        $(".barz>li").css("-moz-animation", "");
+                        $(".barz>li").css("-ms-animation", "");
+                        $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
                     }
-                    if($(this).scrollTop() >2500 ||  $(this).scrollTop() <2700){
-            $timeout(function () {
-                $(".barz>li").css("-webkit-animation", "none");
-                $(".barz>li").css("-moz-animation", "none");
-                $(".barz>li").css("-ms-animation", "none");
-                $(".barz>li").css("animation", "none");
-            }, 2000)
-        
-                       
+                    if ($(this).scrollTop() > 2400) {
+                        $timeout(function () {
+                            $(".barz>li").css("-webkit-animation", "none");
+                            $(".barz>li").css("-moz-animation", "none");
+                            $(".barz>li").css("-ms-animation", "none");
+                            $(".barz>li").css("animation", "none");
+                        }, 2000)
+
+
                     }
 
 
@@ -101,68 +99,68 @@ myApp.directive('img', function ($compile, $parse) {
     })
 
 
-    .directive('fancybox', function ($document) {
-        return {
-            restrict: 'EA',
-            replace: false,
-            link: function (scope, element, attr) {
-                var $element = $(element);
-                var target;
-                if (attr.rel) {
-                    target = $("[rel='" + attr.rel + "']");
-                } else {
-                    target = element;
+.directive('fancybox', function ($document) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function (scope, element, attr) {
+            var $element = $(element);
+            var target;
+            if (attr.rel) {
+                target = $("[rel='" + attr.rel + "']");
+            } else {
+                target = element;
+            }
+
+            target.fancybox({
+                openEffect: 'fade',
+                closeEffect: 'fade',
+                closeBtn: true,
+                padding: 0,
+                helpers: {
+                    media: {}
                 }
+            });
+        }
+    };
+})
 
-                target.fancybox({
-                    openEffect: 'fade',
-                    closeEffect: 'fade',
-                    closeBtn: true,
-                    padding: 0,
-                    helpers: {
-                        media: {}
-                    }
-                });
-            }
-        };
-    })
-
-    .directive('autoHeight', function ($compile, $parse) {
-        return {
-            restrict: 'EA',
-            replace: false,
-            link: function ($scope, element, attrs) {
-                var $element = $(element);
-                var windowHeight = $(window).height();
-                $element.css("min-height", windowHeight);
-            }
-        };
-    })
+.directive('autoHeight', function ($compile, $parse) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function ($scope, element, attrs) {
+            var $element = $(element);
+            var windowHeight = $(window).height();
+            $element.css("min-height", windowHeight);
+        }
+    };
+})
 
 
-    .directive('replace', function () {
-        return {
-            require: 'ngModel',
-            scope: {
-                regex: '@replace',
-                with: '@with'
-            },
-            link: function (scope, element, attrs, model) {
-                model.$parsers.push(function (val) {
-                    if (!val) {
-                        return;
-                    }
-                    var regex = new RegExp(scope.regex);
-                    var replaced = val.replace(regex, scope.with);
-                    if (replaced !== val) {
-                        model.$setViewValue(replaced);
-                        model.$render();
-                    }
-                    return replaced;
-                });
-            }
-        };
-    })
+.directive('replace', function () {
+    return {
+        require: 'ngModel',
+        scope: {
+            regex: '@replace',
+            with: '@with'
+        },
+        link: function (scope, element, attrs, model) {
+            model.$parsers.push(function (val) {
+                if (!val) {
+                    return;
+                }
+                var regex = new RegExp(scope.regex);
+                var replaced = val.replace(regex, scope.with);
+                if (replaced !== val) {
+                    model.$setViewValue(replaced);
+                    model.$render();
+                }
+                return replaced;
+            });
+        }
+    };
+})
 
 
 ;
