@@ -18,15 +18,15 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     name: "MOTOBIKES"
         // }];
 
-        $scope.ongame = function () {
-            console.log("inside game enter")
-            $timeout(function () {
-                $(".barz>li").css("-webkit-animation", "none");
-                $(".barz>li").css("-moz-animation", "none");
-                $(".barz>li").css("-ms-animation", "none");
-                $(".barz>li").css("animation", "none");
-            }, 2000)
-        }
+        // $scope.ongame = function () {
+        //     console.log("inside game enter")
+        //     $timeout(function () {
+        //         $(".barz>li").css("-webkit-animation", "none");
+        //         $(".barz>li").css("-moz-animation", "none");
+        //         $(".barz>li").css("-ms-animation", "none");
+        //         $(".barz>li").css("animation", "none");
+        //     }, 2000)
+        // }
 
         //     $scope.ongamenot = function () {
         // console.log("inside ongamenot");

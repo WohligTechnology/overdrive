@@ -37,7 +37,7 @@ myApp.directive('img', function ($compile, $parse) {
             }
         };
     })
-    .directive('scrollAnimation', function ($document) {
+    .directive('scrollAnimation', function ($document,$timeout) {
         return {
             restrict: 'EA',
             replace: false,
@@ -55,6 +55,30 @@ myApp.directive('img', function ($compile, $parse) {
                     // h4 = $(this).scrollTop() - 3100;
                     // $('.blade4').css("height", h4);
                     console.log($(this).scrollTop());
+                         if($(this).scrollTop() <2400){
+                       $timeout(function () {
+                     $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+                    $(".barz>li").css("-moz-animation", "");
+                    $(".barz>li").css("-ms-animation", "");
+                    $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+            }, 1000)
+        
+                       
+                    }
+                    if($(this).scrollTop() >2400){
+
+                           
+            $timeout(function () {
+                $(".barz>li").css("-webkit-animation", "none");
+                $(".barz>li").css("-moz-animation", "none");
+                $(".barz>li").css("-ms-animation", "none");
+                $(".barz>li").css("animation", "none");
+            }, 2000)
+        
+                       
+                    }
+
+
                     if ($(this).scrollTop() < 100) {
                         $('.cust-transition').css("transition", "none")
                         $('.blade1').css("height", '0%');
