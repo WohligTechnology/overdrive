@@ -21,6 +21,7 @@
     }
     .inside_b1 .b1_img img {
         margin-top: 0px;
+        width: 100%;
     }
     .block {
         height: 450px;
@@ -33,7 +34,7 @@
     } //block 2
     .inside_b2 .side_hr:after,
     .inside_b2 .side_hr:before {
-           width: 15%;
+        width: 15%;
         top: 22px;
     }
     .bike-name {
@@ -58,13 +59,12 @@
     .inside_b4 .side_hr:after {
         left: -18px;
         top: 22px;
-        width:30%
-        
+        width: 30%
     }
     .inside_b4 .side_hr:before {
         right: -18px;
         top: 22px;
-    width: 30%;
+        width: 30%;
     }
     .inside_b4 .b4_racetext {
         width: 70%;
@@ -190,7 +190,7 @@
         width: 80px;
     }
     .nomination-flip .flipDiv figure figcaption {
-        left: 22%;
+        left: 50%;
         width: 200px;
         height: 200px;
     }
@@ -257,18 +257,33 @@
         margin-bottom: 30px;
     }
     #gallery .swiper-slide {
-           width: 322px !important;
-    height: 200px;
-    margin: 50px 35px;
+        width: 322px !important;
+        height: 200px;
+        margin: 50px 35px;
     }
     .block-gallery {
-    height: 340px;
-}
-  .nav-tabs{
-      top:0;
-      margin: 20px;
-  }
-  .inside_b7{
-overflow: hidden;
-  }
+        height: 340px;
+    }
+    .nav-tabs {
+        top: 0;
+        margin: 20px;
+    }
+    .inside_b7 {
+        overflow: hidden;
+    }
+    .thumb img {
+        width: 50px;
+    }
+    .thankyou {
+        padding: 0px 20px 30px;
+        margin-top: 10px;
+        h4 {
+            font-size: 12px;
+        }
+    }
+    .animation-go {
+        img {
+            width: 120px !important;
+        }
+    }
 }

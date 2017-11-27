@@ -338,8 +338,7 @@ body {
     }
     .b1_img {
         img {
-            width: 100%;
-            margin-top: 70px;
+            margin: 30px auto 0;
             max-height: 400px;
         }
     }
@@ -512,9 +511,9 @@ body {
     border-radius: 50%;
     border: 5px solid #750901;
     object-fit: cover;
-    &:hover{
-       border: 5px solid red;
-       margin: 7px auto;
+    &:hover {
+        border: 5px solid red;
+        margin: 7px auto;
     }
 }
 
@@ -546,7 +545,7 @@ body {
     color: #d4d4d4;
     font-size: 16px;
     padding: 10px;
-    p{
+    p {
         text-align: center;
     }
 }
@@ -606,7 +605,7 @@ body {
     position: relative;
     top: -35px;
     left: 0px;
-    margin:70px 50px;
+    margin: 70px 50px;
 }
 
 .nav-tabs>li.active>a,
@@ -872,18 +871,18 @@ header {
     background-image: url("../img/arrow_left.png") !important;
     top: 50% !important;
 }
-.jurors-slider-main{
-.swiper-button-next,
-.swiper-container-rtl .swiper-button-prev {
+
+.jurors-slider-main {
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
         right: 0px;
-}
-
-.swiper-button-prev,
-.swiper-container-rtl .swiper-button-next {
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
         left: 0px;
+    }
+}
 
-}
-}
 .cust-transition {
     transition: all 2s;
 }
@@ -928,9 +927,11 @@ header {
 .partner-img {
     margin: 50px 0;
 }
-.descrip-color{
-    color:#9a1205 !important;
+
+.descrip-color {
+    color: #9a1205 !important;
 }
+
 //
 .bikeslider2 {
     .flipDiv {
@@ -1011,9 +1012,9 @@ header {
 .jurors-slider {
     cursor: pointer;
     transition: all ease 300ms;
-      &:hover{
-          @include transform(scale(1.1));
-      } 
+    &:hover {
+        @include transform(scale(1.1));
+    }
 }
 
 .nav_highlight {
@@ -1180,7 +1181,7 @@ footer .border-white {
     padding: 8px 0;
     background: black;
     color: white;
-    p{
+    p {
         font-size: 10px;
     }
 }
@@ -1327,7 +1328,7 @@ footer .border-white {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         top: 0;
-        left: 0;
+        left: 50%;
         border-radius: 50%;
         width: 250px;
         height: 250px;
@@ -1365,7 +1366,7 @@ footer .border-white {
         z-index: 0;
     }
     figcaption {
-        transform: rotateY(0) !important;
+        @include transform(translateX(-50%) rotateY(0) !important);
         z-index: 9;
     }
 }
@@ -1392,12 +1393,27 @@ footer .border-white {
     width: 50px;
 }
 
+@keyframes moving-car {
+    from {
+        @include transform(translateX(-100%));
+    }
+    to {
+        @include transform(translateX(-5%));
+    }
+}
+
+.animation-go {
+    @include transform(translateX(-100%));
+    @include animation(moving-car 1.5s linear 0.5s forwards);
+}
+
 .thankyou {
+    padding: 0 35px 30px 35px;
     .thank-border {
         border: 2px solid red;
         padding: 15px 0;
+        overflow: hidden;
     }
-    padding: 0 35px 30px 35px;
     h4 {
         color: red;
         letter-spacing: 1px;

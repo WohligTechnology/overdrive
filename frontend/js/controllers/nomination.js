@@ -9,11 +9,11 @@
      $scope.formSubmitted = true;
    };
 
-  //  $scope.class = [];
-  //  $scope.changeClass = function (index) {
-  //    $scope.class = [];
-  //    $scope.class[index] = "n_flip";
-  //  };
+   //  $scope.class = [];
+   //  $scope.changeClass = function (index) {
+   //    $scope.class = [];
+   //    $scope.class[index] = "n_flip";
+   //  };
 
 
    //  $scope.Nomination = [{
@@ -57,10 +57,10 @@
    });
 
 
-  //  NavigationService.callApi("Awardcategory/search", function (data) {
-  //    console.log("Awardcategory data", data);
-  //    $scope.Nomination = data.data.results;
-  //  });
+   //  NavigationService.callApi("Awardcategory/search", function (data) {
+   //    console.log("Awardcategory data", data);
+   //    $scope.Nomination = data.data.results;
+   //  });
 
 
    //for vote//
@@ -79,42 +79,42 @@
 
    $scope.awardcategory();
 
-  //  $scope.getCompany = function (awardcategoryId) {
-  //    $scope.company = [];
-  //    NavigationService.callApiWithData('Awardcategory/getOne', {
-  //      _id: awardcategoryId
-  //    }, function (data) {
-  //      if ($.jStorage.get("accessToken")) {
-  //        $scope.companyView = false;
-  //        $scope.awardcategoryId = awardcategoryId;
-  //        $scope.company = data.data.company;
-  //        $scope.awardcategoryName = data.data.name;
-  //      } else {
-  //        $scope.companyView = true;
-  //        $scope.currentHost = window.location.origin;
-  //        $uibModal.open({
-  //          animation: true,
-  //          templateUrl: 'views/content/login.html',
-  //          scope: $scope,
-  //          size: 'lg',
-  //        });
-  //      }
-  //    });
-  //  };
+   //  $scope.getCompany = function (awardcategoryId) {
+   //    $scope.company = [];
+   //    NavigationService.callApiWithData('Awardcategory/getOne', {
+   //      _id: awardcategoryId
+   //    }, function (data) {
+   //      if ($.jStorage.get("accessToken")) {
+   //        $scope.companyView = false;
+   //        $scope.awardcategoryId = awardcategoryId;
+   //        $scope.company = data.data.company;
+   //        $scope.awardcategoryName = data.data.name;
+   //      } else {
+   //        $scope.companyView = true;
+   //        $scope.currentHost = window.location.origin;
+   //        $uibModal.open({
+   //          animation: true,
+   //          templateUrl: 'views/content/login.html',
+   //          scope: $scope,
+   //          size: 'lg',
+   //        });
+   //      }
+   //    });
+   //  };
 
-  //  $scope.companyvote = [];
-  //  $scope.getCompanyData = function (awardcategoryId) {
-  //    NavigationService.callApiWithData('Awardcategory/getOne', {
-  //      _id: awardcategoryId
-  //    }, function (data) {
-  //      $scope.totalVoteCount = 0;
-  //      $scope.companyvote = data.data.company;
-  //      _.each($scope.companyvote, function (value) {
-  //        $scope.totalVoteCount += value.voteCount;
-  //      })
-  //      $scope.awardcategoryName = data.data.name;
-  //    });
-  //  };
+   //  $scope.companyvote = [];
+   //  $scope.getCompanyData = function (awardcategoryId) {
+   //    NavigationService.callApiWithData('Awardcategory/getOne', {
+   //      _id: awardcategoryId
+   //    }, function (data) {
+   //      $scope.totalVoteCount = 0;
+   //      $scope.companyvote = data.data.company;
+   //      _.each($scope.companyvote, function (value) {
+   //        $scope.totalVoteCount += value.voteCount;
+   //      })
+   //      $scope.awardcategoryName = data.data.name;
+   //    });
+   //  };
 
    $scope.getCompanyDescription = function (awardcategoryId) {
      // console.log(awardcategoryId);
@@ -127,15 +127,15 @@
    };
 
 
-$scope.class = [];
-   $scope.changeCompany = function (companyId,index) {
-      $scope.class = [];
+   $scope.class = [];
+   $scope.changeCompany = function (companyId, index) {
+     $scope.class = [];
      $scope.class[index] = "n_flip";
      console.log("changeCompany", companyId);
      $scope.companyId = companyId;
 
    };
-
+   $scope.animationAdd = "";
    $scope.submitVote = function () {
      console.log("submit vote");
      // console.log($scope.companyId)
@@ -157,6 +157,7 @@ $scope.class = [];
            size: 'md',
 
          });
+         $scope.animationAdd = "animation-go";
        });
      }
    };
