@@ -128,6 +128,7 @@
                             </div>
                         </div>
                     </div>-->
+<<<<<<< HEAD
                         <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
                             <div>
                                 <div class="text-center bike-name">
@@ -142,6 +143,24 @@
                                         <li class="volkswagen" ng-repeat="l1 in l.company track by $index"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>
                                     </ul>
                                 </div>
+=======
+
+
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
+                        <div>
+                            <div class="text-center bike-name">
+                                <p class="text-uppercase">{{l.name}}</p>
+                            </div>
+                            <div class="back-games text-center">
+                                <ul class="barz">
+                                    <!--<li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>-->
+                                    <li style="transform:translateY({{100 - l1.percent}}%)" ng-repeat="l1 in l.company track by $index"><span class="percent-label">{{l1.percent|number:2}}%</span></li>
+                                </ul>
+                                <ul class="brand-icon">
+                                    <li class="volkswagen" ng-repeat="l1 in l.company track by $index"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>
+                                </ul>
+>>>>>>> d17686119456543fc8f81651213715c1ee07bdf8
                             </div>
                         </div>
                         <!--/for one field/-->
@@ -236,6 +255,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="blade4 cust-transition">
             <img class="img1 img-responsive" src="img/background/blade3.png">
         </div>
@@ -250,6 +270,33 @@
                                     <figure>
                                         <div class="front">
                                             <img ng-src="{{s.img|uploadpath}}" class="img-responsive" noloading="true">
+=======
+    </div>
+    <div class="blade4 cust-transition">
+        <img class="img1 img-responsive" src="img/background/blade3.png">
+    </div>
+    <div id="winnner" class="b6 block-min block6-tab backimg1 container-fluid">
+        <div class="inside_b6">
+            <div class="text-center h side_hr"><span>WINNERS 2016</span></div>
+            <div class="bikeslider2">
+                <swiper autoplay="5000" effect="slide" slides-per-view="4" loop="true">
+                    <slides>
+                        <slide ng-repeat="s in myWinner track by $index">
+                            <div class="flipDiv">
+                                <figure>
+                                    <div class="front">
+                                        <img ng-src="{{s.img|uploadpath}}" class="img-responsive" noloading="true">
+                                    </div>
+                                    <figcaption>
+                                        <div class="descrip">
+                                            <p class="text-center text-uppercase  descrip-color">
+                                                {{s.bname}}
+                                            </p>
+                                            <p class="text-center text-uppercase">
+                                                {{s.wname}}
+                                            </p>
+
+>>>>>>> d17686119456543fc8f81651213715c1ee07bdf8
                                         </div>
                                         <figcaption>
                                             <div class="descrip">
@@ -275,6 +322,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div id="gallery" class="b7 block-gallery gray-bg container-fluid" ng-init="bubble=true">
             <div class="inside_b7">
                 <div class="h text-right right-h"> GALLERY</div>
@@ -290,6 +338,23 @@
                                         <div class="swiper-slide" style="background-image:url({{pic.image|uploadpath}})" ng-repeat="pic in galleryImg track by $index">
                                             <!--<img class="img-responsive gallery_img" ng-src="{{pic.image|uploadpath}}">-->
                                         </div>
+=======
+    </div>
+    <div id="gallery" class="b7 block-gallery gray-bg container-fluid" ng-init="bubble=true">
+        <div class="inside_b7">
+            <div class="h text-right right-h"> GALLERY</div>
+            <hr class="right-hr">
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-xs-12 hide-xs"><img src="img/bike1.png" class="img-responsive b7_bike"></div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <uib-tabset active="active" class="custom-tab">
+                        <uib-tab index="$index" ng-repeat="tab in gallerytabs| orderBy : '-year' track by $index" heading="{{tab.year}}" disable="tab.disabled" select="swiperInitialize(tab);"
+                            ng-click="bubble=true">
+                            <div class="swiper-container1" ng-if="bubble">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="background-image:url({{pic.image|uploadpath}})" ng-repeat="pic in galleryImg track by $index">
+                                        <!--<img class="img-responsive gallery_img" ng-src="{{pic.image|uploadpath}}">-->
+>>>>>>> d17686119456543fc8f81651213715c1ee07bdf8
                                     </div>
                                     <div class="swiper-button-prev"></div>
                                     <div class="swiper-button-next"></div>
