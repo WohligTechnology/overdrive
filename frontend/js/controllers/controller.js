@@ -28,15 +28,15 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             }, 2000)
         }
 
-            $scope.ongamenot = function () {
-        console.log("inside ongamenot");
+        $scope.ongamenot = function () {
+            console.log("inside ongamenot");
 
-                    $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
-                    $(".barz>li").css("-moz-animation", "");
-                    $(".barz>li").css("-ms-animation", "");
-                    $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+            $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
+            $(".barz>li").css("-moz-animation", "");
+            $(".barz>li").css("-ms-animation", "");
+            $(".barz>li").css("animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
 
-            }
+        }
         $scope.swiperInitialize = function (e) {
             $scope.galleryImg = e.img;
 
@@ -144,7 +144,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         NavigationService.callApi("Gallery/search", function (data) {
             console.log("Gallery data", data);
-            $scope.gallerytabs =  _.orderBy(data.data.results, ['year'],['desc']);
+            $scope.gallerytabs = _.orderBy(data.data.results, ['year'], ['desc']);
         });
 
         NavigationService.callApi("Company/search", function (data) {
@@ -185,7 +185,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         }
 
         //for category img change end//
-        
+
         $scope.getCompany = function (awardcategoryId) {
             console.log("catClicked");
             console.log("awardcategoryId", awardcategoryId);
@@ -266,21 +266,21 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                     //     $scope.totalVote += value1.voteCount;
                     //     // console.log("totalVote",$scope.totalVote)
                     // })
-//                     _.each(value.company,function(key){
-//                         console.log("key",key);
-                      
-//                       $scope.totalVote +=key.voteCount;
-//   console.log("$scope.totalVote", $scope.totalVote);
-//                     });
- value.totalCount= _.sumBy(value.company, 'voteCount');
- console.log(value.totalCount,"value.totalCount");
- _.each(value.company,function(n){
-     n.percent =n.voteCount/value.totalCount*100;
- })
+                    //                     _.each(value.company,function(key){
+                    //                         console.log("key",key);
 
-                  
+                    //                       $scope.totalVote +=key.voteCount;
+                    //   console.log("$scope.totalVote", $scope.totalVote);
+                    //                     });
+                    value.totalCount = _.sumBy(value.company, 'voteCount');
+                    console.log(value.totalCount, "value.totalCount");
+                    _.each(value.company, function (n) {
+                        n.percent = n.voteCount / value.totalCount * 100;
+                    })
+
+
                 });
-                 console.log("$scope.awardcategory", $scope.awardcategory);
+                console.log("$scope.awardcategory", $scope.awardcategory);
             });
         };
 
