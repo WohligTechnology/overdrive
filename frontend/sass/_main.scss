@@ -1411,7 +1411,7 @@ footer .border-white {
     padding: 0 35px 30px 35px;
     .thank-border {
         border: 2px solid red;
-         padding: 35px 0;
+        padding: 35px 0;
         overflow: hidden;
     }
     h4 {
@@ -1437,4 +1437,8 @@ footer .border-white {
 
 .radio-pointer input {
     cursor: pointer;
+}
+
+.reached-bottom {
+    bottom: 100px;
 }
