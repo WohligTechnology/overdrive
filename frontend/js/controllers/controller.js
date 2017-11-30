@@ -144,7 +144,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         NavigationService.callApi("Gallery/search", function (data) {
             console.log("Gallery data", data);
-            $scope.gallerytabs = data.data.results;
+            $scope.gallerytabs =  _.orderBy(data.data.results, ['year'],['desc']);
         });
 
         NavigationService.callApi("Company/search", function (data) {
