@@ -112,22 +112,24 @@
             <div class="music-section">
                 <div class="row">
                     <!--/for one field/-->
-                    <!--<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in Leadershipboard track by $index">
-                        <div>
-                            <div class="text-center bike-name">
-                                <p class="text-uppercase">{{l.name}}</p>
-                            </div>
-                            <div class="back-games text-center">
-                                <ul class="barz">
-                                    <li style="transform:translateY({{100 - r.percentage}}%)" ng-repeat="r in l.ratings track by $index"><span class="percent-label">{{r.percentage}}%</span></li>
-                                </ul>
-                                <ul class="brand-icon">
-                                    <li class="volkswagen" ng-repeat="r in l.ratings track by $index"><img ng-src="{{r.img|uploadpath}}" class="img-responsive"></li>
-                                </ul>
+                     <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
+                            <div>
+                                <div class="text-center bike-name">
+                                    <p class="text-uppercase">{{l.name}}</p>
+                                </div>
+                                <div class="back-games text-center">
+                                    <ul class="barz">
+                                        <!--<li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>-->
+                                        <li style="transform:translateY({{100 - l1.percent}}%)" ng-repeat="l1 in l.company track by $index"><span class="percent-label">{{l1.percent|number:2}}%</span></li>
+                                    </ul>
+                                    <ul class="brand-icon">
+                                        <li class="volkswagen" ng-repeat="l1 in l.company track by $index"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>-->
-                    <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
+                     <!--<---for slider-->
+                    <!--<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
                         <div>
                             <div class="text-center bike-name">
                                 <p class="text-uppercase">{{l.name}}</p>
@@ -150,16 +152,10 @@
                                     <next></next>
                                     <pagination></pagination>
                                 </swiper>
-                                <!--<flex-slider flex-slide="s in mySlides track by s.id" prev-text="" next-text="" animation="slide" item-width="275">
-                                    <li>
-                                        <div class="tab-item  text-center  pointer" ng-click="tabchange(s.id,$index,s.text);" ng-class="{'active-tab': active === $index}">
-                                            {{s.text}}
-                                        </div>
-                                    </li>
-                                </flex-slider>-->
                             </div>
                         </div>
-                    </div>
+                    </div>-->
+                    <!--<---for slider-->
                     <!--/for one field/-->
                     <!--<div class="col-md-4 col-sm-5 col-xs-12">
                         <div class="text-center bike-name">
