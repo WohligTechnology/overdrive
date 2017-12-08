@@ -180,7 +180,8 @@ body {
 }
 
 .block-nomination {
-    height: 700px;
+    height: auto;
+    padding-bottom: 50px;
 }
 
 .block1 {
@@ -1145,7 +1146,7 @@ header {
 footer li {
     position: relative;
     display: inline;
-    padding: 0 30px;
+    padding: 0 40px;
     a {
         color: black;
         &:hover,
@@ -1206,13 +1207,14 @@ footer .border-white {
     /* margin: 0 50px; */
     padding: 10px 0;
     position: absolute;
-    top: 42%;
-    left: 12%;
+    top: 40%;
+    left: 14%;
     height: 50px;
-    width: 200px;
+    width: 150px;
     p {
         color: white;
-        font-size: 20px;
+        font-size: 14px;
+        margin:0;
     }
 }
 
@@ -1321,7 +1323,7 @@ footer .border-white {
         z-index: 1;
     }
     .flipDiv figure figcaption {
-        background: black;
+        background: white;
         border: 5px solid #9a1205;
         display: block;
         position: absolute;
@@ -1330,8 +1332,8 @@ footer .border-white {
         top: 0;
         left: 50%;
         border-radius: 50%;
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         margin: 0px auto;
         text-align: center;
         -webkit-backface-visibility: hidden;
@@ -1441,6 +1443,27 @@ footer .border-white {
 
 .reached-bottom {
     bottom: 100px;
+}
+.d-flex{
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+}
+.justify-content-center{
+    @include justify-content(center);
+}
+.justify-content-top{
+    @include justify-content(top);
+}
+.justify-content-bottom{
+    @include justify-content(bottom);
+}
+.align-items-center{
+    @include align-items(center);
+}
+.flex-item{
+width:200px;
+margin-right: 28px;
 }
 // .back-games{
 // .swiper-button-prev, .swiper-container-rtl .swiper-button-next{

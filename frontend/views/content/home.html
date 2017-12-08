@@ -106,12 +106,11 @@
             </div>
         </div>
     </div>
-    <div id="games" ng-mouseenter="ongame()" class="b4 block1  blockb4-tab backimg2 container-fluid">
+    <!--<div id="games" ng-mouseenter="ongame()" class="b4 block1  blockb4-tab backimg2 container-fluid">
         <div class="inside_b4">
             <div class="h side_hr text-center"><span>LEADERSHIP BOARD</span></div>
             <div class="music-section">
                 <div class="row">
-                    <!--/for one field/-->
                      <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
                             <div>
                                 <div class="text-center bike-name">
@@ -119,7 +118,6 @@
                                 </div>
                                 <div class="back-games text-center">
                                     <ul class="barz">
-                                        <!--<li style="transform:translateY({{100 - l1.voteCount}}%)" ng-repeat="l1 in l.company track by $index" ><span class="percent-label">{{l1.voteCount}}%</span></li>-->
                                         <li style="transform:translateY({{100 - l1.percent}}%)" ng-repeat="l1 in l.company track by $index"><span class="percent-label">{{l1.percent|number:2}}%</span></li>
                                     </ul>
                                     <ul class="brand-icon">
@@ -128,73 +126,6 @@
                                 </div>
                             </div>
                         </div>
-                     <!--<---for slider-->
-                    <!--<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
-                        <div>
-                            <div class="text-center bike-name">
-                                <p class="text-uppercase">{{l.name}}</p>
-                            </div>
-                            <div class="back-games text-center">
-                                <swiper effect="slide" slides-per-view="4" loop="true">
-                                    <slides>
-                                        <slide ng-repeat="l1 in l.company track by $index">
-                                            <div>
-                                                <ul class="barz">
-                                                    <li style="transform:translateY({{100 - l1.percent}}%)"><span class="percent-label">{{l1.percent|number:2}}%</span></li>
-                                                </ul>
-                                                <ul class="brand-icon">
-                                                    <li class="volkswagen"><img ng-src="{{l1.companyObj.logo|uploadpath}}" class="img-responsive"></li>
-                                                </ul>
-                                            </div>
-                                        </slide>
-                                    </slides>
-                                    <prev></prev>
-                                    <next></next>
-                                    <pagination></pagination>
-                                </swiper>
-                            </div>
-                        </div>
-                    </div>-->
-                    <!--<---for slider-->
-                    <!--/for one field/-->
-                    <!--<div class="col-md-4 col-sm-5 col-xs-12">
-                        <div class="text-center bike-name">
-                            <p class="text-uppercase">cars</p>
-                        </div>
-                        <div class="back-games text-center">
-                            <ul class="barz">
-                                <li style="transform:translateY(70%)"><span class="percent-label">30%</span></li>
-                                <li style="transform:translateY(60%)"><span class="percent-label">40%</span></li>
-                                <li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
-                                <li style="transform:translateY(90%)"><span class="percent-label">10%</span></li>
-                            </ul>
-                            <ul class="brand-icon">
-                                <li class="volkswagen"><img src="img/leadership/copy.png" class="img-responsive"></li>
-                                <li class="yamaha"><img src="img/leadership/2.png" class="img-responsive"></li>
-                                <li class="honda"><img src="img/leadership/3.png" class="img-responsive"></li>
-                                <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>
-                            </ul>
-                        </div>
-                    </div>-->
-                    <!--<div class="col-md-4 col-sm-5 col-xs-12">
-                        <div class="text-center bike-name">
-                            <p class="text-uppercase">scooter</p>
-                        </div>
-                        <div class="back-games text-center">
-                            <ul class="barz">
-                                <li style="transform:translateY(90%)"><span class="percent-label">10%</span></li>
-                                <li style="transform:translateY(70%)"><span class="percent-label">30%</span></li>
-                                <li style="transform:translateY(80%)"><span class="percent-label">20%</span></li>
-                                <li style="transform:translateY(60%)"><span class="percent-label">40%</span></li>
-                            </ul>
-                            <ul class="brand-icon">
-                                <li class="volkswagen"><img src="img/leadership/copy.png" class="img-responsive"></li>
-                                <li class="yamaha"><img src="img/leadership/2.png" class="img-responsive"></li>
-                                <li class="honda"><img src="img/leadership/3.png" class="img-responsive"></li>
-                                <li class="hyundai"><img src="img/leadership/4.png" class="img-responsive"></li>
-                            </ul>
-                        </div>
-                    </div>-->
                 </div>
             </div>
             <div class="row">
@@ -213,7 +144,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div id="jurors" class="b5 block-min-jurors gray-bg rel over-hidden container-fluid">
         <div class="inside_b5">
             <div class="blade3 cust-transition">

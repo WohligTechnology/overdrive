@@ -35,13 +35,14 @@ myApp.factory('NavigationService', function ($http) {
             // anchor: "form",
             link: "socialmedia",
             subnav: []
-        }, {
-            name: "LEADERSHIP BOARD",
-            classis: "active",
-            // anchor: "games",
-            link: "games",
-            subnav: []
         },
+        //  {
+        //     name: "LEADERSHIP BOARD",
+        //     classis: "active",
+        //     // anchor: "games",
+        //     link: "games",
+        //     subnav: []
+        // },
         {
             name: "JURORS",
             classis: "active",

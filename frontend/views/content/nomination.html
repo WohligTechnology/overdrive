@@ -38,15 +38,15 @@
     <div class="container">
         <div class="nomination-section">
             <!--<pre>{{singleCatData}}</pre>-->
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="i in singleCatData.company track by $index">
+            <div class="d-flex justify-content-center">
+                <div class="flex-item" ng-repeat="i in singleCatData.company track by $index">
                     <div class="nomination-flip">
                         <div class="flipDiv" ng-class="class[$index]">
                             <figure>
                                 <div class="front">
                                     <div class="wheel">
                                         <img src="img/nomination/wheel.png" class="img-responsive">
-                                        <div class="nomini-name">
+                                        <div class="nomini-name d-flex justify-content-center align-items-center">
                                             <p class="text-center text-uppercase">{{i.companyObj.name}}</p>
                                         </div>
                                     </div>

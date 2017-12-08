@@ -170,10 +170,12 @@
         margin: 0 auto;
     }
     .block-nomination {
-        height: 1500px;
+        height:auto;
+
+        padding-bottom: 20px;
     }
     .nomini-name {
-        left: 20%;
+        top: 42%;
     }
     .nominations-heading p {
         text-align: center;
@@ -286,4 +288,7 @@
             width: 120px !important;
         }
     }
+     .flex-item{
+margin-right: 0;
+     }
 }
