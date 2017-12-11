@@ -18,6 +18,23 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     name: "MOTOBIKES"
         // }];
 
+
+$scope.videoEpisode = [{
+            imageUrl: "r-sFYno9dmQ",
+            videoUrl:"r-sFYno9dmQ"
+        }, {
+            imageUrl: "eKv4BMYj9Wg",
+            videoUrl:"eKv4BMYj9Wg"
+        }, {
+            imageUrl: "IFa2XGXJSeo",
+            videoUrl:"IFa2XGXJSeo"
+        }, {
+            imageUrl: "bxyPEIS6G6k",
+            videoUrl:"bxyPEIS6G6k"
+        }]
+
+
+
         $scope.ongame = function () {
             console.log("inside game enter")
             $timeout(function () {
@@ -84,22 +101,6 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             console.log("run");
         });
 
-        // $scope.gallerytabs = [{
-        //     title: "2016",
-        //     gallery: ['img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2015",
-        //     gallery: ['img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2014",
-        //     gallery: ['img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal1.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2013",
-        //     gallery: ['img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }, {
-        //     title: "2012",
-        //     gallery: ['img/gallery/2016/gal2.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal3.jpg', 'img/gallery/2016/gal4.jpg', 'img/gallery/2016/gal5.jpg', 'img/gallery/2016/gal6.jpg']
-        // }]
 
         var abc = _.times(100, function (n) {
             return n;
@@ -132,6 +133,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             $scope.mySlides = data.data.results;
         });
 
+NavigationService.callApi("Leadershipboard/search", function (data) {
+            console.log("Leadershipboard data", data);
+            $scope.Leadershipboard = data.data.results;
+        });
+
+
         NavigationService.callApi("Partners/search", function (data) {
             console.log("Partners data", data);
             $scope.partners = data.data.results;
@@ -154,15 +161,12 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         NavigationService.callApi("Leadershipboard/search", function (data) {
             console.log("Leadership board data", data);
             $scope.Leadershipboard = data.data.results;
-            console.log("Leadershipboard", $scope.Leadershipboard);
+            // console.log("Leadershipboard", $scope.Leadershipboard);
 
             _.forEach($scope.Leadershipboard, function (temp) {
-                // console.log("temp", temp);
 
                 _.forEach(temp.ratings, function (temp1) {
-                    // console.log("temp1", temp1);
                     $scope.percent = 100 - temp1.percentage;
-                    // console.log("percent", $scope.percent);
                     $scope.motorbike_percentage = [];
                     $scope.scooter_percentage = [];
                     $scope.car_percentage = [];
@@ -206,23 +210,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 });
             });
         };
-        // $scope.signupOpen = function (vehicleId) {
-        //     console.log("vehicleId",vehicleId);
-        //     $scope.vehicleId=vehicleId;
-        //     $scope.id=$scope.vehicleId;
-        //     console.log("$stateParams",$scope.id);
-        //     $uibModal.open({
-        //         animation: true,
-        //         templateUrl: 'views/modal/signup.html',
-        //         scope: $scope,
-        //         size: 'md',
-
-        //     });
-        // };
-
-
-
-
+       
 
         $scope.submitUser = function (data) {
             console.log("submit voter", data);
@@ -257,7 +245,8 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 $scope.awardcategory = data.data.results;
                 console.log("$scope.awardcategory", $scope.awardcategory);
                 _.each($scope.awardcategory, function (value) {
-                    console.log("value", value)
+                    // console.log("value", value)
+
                     // $scope.companyvote = value.company;
                     // _.each(value.company, function (value1) {
                     //     $scope.value1 = value1;
@@ -273,7 +262,7 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                     //   console.log("$scope.totalVote", $scope.totalVote);
                     //                     });
                     value.totalCount = _.sumBy(value.company, 'voteCount');
-                    console.log(value.totalCount, "value.totalCount");
+                    // console.log(value.totalCount, "value.totalCount");
                     _.each(value.company, function (n) {
                         n.percent = n.voteCount / value.totalCount * 100;
                     })
@@ -413,20 +402,52 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
             i++;
             // console.log("This is a button Click");
         };
-
-
-
-
-
-
-
-
-
         //for vote end//
 
 
+
+//to save votes in leadershipboard//
+ 
+NavigationService.callApi("Awardcategory/search", function (data) {
+            $scope.storeAwardData = data.data.results;
+            console.log("$scope.storeAwardData", $scope.storeAwardData);
+
+NavigationService.callApi("Leadershipboard/search", function (data) {
+            $scope.storeLeaderData = data.data.results;
+console.log("$scope.storeLeaderData", $scope.storeLeaderData);
+
+
+            
+        });
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+ 
+//to save votes in leadershipboard end//
+
+
+
+
+
+
+
+
+
+
+
+
     })
-    .controller('navCtrl', function ($scope, $location, $anchorScroll) {
+    .controller('navCtrl', function ($scope, $location, $anchorScroll,$state, $timeout) {
         $scope.scrollTo = function (id) {
             document.querySelector('#' + id).scrollIntoView({
                 behavior: 'smooth'
@@ -439,6 +460,22 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
                 $('.collapse').collapse('toggle');
             }
         };
+
+
+   $scope.goToAnchor = function (anchor, id) {
+            console.log("inside anchor")
+            $state.go(anchor)
+                // $location.hash(anchor);
+            if (id) {
+                $timeout(function () {
+                    // $anchorScroll();
+                    $('html,body').animate({
+                        scrollTop: $('#' + id).offset().top - 50
+                    }, "slow");
+                }, 500);
+            }
+        };
+
 
         $scope.navblur = function () {
             if ($('#nav-collapse').hasClass('in')) {

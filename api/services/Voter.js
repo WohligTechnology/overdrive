@@ -9,7 +9,9 @@ var schema = new Schema({
         type: String,
         validate: validators.isEmail(),
         unique: true
-
+    },
+    votedFor: {
+        type: String,
     }
     
 });

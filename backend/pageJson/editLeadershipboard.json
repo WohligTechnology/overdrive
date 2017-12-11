@@ -15,27 +15,39 @@
         "url": ""
     },
 {
-        "name": "Ratings",
+        "name": "Companies",
         "type": "box",
-        "tableRef": "ratings",
-        "validation": ["", "trim", ""],
+        "id": "company",
+        "tableRef": "company",
+        "placeholder": "Enter Companies",
         "fields": [{
-            "name": "Image",
-            "type": "image",
-            "tableRef": "img",
-            "placeholder": "Enter image",
-            "id": "img",
-            "validation": ["", "trim", ""],
-            "url": "",
-            "onView": true
-        },{
-        "name": "Percentage",
-        "type": "text",
-        "tableRef": "percentage",
-        "placeholder": "Enter percentage",
-        "id": "percentage",
-        "url": ""
-    }]
+            "name": "Company",
+            "type": "tags",
+            "tableRef": "companyObj",
+            "placeholder": "Select Company",
+            "id": "company",
+            "searchApi": "searchCall",
+            "fieldType": "",
+            "url": "Company/search",
+            "dropDownField": "name",
+            "view": true,
+            "dropDownType": "single",
+            "validation": [ "required","trim"],
+            "companyName":"companyName",
+            "onView":true
+            },{
+                "name": "Count",
+                "type": "text",
+                "tableRef": "voteCount",
+                "placeholder": "Enter Vote Counts",
+                "id": "count",
+                "onView":true,
+                "view": true,
+                "companyCount":"companyCount"
+               
+                }
+        
+        ]
 }],
     "action": [{
         "name": "submit",

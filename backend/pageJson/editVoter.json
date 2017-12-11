@@ -30,6 +30,14 @@
         "id": "email",
         "validation": ["", "trim", "unique"],
         "url": ""
+    },
+      {
+        "name": "Voted for ",
+        "type": "text",
+        "tableRef": "votedFor",
+        "placeholder": "Voted For",
+        "id": "votedFor",
+        "url": ""
     }],
     "action": [{
         "name": "submit",

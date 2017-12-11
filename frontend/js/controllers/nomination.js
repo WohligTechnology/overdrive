@@ -9,36 +9,6 @@
      $scope.formSubmitted = true;
    };
 
-   //  $scope.class = [];
-   //  $scope.changeClass = function (index) {
-   //    $scope.class = [];
-   //    $scope.class[index] = "n_flip";
-   //  };
-
-
-   //  $scope.Nomination = [{
-   //        img: 'img/nomination/wheel.png',
-   //        imgback: 'img/slider/1-m.png',
-   //       name: "CARS",
-   //       id:1
-   //       }, {
-   //         img: 'img/nomination/wheel.png',
-   //         imgback: 'img/slider/2-m.png',
-   //          name: "SCOOTERS",
-   //            id:2
-
-   //      }, {
-   //         img: 'img/nomination/wheel.png',
-   //       imgback: 'img/slider/3-m.png',
-   //          name: "MOTOBIKES",
-   //            id:3
-   //       }, {
-   //         img: 'img/nomination/wheel.png',
-   //       imgback: 'img/slider/3-m.png',
-   //          name: "MOTOB",
-   //          id:4
-   //       }];
-
    $scope.dataId = {
      _id: $stateParams.id
    }
@@ -55,12 +25,6 @@
      console.log("Company data", data);
      $scope.Nomination = data.data.results;
    });
-
-
-   //  NavigationService.callApi("Awardcategory/search", function (data) {
-   //    console.log("Awardcategory data", data);
-   //    $scope.Nomination = data.data.results;
-   //  });
 
 
    //for vote//
@@ -169,4 +133,6 @@
    };
 
    //for vote end//
+
+
  })

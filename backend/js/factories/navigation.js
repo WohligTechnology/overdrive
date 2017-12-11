@@ -30,12 +30,6 @@ myApp.factory('NavigationService', function ($http) {
         sref: "#!/page/viewCompany//",
       
     },
-     {
-        name: "Leadershipboard",
-        classis: "active",
-        sref: "#!/page/viewLeadershipboard//",
-       
-    },
     {
         name: "Jurors",
         classis: "active",
@@ -65,6 +59,11 @@ myApp.factory('NavigationService', function ($http) {
         classis: "active",
         sref: "#!/page/viewVoter//",
         
+    },{
+        name: "Leadershipboard",
+        classis: "active",
+        sref: "#!/page/viewLeadershipboard//",
+       
     }
     
     
