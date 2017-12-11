@@ -187,7 +187,9 @@ body {
 .block1 {
     height: 700px
 }
-
+.block-video{
+height: 518px
+}
 .block-gallery {
     height: 550px;
 }
@@ -451,7 +453,7 @@ body {
     // }
     .b4_flotimg {
         position: relative;
-        width: 550px;
+        width: 400px;
         margin-top: 21px;
     }
     .b4_racetext {
@@ -810,13 +812,14 @@ header {
     z-index: 9;
 }
 
-.smoke {
+    .smoke {
     position: absolute;
     z-index: 4;
-    bottom: 18px;
-    left: 80px;
+    bottom: 5px;
+    left: 46px;
     width: 110px;
 }
+
 
 .blade1 {
     position: absolute;
@@ -1116,7 +1119,7 @@ header {
 }
 
 .music-section {
-    margin-top: 64px;
+    margin-top: 20px;
 }
 
 .bike-name {
@@ -1146,7 +1149,7 @@ header {
 footer li {
     position: relative;
     display: inline;
-    padding: 0 40px;
+    padding: 0 35px;
     a {
         color: black;
         &:hover,
@@ -1214,7 +1217,7 @@ footer .border-white {
     p {
         color: white;
         font-size: 14px;
-        margin:0;
+        margin: 0;
     }
 }
 
@@ -1445,27 +1448,46 @@ footer .border-white {
 .reached-bottom {
     bottom: 100px;
 }
-.d-flex{
+
+.d-flex {
     @include display(flex);
     @include flex-direction(row);
     @include flex-wrap(wrap);
 }
-.justify-content-center{
+
+.justify-content-center {
     @include justify-content(center);
 }
-.justify-content-top{
+
+.justify-content-top {
     @include justify-content(top);
 }
-.justify-content-bottom{
+
+.justify-content-bottom {
     @include justify-content(bottom);
 }
-.align-items-center{
+
+.align-items-center {
     @include align-items(center);
 }
-.flex-item{
-width:200px;
-margin-right: 28px;
+
+.flex-item {
+    width: 200px;
+    margin-right: 28px;
 }
+
+.episodes {
+    position: relative;
+}
+
+.video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 // .back-games{
 // .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
 //     left:0 !important;

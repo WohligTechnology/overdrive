@@ -1,8 +1,8 @@
 <ul class="nav navbar-nav">
   <li ng-repeat="menu in navigation track by $index" ui-sref-active="active">
-    <a ui-sref="{{menu.anchor}}" ng-if="menu.anchor" ng-class="{nav_highlight:menu.highlight}" class="anchor-bg">{{menu.name}}</a>
-    <!-- <a ng-click="scrollTo(menu.link)" ng-if="menu.link">{{menu.name}}</a> -->
-    <a du-smooth-scroll="{{menu.link}}" ng-click="clic()" offset="100" du-scrollspy ng-if="menu.link">{{menu.name}}</a>
+    <a ui-sref="{{menu.anchor}}"  ng-click="goToAnchor(menu.anchor,menu.link); clic()" offset="100" ng-if="menu.anchor" ng-class="{nav_highlight:menu.highlight}" class="anchor-bg">{{menu.name}}</a>
+     
+    <!--<a du-smooth-scroll="{{menu.link}}" ng-click="clic()" offset="100" du-scrollspy ng-if="menu.link">{{menu.name}}</a>-->
     <ul class="dropdown-menu" ng-if="menu.subnav!='';">
       <li ng-repeat="submenu in menu.subnav" ui-sref-active="active">
         <a ui-serf="{{submenu.anchor}}" ng-if="submenu.anchor">{{submenu.name}}</a>

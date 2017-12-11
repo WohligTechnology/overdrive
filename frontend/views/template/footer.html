@@ -1,17 +1,18 @@
-<footer ng-controller="headerCtrl">
+<footer ng-controller="footerCtrl">
     <div class="border-white">
     <div class="container">
             <div class="list-footer">
                 <div class="footer-padding">
                     <ul class="footer-list-padd">
-                        <li><a du-smooth-scroll="overview" offset="50" du-scrollspy>OVERVIEW</a></li>
-                        <li><a du-smooth-scroll="award" offset="50" du-scrollspy>AWARDS CATEGORIES</a></li>
-                        <li><a du-smooth-scroll="socialmedia" offset="50" du-scrollspy>SOCIAL MEDIA</a></li>
-                        <!--<li><a du-smooth-scroll="games" offset="50" du-scrollspy>LEADERSHIP BOARD</a></li>-->
-                        <li><a du-smooth-scroll="jurors" offset="50" du-scrollspy>JURORS</a></li>
-                        <li><a du-smooth-scroll="winnner" offset="50" du-scrollspy>WINNERS</a> </li>
-                        <li><a du-smooth-scroll="gallery" offset="50" du-scrollspy>GALLERY</a></li>
-                        <li><a du-smooth-scroll="partner" offset="50" du-scrollspy>PARTNERS</a></li>
+                        
+                        <li><a ng-click="goToAnchor('home','overview');" >OVERVIEW</a></li>
+                        <li><a ng-click="goToAnchor('home','award');">AWARDS CATEGORIES</a></li>
+                        <li><a ng-click="goToAnchor('home','socialmedia');">SOCIAL MEDIA</a></li>
+                         <li><a ng-click="goToAnchor('home','games');">VIDEOS</a></li>
+                        <li><a ng-click="goToAnchor('home','jurors');">JURORS</a></li>
+                        <li><a ng-click="goToAnchor('home','winnner');">WINNERS</a> </li>
+                        <li><a ng-click="goToAnchor('home','gallery');">GALLERY</a></li>
+                        <li><a ng-click="goToAnchor('home','partner');">PARTNERS</a></li>
                     </ul>
                 </div>
             </div>
