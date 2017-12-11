@@ -69,11 +69,11 @@
         }
     }],
     "apiCall": {
-        "url": "Leadershipboard/save",
+        "url": "Awardcategory/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "Leadershipboard/getOne",
+        "url": "Awardcategory/getOne",
         "params": "_id"
     }
 

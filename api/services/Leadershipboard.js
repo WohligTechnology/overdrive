@@ -2,16 +2,17 @@ var schema = new Schema({
     name: {
         type: String,
     },
-   company:[{
+  company: [{
         companyObj: {
         type:Schema.Types.ObjectId,
         ref:'Company'
-    },
+        },
         voteCount:{
          type:Number,
-         default: 0     
-        }  
-}] 
+         default: 0 
+        }
+    }]
+
 });
 
 schema.plugin(deepPopulate, {

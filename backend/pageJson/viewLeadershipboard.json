@@ -45,15 +45,9 @@
         "type": "redirect",
         "action": "excel-upload/Leadershipboard",
         "linkType": "internal"
-    },{
-        "name": "Create",
-        "icon": "plus",
-        "class": "btn-success",
-        "type": "page",
-        "action": "createLeadershipboard"
     }],
     "apiCall": {
-        "url": "Leadershipboard/search",
+        "url": "Awardcategory/search",
         "params": "_id"
     }
 }
