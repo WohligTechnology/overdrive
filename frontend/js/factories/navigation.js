@@ -14,7 +14,7 @@ myApp.factory('NavigationService', function ($http) {
             // name: "THE AWARDS",
             name: "OVERVIEW",
             classis: "active",
-            // anchor: "home",
+            anchor: "home",
             link: "overview",
             subnav: []
             // subnav: [{
@@ -25,47 +25,47 @@ myApp.factory('NavigationService', function ($http) {
         }, {
             name: "AWARDS CATEGORIES",
             classis: "active",
-            // anchor: "form",.
+            anchor: "home",
             link: "award",
             subnav: []
         },
         {
             name: "SOCIAL MEDIA",
             classis: "active",
-            // anchor: "form",
+           anchor: "home",
             link: "socialmedia",
             subnav: []
         },
-        //  {
-        //     name: "LEADERSHIP BOARD",
-        //     classis: "active",
-        //     // anchor: "games",
-        //     link: "games",
-        //     subnav: []
-        // },
+         {
+            name: "VIDEOS",
+            classis: "active",
+              anchor: "home",
+            link: "games",
+            subnav: []
+        },
         {
             name: "JURORS",
             classis: "active",
-            // anchor: "grid",
+             anchor: "home",
             link: "jurors",
             subnav: []
         },
         {
             name: "WINNERS",
             classis: "active",
-            // anchor: "grid",
+             anchor: "home",
             link: "winnner",
             subnav: []
         }, {
             name: "GALLERY",
             classis: "active",
-            // anchor: "grid",
+            anchor: "home",
             link: "gallery",
             subnav: []
         }, {
             name: "PARTNERS",
             classis: "active",
-            // anchor: "grid",
+             anchor: "home",
             link: "partner",
             subnav: []
         },
