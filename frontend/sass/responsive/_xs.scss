@@ -67,7 +67,9 @@
         width: 30%;
     }
     .inside_b4 .b4_racetext {
-        width: 70%;
+        width: 70%;#fancybox-loading, .fancybox-close, .fancybox-next span, .fancybox-prev span {
+    background-image: url(../img/fancybox_sprite.png);
+}
         margin: 0 auto;
         padding-top: 20px;
     }
@@ -294,4 +296,7 @@ margin-right: 0;
      .episodes{
          margin-bottom: 10px
      }
+     #fancybox-loading, .fancybox-close, .fancybox-next span, .fancybox-prev span {
+    background-image: url(../img/fancybox_sprite.png);
+}
 }
