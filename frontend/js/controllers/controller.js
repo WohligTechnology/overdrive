@@ -179,6 +179,11 @@ NavigationService.callApi("Leadershipboard/search", function (data) {
         });
 
 
+        NavigationService.callApi("Voter/search", function (data) {
+            console.log("Voter data", data);
+        });
+
+
         //for category img change//
 
         $scope.smallImgClick = function (data) {
