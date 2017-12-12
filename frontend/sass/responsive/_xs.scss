@@ -22,6 +22,7 @@
     .inside_b1 .b1_img img {
         margin-top: 0px;
         width: 100%;
+        max-width: 180px;
     }
     .block {
         height: 450px;
@@ -42,7 +43,7 @@
         margin-top: -10px;
     }
     .sliderbike1 {
-        margin: 50px 0px;
+        margin: 25px 0px;
     } //block 3
     .left-h {
         padding-left: 8px;
@@ -165,7 +166,7 @@
     }
     //scss by snehal
     .block-awards {
-        height: 345px;
+        height: 250px;
     }
     .wheel {
         width: 200px;
