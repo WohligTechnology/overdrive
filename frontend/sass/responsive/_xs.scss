@@ -42,7 +42,7 @@
         margin-top: -10px;
     }
     .sliderbike1 {
-        margin: 25px 0px;
+        margin: 50px 0px;
     } //block 3
     .left-h {
         padding-left: 8px;
@@ -165,7 +165,7 @@
     }
     //scss by snehal
     .block-awards {
-        height: 250px;
+        height: 345px;
     }
     .wheel {
         width: 200px;
@@ -298,5 +298,8 @@ margin-right: 0;
      }
      #fancybox-loading, .fancybox-close, .fancybox-next span, .fancybox-prev span {
     background-image: url(../img/fancybox_sprite.png);
+}
+.video-icon{
+    top:50%;
 }
 }

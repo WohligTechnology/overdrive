@@ -21,16 +21,20 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 $scope.videoEpisode = [{
             imageUrl: "r-sFYno9dmQ",
-            videoUrl:"r-sFYno9dmQ"
+            videoUrl:"r-sFYno9dmQ",
+            name:"TEASER"
         }, {
             imageUrl: "eKv4BMYj9Wg",
-            videoUrl:"eKv4BMYj9Wg"
+            videoUrl:"eKv4BMYj9Wg",
+            name:"CURTAIN RAISER"
         }, {
             imageUrl: "IFa2XGXJSeo",
-            videoUrl:"IFa2XGXJSeo"
+            videoUrl:"IFa2XGXJSeo",
+            name:"JURY PROMO ROUND"
         }, {
             imageUrl: "bxyPEIS6G6k",
-            videoUrl:"bxyPEIS6G6k"
+            videoUrl:"bxyPEIS6G6k",
+            name:"THE RACE HAS BEGUN"
         }]
 
 
