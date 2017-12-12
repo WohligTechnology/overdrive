@@ -17,11 +17,6 @@
         "name": "Email",
         "isSort": "",
         "tableRef": "email"
-    },
-    {
-        "name": "Voted For",
-        "isSort": "",
-        "tableRef": "votedFor"
     }
     ],
     "action": [{
