@@ -112,14 +112,15 @@
             <div class="music-section">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                      <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="itemSeason in videoEpisode track by $index">
+                        <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="itemSeason in videoEpisode track by $index">
                             <div class="episodes">
-
-                                <img ng-src="http://img.youtube.com/vi/{{itemSeason.imageUrl}}/hqdefault.jpg" class="img-responsive img-full">
-                                <div class="video-icon">
-                                    <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{itemSeason.videoUrl}}?autoplay=1" fancybox>
-                                        <img src="img/youtube-small.png" class="img-responsive">
-                                    </a>
+                                <div class="ep-img">
+                                    <img ng-src="http://img.youtube.com/vi/{{itemSeason.imageUrl}}/hqdefault.jpg" class="img-responsive img-full">
+                                    <div class="video-icon">
+                                        <a class="fancybox.iframe" ng-href="https://www.youtube.com/embed/{{itemSeason.videoUrl}}?autoplay=1" fancybox>
+                                            <img src="img/youtube-small.png" class="img-responsive">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="text-center video-name">
                                     <p>{{itemSeason.name}}</p>
@@ -127,17 +128,17 @@
                             </div>
                         </div>
                     </div>
-                   <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
-                    <div class="b4_flotimg">
-                        <div class="smoke_car">
-                            <img src="img/car2.png" class="img-responsive">
-                        </div>
-                        <div class="smoke">
-                            <img src="img/gif/smoke.gif" class="img-responsive">
+                    <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                        <div class="b4_flotimg">
+                            <div class="smoke_car">
+                                <img src="img/car2.png" class="img-responsive">
+                            </div>
+                            <div class="smoke">
+                                <img src="img/gif/smoke.gif" class="img-responsive">
+                            </div>
                         </div>
                     </div>
-                   </div>
-                     <!--<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
+                    <!--<div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="l in awardcategory track by $index">
                             <div>
                                 <div class="text-center bike-name">
                                     <p class="text-uppercase">{{l.name}}</p>
