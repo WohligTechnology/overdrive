@@ -453,8 +453,8 @@ height: 518px
     // }
     .b4_flotimg {
         position: relative;
-        width: 400px;
-        margin-top: 21px;
+        width: 100%;
+        margin-top: 50px;
     }
     .b4_racetext {
         width: 70%;
@@ -1478,6 +1478,7 @@ footer .border-white {
 
 .episodes {
     position: relative;
+    // margin-bottom: 20px;
 }
 
 .video-icon {
@@ -1487,7 +1488,13 @@ footer .border-white {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
+.video-name{
+    p{
+        color:white;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
 // .back-games{
 // .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
 //     left:0 !important;
