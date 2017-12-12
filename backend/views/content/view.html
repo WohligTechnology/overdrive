@@ -20,11 +20,10 @@
                         <div class="widget-title ">
                             <div class="pull-right ">
                                 <form class="search-form mr-form ">
-                                    <input type="text " ng-change="getAllItems(true)" placeholder="Search Here...
+                                    <input type="text " ng-change="getAllItems(true) " placeholder="Search Here...
                         " ng-model="search.keyword " />
                                 </form>
                                 <a ng-repeat="btn in json.json.button " class="btn " ng-class="btn.class " ng-click="json.eventAction(btn)">{{btn.name}}</a>
-                                <a class="btn btn-default" ng-if="json.json.filter" ng-click="showFilter();">Filter</a>
                             </div>
                             <h3>{{json.json.description}} <span class="tableTotal ">(Total : {{totalItems}}) </span></h3>
                         </div>
@@ -54,7 +53,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tableData " ng-show="totalItems===0">
+                        <div class="tableData " ng-show="totalItems===0 ">
                             <h5>No data found</h5>
                         </div>
                         <div class="tableData " ng-show="totalItems===undefined ">
