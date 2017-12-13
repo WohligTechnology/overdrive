@@ -65,14 +65,14 @@ search1: function (data, callback) {
                     term: data.keyword
                 }
             },
-            sort: {
-                asc: 'createdAt'
-            },
+            // sort: {
+            //     asc: 'createdAt'
+            // },
             start: (page - 1) * maxRow,
             count: maxRow
         };
         console.log("data", data);
-        VoterDetails.find()
+        VoterDetails.find().sort({createdAt:-1})
             .order(options)
             .keyword(options)
             .page(options,
