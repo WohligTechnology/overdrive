@@ -134,6 +134,32 @@ console.log("$stateParams.id", $stateParams.id);
          $scope.animationAdd = "animation-go";
        });
      }
+
+
+$scope.voterDetails={
+  firstName:$scope.VoterName  ,
+  lastName:$scope.VoterSurname,
+  email:$scope.VoterEmail,
+  company:$scope.companyName,
+  category:$scope.VoterCategory
+}
+
+
+NavigationService.callApiWithData("VoterDetails/save", $scope.voterDetails, function (data) {
+               
+console.log("VoterDetails data",data);
+
+            });
+
+
+
+
+
+console.log("$scope.voterDetails",$scope.voterDetails);
+
+
+
+
    };
 
    var i = 0;
@@ -175,7 +201,6 @@ NavigationService.callApiWithData("Company/getOne", $scope.userId, function (dat
    });
 
 
- 
    //for voter save end//
 
 

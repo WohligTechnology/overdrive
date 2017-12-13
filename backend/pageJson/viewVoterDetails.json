@@ -19,14 +19,14 @@
         "tableRef": "email"
     },
     {
-        "name": "Company",
-        "isSort": "",
-        "tableRef": "company"
-    },
-    {
         "name": "Category",
         "isSort": "",
         "tableRef": "category"
+    },
+    {
+        "name": "Company",
+        "isSort": "",
+        "tableRef": "company"
     }
     ],
     "action": [{
@@ -67,7 +67,7 @@
         "linkType": "internal"
     }],
     "apiCall": {
-        "url": "VoterDetails/search",
+        "url": "VoterDetails/search1",
         "params": "_id"
     }
 }
