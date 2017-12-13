@@ -163,6 +163,8 @@ hr {
 .backimg2 {
     background-image: url('../img/background2.gif');
     background-position: bottom, top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .h_bannerimg {
@@ -188,7 +190,7 @@ body {
     height: 700px
 }
 .block-video{
-height: 545px
+height: auto;
 }
 .block-gallery {
     height: 550px;
@@ -815,7 +817,7 @@ header {
     position: absolute;
     z-index: 4;
     bottom: 18px;
-    left: 80px;
+    left: 90px;
     width: 110px;
 }
 
@@ -1118,7 +1120,7 @@ header {
 }
 
 .music-section {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .bike-name {
