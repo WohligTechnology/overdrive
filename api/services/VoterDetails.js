@@ -65,9 +65,9 @@ search1: function (data, callback) {
                     term: data.keyword
                 }
             },
-            sort: {
-                desc: 'createdAt'
-            },
+            // sort: {
+            //     desc: 'createdAt'
+            // },
             start: (page - 1) * maxRow,
             count: maxRow
         };
