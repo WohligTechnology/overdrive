@@ -45,8 +45,8 @@ myApp.directive('img', function ($compile, $parse) {
                 var $element = $(element);
                 var lastScrollTop = 600;
                 $(window).scroll(function (event) {
-                    console.log($('#games').height());
-                    console.log($(this).scrollTop());
+                    // console.log($('#games').height());
+                    // console.log($(this).scrollTop());
                     if (($(this).scrollTop() <= 2520) || ($(this).scrollTop() >= 2700)) {
                         $(".barz>li").css("-webkit-animation", " bounce 1s infinite cubic-bezier(0, 0, 0, 1)");
                         $(".barz>li").css("-moz-animation", "");
@@ -89,7 +89,7 @@ myApp.directive('img', function ($compile, $parse) {
                     }
 
                     if (($(this).scrollTop() + $(this).height()) > $('.footer').offset().top) {
-                        console.log("bottom reached", $('.footer').scrollTop())
+                        // console.log("bottom reached", $('.footer').scrollTop())
                         $('.nav_highlight').addClass('reached-bottom');
                     } else {
                         $('.nav_highlight').removeClass('reached-bottom');

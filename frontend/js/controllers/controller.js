@@ -225,12 +225,14 @@ NavigationService.callApi("Leadershipboard/search", function (data) {
             console.log("submit voter", data);
             NavigationService.callApiWithData("Voter/saveVoter", data, function (data) {
                 if (data.value == true) {
-                    console.log("value");
+                    console.log(data,"data");
+                    // $.jStorage.set("voter", data.data);
                     if (data.data._id) {
                         console.log("$scope.userId", data.data._id);
                         $scope.userId = data.data._id;
                         $state.go('nomination', {
-                            'id': $scope.id
+                            'userId': $scope.userId,
+                           'id': $scope.id
                         });
                     } else {
                         $scope.errorVoterLogin = "Something Went Wrong!!!";

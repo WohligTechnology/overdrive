@@ -9,6 +9,12 @@ var schema = new Schema({
         type: String,
         validate: validators.isEmail(),
         unique: true
+    },
+    company: {
+        type: String,
+    },
+    category: {
+        type: String,
     }
     
 });
@@ -45,12 +51,11 @@ var model = {
 //         });
 //     },
 
-
 saveVoter: function (data, callback) {
         console.log("inside api**********", data)
         Voter.findOne({
             email: data.email
-        }).sort({"createdAt": -1}).exec(function (err, found) {
+        }).exec(function (err, found) {
             console.log("Found: ", found);
             if (err) {
                 callback(err, null);
@@ -69,6 +74,30 @@ saveVoter: function (data, callback) {
 
         });
     },
+
+
+getLastAddedVoter: function (data, callback) {
+    console.log("inside voter")
+        Voter.find({}).sort({
+            createdAt: -1
+        }).limit().exec(function (err, found) {
+    console.log("inside voter")
+            
+            console.log("Found: ", found);
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                // console.log("found in Question", found);
+                callback(null, found);
+            }
+
+        });
+    },
+
+
+
 
 
 };

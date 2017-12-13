@@ -1,28 +1,29 @@
 {
-    "title": "Edit Voter",
-    "name": "Voter",
-    "jsonPage": "viewVoter",
+    "title": "Create VoterDetails",
+    "name": "VoterDetails",
+    "jsonPage": "viewVoterDetails",
     "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
+    "pageType": "create",
+    "urlFields": ["VoterDetails"],
     "fields": [{
-        "name": "Name",
+        "name": "firstName",
         "type": "text",
-        "tableRef": "name",
-        "placeholder": "Enter Name",
-        "id": "name",
+        "tableRef": "firstName",
+        "placeholder": "Enter firstName",
+        "id": "firstName",
         "validation": ["required", "trim", "unique"],
         "url": ""
     },
     {
-        "name": "Surname",
+        "name": "lastName",
         "type": "text",
-        "tableRef": "surname",
-        "placeholder": "Enter surname",
-        "id": "surname",
+        "tableRef": "lastName",
+        "placeholder": "Enter lastName",
+        "id": "lastName",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
+    },
+     {
         "name": "Email",
         "type": "text",
         "tableRef": "email",
@@ -31,7 +32,7 @@
         "validation": ["", "trim", "unique"],
         "url": ""
     },
-     {
+    {
         "name": "Company",
         "type": "text",
         "tableRef": "company",
@@ -51,11 +52,11 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitVoter",
+        "action": "submitVoterDetails",
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewVoter"
+                "id": "viewVoterDetails"
             }
         }
     }, {
@@ -64,17 +65,11 @@
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewVoter"
+                "id": "viewVoterDetails"
             }
         }
     }],
     "apiCall": {
-        "url": "Voter/save",
-        "params": "_id"
-    },
-    "preApi": {
-        "url": "Voter/getOne",
-        "params": "_id"
+        "url": "VoterDetails/save"
     }
-
 }

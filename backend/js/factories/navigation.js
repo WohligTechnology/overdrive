@@ -59,17 +59,17 @@ myApp.factory('NavigationService', function ($http) {
         classis: "active",
         sref: "#!/page/viewVoter//",
         
-    },
-    {
-        name: "Votelog",
-        classis: "active",
-        sref: "#!/page/viewVotelog//",
-        
     },{
         name: "Leadershipboard",
         classis: "active",
         sref: "#!/page/viewLeadershipboard//",
        
+    },
+    {
+        name: "VoterDetails",
+        classis: "active",
+        sref: "#!/page/viewVoterDetails//",
+        
     }
     
     

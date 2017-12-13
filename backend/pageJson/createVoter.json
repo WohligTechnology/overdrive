@@ -31,6 +31,24 @@
         "id": "email",
         "validation": ["", "trim", "unique"],
         "url": ""
+    },
+    {
+        "name": "Company",
+        "type": "text",
+        "tableRef": "company",
+        "placeholder": "Enter company",
+        "id": "company",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+    {
+        "name": "Category",
+        "type": "text",
+        "tableRef": "category",
+        "placeholder": "Enter category",
+        "id": "category",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
     }],
     "action": [{
         "name": "submit",

@@ -1,18 +1,18 @@
 {
-    "title": "Voter",
-    "description": "List of Voters",
+    "title": "VoterDetail",
+    "description": "List of VoterDetails",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Name",
+        "name": "FirstName",
         "isSort": "",
-        "tableRef": "name"
+        "tableRef": "firstName"
     },
     {
-        "name": "Surname",
+        "name": "LastName",
         "isSort": "",
-        "tableRef": "surname"
+        "tableRef": "lastName"
     }, {
         "name": "Email",
         "isSort": "",
@@ -34,7 +34,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editVoter",
+        "action": "editVoterDetails",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -43,9 +43,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Voter",
-        "content": "Are you sure you want to delete Voter?",
-        "api": "voter/delete",
+        "title": "Delete VoterDetails",
+        "content": "Are you sure you want to delete VoterDetails?",
+        "api": "voterDetails/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -56,18 +56,18 @@
         "icon": "print",
         "class": "btn-danger",
         "type": "redirect",
-        "action": "Voter/generateExcel",
+        "action": "VoterDetails/generateExcel",
         "linkType": "admin"
     }, {
         "name": "Upload Excel",
         "icon": "delete",
         "class": "btn-warning",
         "type": "redirect",
-        "action": "excel-upload/Voter",
+        "action": "excel-upload/VoterDetails",
         "linkType": "internal"
     }],
     "apiCall": {
-        "url": "Voter/search",
+        "url": "VoterDetails/search",
         "params": "_id"
     }
 }

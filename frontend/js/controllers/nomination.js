@@ -4,6 +4,9 @@
    $scope.navigation = NavigationService.getNavigation();
    TemplateService.class = "nomination";
    $scope.formSubmitted = false;
+console.log("$stateParams.userId", $stateParams.userId);
+console.log("$stateParams.id", $stateParams.id);
+
 
    $scope.submitForm = function (data) {
      $scope.formSubmitted = true;
@@ -11,6 +14,11 @@
 
    $scope.dataId = {
      _id: $stateParams.id
+   };
+
+
+   $scope.userId = {
+     _id: $stateParams.userId
    }
 
    NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
@@ -92,11 +100,13 @@
 
 
    $scope.class = [];
-   $scope.changeCompany = function (companyId, index) {
+   $scope.changeCompany = function (companyId, index, companyName) {
      $scope.class = [];
      $scope.class[index] = "n_flip";
-     console.log("changeCompany", companyId);
+     console.log("changeCompanyId", companyId);
+     console.log("changeCompanyName", companyName);
      $scope.companyId = companyId;
+     $scope.companyName = companyName;
 
    };
    $scope.animationAdd = "";
@@ -133,6 +143,49 @@
    };
 
    //for vote end//
+
+
+
+
+   //for voter save//
+
+
+NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
+     console.log("getOne Category", data)
+     $scope.VoterCategory = data.data.name;
+     console.log("$scope.VoterCategory", $scope.VoterCategory)
+   });
+
+
+NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data) {
+     console.log("getOne Voter", data)
+     $scope.VoterName = data.data.name;
+     $scope.VoterEmail = data.data.email;
+     $scope.VoterSurname = data.data.surname;
+     console.log("$scope.VoterName", $scope.VoterName);
+     console.log("$scope.VoterEmail", $scope.VoterEmail);
+     console.log("$scope.VoterSurname", $scope.VoterSurname)
+   });
+
+
+NavigationService.callApiWithData("Company/getOne", $scope.userId, function (data) {
+     console.log("getOne Company", data)
+     $scope.VoterCompany = data.data.name;
+     console.log("$scope.VoterCompany", $scope.VoterCompany)
+   });
+
+
+ 
+   //for voter save end//
+
+
+
+
+
+
+
+
+
 
 
  })
