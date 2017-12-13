@@ -23,7 +23,7 @@ schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 module.exports = mongoose.model('VoterDetails', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema,"createdAt", "asc"));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
 
 // getLastAddedVoter: function (data, callback) {
