@@ -66,7 +66,7 @@ search1: function (data, callback) {
                 }
             },
             sort: {
-                asc: 'createdAt'
+                desc: 'createdAt'
             },
             start: (page - 1) * maxRow,
             count: maxRow
