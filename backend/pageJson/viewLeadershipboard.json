@@ -36,15 +36,8 @@
         "icon": "print",
         "class": "btn-danger",
         "type": "redirect",
-        "action": "Leadershipboard/generateExcel",
+        "action": "Awardcategory/excelLeadershipboard",
         "linkType": "admin"
-    }, {
-        "name": "Upload Excel",
-        "icon": "delete",
-        "class": "btn-warning",
-        "type": "redirect",
-        "action": "excel-upload/Leadershipboard",
-        "linkType": "internal"
     }],
     "apiCall": {
         "url": "Awardcategory/search",

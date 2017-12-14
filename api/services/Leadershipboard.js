@@ -27,5 +27,12 @@ schema.plugin(timestamps);
 module.exports = mongoose.model('Leadershipboard', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema, 'company.companyObj','company.companyObj'));
-var model = {};
+var model = {
+
+
+
+
+
+
+};
 module.exports = _.assign(module.exports, exports, model);
