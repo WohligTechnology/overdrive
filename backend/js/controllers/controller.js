@@ -451,7 +451,7 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
                 return returnval;
             }
 
-        }
+        };
         // // BOX
         // if ($scope.type.type == "date") {
         //     $scope.formData[$scope.type.tableRef] = moment($scope.formData[$scope.type.tableRef]).toDate();
@@ -513,7 +513,12 @@ myApp.controller('DashboardCtrl', function ($scope, TemplateService, NavigationS
         //     data.splice(index, 1);
         // };
 
-// BOX
+// BOX//
+
+
+//for download excel//
+
+
         if ($scope.type.type == "date") {
             $scope.formData[$scope.type.tableRef] = moment($scope.formData[$scope.type.tableRef]).toDate();
         }

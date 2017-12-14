@@ -25,6 +25,31 @@ module.exports = mongoose.model('VoterDetails', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
+      exceltotalVoter: function (data, callback) {
+          console.log("inside api")
+        VoterDetails.find({}).deepPopulate("currentSubscription").exec(function (err, data) {
+            if (err || _.isEmpty(data)) {
+                callback(err, [])
+            } else {
+                callback(null, data)
+            }
+        })
+    },
+    generateExcelVoter: function (match, callback) {
+        async.concatSeries(match, function (mainData, callback) {
+                var obj = {};
+                obj["FIRST NAME"] = mainData.firstName;
+                obj["LAST NAME"] = mainData.lastName;
+                obj["EMAIL"] = mainData.email;
+                obj["COMAPNY"] = mainData.company;
+                obj["CATEGORY"] = mainData.category;
+                callback(null, obj);
+            },
+            function (err, singleData) {
+                callback(null, singleData);
+            });
+
+    },
 
 // getLastAddedVoter: function (data, callback) {
 //     console.log("inside voter")
@@ -65,9 +90,6 @@ search1: function (data, callback) {
                     term: data.keyword
                 }
             },
-            // sort: {
-            //     desc: 'createdAt'
-            // },
             start: (page - 1) * maxRow,
             count: maxRow
         };

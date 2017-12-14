@@ -90,6 +90,7 @@
             }
         }
     }],
+
     "apiCall": {
         "url": "Awardcategory/save",
         "params": "_id"

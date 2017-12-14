@@ -321,6 +321,47 @@ var models = {
             callback(null, Config.import(buffer));
         });
     },
+    generateExcel1: function (name, found, res) {
+      
+        var excelData = [];
+        _.each(found, function (singleData) {
+            var singleExcel = {};
+            _.each(singleData, function (n, key) {
+                if (key != "__v" && key != "createdAt" && key != "updatedAt") {
+                    singleExcel[key] = n;
+                }
+            });
+            excelData.push(singleExcel);
+        });
+        var xls = json2xls(excelData);
+        var folder = "./.tmp/";
+        var path = name + "-" + moment().format("MMM-DD-YYYY-hh-mm-ss-a") + ".xlsx";
+        var finalPath = folder + path;
+        console.log("finalPath", finalPath);
+        fs.writeFile(finalPath, xls, 'binary', function (err) {
+            if (err) {
+                res.callback(err, null);
+            } else {
+                fs.readFile(finalPath, function (err, excel) {
+                    if (err) {
+                        res.callback(err, null);
+                    } else {
+                        // res.set('Content-Type', "application/octet-stream");
+                        // res.set('Content-Disposition', "attachment;filename=" + path);
+                        // res.send(excel);
+                        res({
+                            excel: excel,
+                            path: path,
+                            finalPath: finalPath
+                        })
+
+                        fs.unlink(finalPath);
+                    }
+                });
+            }
+        });
+
+    },
     generateExcel: function (name, found, res) {
         // name = _.kebabCase(name);
         var excelData = [];
