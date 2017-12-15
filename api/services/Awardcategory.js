@@ -50,9 +50,10 @@ var model = {
         async.concatSeries(match, function (mainData, callback) {
                 console.log("maindata..5555555555555", mainData);
                 var obj = {};
-                obj["NAME"] = mainData.name;
 
-var myVal1 = '';
+                obj["NAME"] = mainData.name;
+                
+                var myVal1 = '';
                 var foo1 = ''
                 _.forEach(mainData.company, function (pro1) {
                     myVal1 = pro1.companyObj.name + ',' + myVal1;
