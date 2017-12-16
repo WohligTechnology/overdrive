@@ -51,29 +51,96 @@ var model = {
                 console.log("maindata..5555555555555", mainData);
                 var obj = {};
 
-                obj["NAME"] = mainData.name;
-                
-                var myVal1 = '';
-                var foo1 = ''
-                _.forEach(mainData.company, function (pro1) {
-                    myVal1 = pro1.companyObj.name + ',' + myVal1;
-                    foo1 = myVal1.substring(0, myVal1.length - 1);
-                })
-                obj["CATEGORY"] = foo1;
+                // obj["NAME"] = mainData.name;
+
+                // var myVal1 = '';
+                // var foo1 = ''
+                // _.forEach(mainData.company, function (pro1) {
+                //     myVal1 = pro1.companyObj.name + ',' + myVal1;
+                //     foo1 = myVal1.substring(0, myVal1.length - 1);
+                // })
+                // obj["CATEGORY"] = foo1;
 
 
-                var myVal = '';
-                var foo = ''
-                _.forEach(mainData.company, function (pro) {
-                    myVal = pro.voteCount + ',' + myVal;
-                    foo = myVal.substring(0, myVal.length - 1);
-                })
-                obj["VOTECOUNT"] = foo;
+                // var myVal = '';
+                // var foo = ''
+                // _.forEach(mainData.company, function (pro) {
+                //     myVal = pro.voteCount + ',' + myVal;
+                //     foo = myVal.substring(0, myVal.length - 1);
+                // })
+                // obj["VOTECOUNT"] = foo;
+
+
+                var comp = '';
+                var vote = '';
+                if (mainData.name == "CARS") {
+                    var myVal1 = '';
+                    var foo1 = '';
+                    _.forEach(mainData.company, function (pro1) {
+                        console.log("pro1 in car", pro1)
+                        myVal1 = pro1.companyObj.name;
+                        if (comp == '') {
+                            comp = myVal1
+                        } else {
+                            comp = comp + "\n" + myVal1;
+                        }
+                        myVal2 = pro1.voteCount;
+                        if (vote == '') {
+                            vote = myVal2
+                        } else {
+                            vote = vote + "\n" + myVal2;
+                        }
+                        obj["NAME"] = mainData.name;
+                        obj["CATEGORY"] = comp;
+                        obj["VOTECOUNT"] = vote;
+                    })
+                }
 
 
 
+                if (mainData.name == "SCOOTERS") {
+                    var myVal1 = '';
+                    var foo1 = '';
+                    _.forEach(mainData.company, function (pro1) {
+                        myVal1 = pro1.companyObj.name;
+                        if (comp == '') {
+                            comp = myVal1
+                        } else {
+                            comp = comp + "\n" + myVal1;
+                        }
+                        myVal2 = pro1.voteCount;
+                        if (vote == '') {
+                            vote = myVal2
+                        } else {
+                            vote = vote + "\n" + myVal2;
+                        }
+                        obj["NAME"] = mainData.name;
+                        obj["CATEGORY"] = comp;
+                        obj["VOTECOUNT"] = vote;
+                    })
+                }
 
-
+                if (mainData.name == "MOTOBIKES") {
+                    var myVal1 = '';
+                    var foo1 = '';
+                    _.forEach(mainData.company, function (pro1) {
+                        myVal1 = pro1.companyObj.name;
+                        if (comp == '') {
+                            comp = myVal1
+                        } else {
+                            comp = comp + "\n" + myVal1;
+                        }
+                        myVal2 = pro1.voteCount;
+                        if (vote == '') {
+                            vote = myVal2
+                        } else {
+                            vote = vote + "\n" + myVal2;
+                        }
+                        obj["NAME"] = mainData.name;
+                        obj["CATEGORY"] = comp;
+                        obj["VOTECOUNT"] = vote;
+                    })
+                }
 
                 callback(null, obj);
             },

@@ -246,15 +246,11 @@ NavigationService.callApi("Leadershipboard/search", function (data) {
         //for vote//
         $scope.companyView = true;
         $scope.company = [];
-        console.log($stateParams);
-        console.log($state.current.name);
-
         $scope.awardcategory = function () {
             NavigationService.callApiWithData('Awardcategory/search', {}, function (data) {
                 var awardcategory = [];
                 $scope.totalVote = 0;
                 $scope.awardcategory = data.data.results;
-                console.log("$scope.awardcategory", $scope.awardcategory);
                 _.each($scope.awardcategory, function (value) {
                     // console.log("value", value)
 
