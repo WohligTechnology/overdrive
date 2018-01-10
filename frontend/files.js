@@ -26,6 +26,7 @@ module.exports = [
   "bower_components/angular-promise-buttons/dist/angular-promise-buttons.js",
   "bower_components/angular-scroll/angular-scroll.js",
   'bower_components/swiper/dist/js/swiper.min.js',
+  'bower_components/jStorage/jstorage.js',
 
   //App.js
   'frontend/js/app.js',

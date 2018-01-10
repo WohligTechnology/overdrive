@@ -143,7 +143,7 @@ $scope.voterDetails={
   company:$scope.companyName,
   category:$scope.VoterCategory
 }
-
+console.log("$scope.voterDetails",$scope.voterDetails);
 
 NavigationService.callApiWithData("VoterDetails/save", $scope.voterDetails, function (data) {
                
@@ -155,7 +155,7 @@ console.log("VoterDetails data",data);
 
 
 
-console.log("$scope.voterDetails",$scope.voterDetails);
+
 
 
 

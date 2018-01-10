@@ -1,4 +1,4 @@
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location, $uibModal, $state) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location, $uibModal, $state,$timeout) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
@@ -17,6 +17,22 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         //     url1: 'img/slider/3-m.png',
         //     name: "MOTOBIKES"
         // }];
+
+
+
+
+
+ $scope.removeUser = function () {
+console.log("in remove user");
+
+ $timeout(function () {
+                    $.jStorage.flush();
+                }, 3600000);
+
+
+ };
+ $scope.removeUser();
+
 
 
 $scope.videoEpisode = [{
@@ -210,23 +226,71 @@ NavigationService.callApi("Leadershipboard/search", function (data) {
             }, function (data) {
                 $scope.companyView = true;
                 $scope.currentHost = window.location.origin;
-                $uibModal.open({
+
+
+
+if (!_.isEmpty($.jStorage.get('voter')))
+{
+console.log("voter already exist");
+console.log("userId",$.jStorage.get('voter')._id);
+$scope.userId=$.jStorage.get('voter')._id;
+// $state.go('nomination', {
+//                             'userId': $scope.userId,
+//                            'id': $scope.id
+//                         });
+$scope.vData={};
+$scope.userId=$.jStorage.get('voter')._id;
+if($.jStorage.get('voter').email){
+    console.log("voter in jstorage");
+$scope.vData.email=$.jStorage.get('voter').email;
+$scope.vData.name=$.jStorage.get('voter').name;
+$scope.vData.surname=$.jStorage.get('voter').surname;
+console.log($scope.vData,"$scope.vData");
+}
+
+
+            NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
+                console.log(data,"data");
+                if (data.value == true) {
+                    console.log(data,"data");
+                    console.log(data.data,"data11111111");
+                    if (data.data._id) {
+                        console.log("$scope.userId", data.data._id);
+                        $scope.userId = data.data._id;
+                        $state.go('nomination', {
+                            'userId': $scope.userId,
+                           'id': $scope.id
+                        });
+                    } else {
+                        $scope.errorVoterLogin = "Something Went Wrong!!!";
+                    }
+                }
+            });
+        
+}
+
+else{
+    console.log("voter does not exist");
+ $uibModal.open({
                     animation: true,
                     templateUrl: 'views/modal/signup.html',
                     scope: $scope,
                     size: 'md',
 
                 });
+}
             });
         };
        
 
         $scope.submitUser = function (data) {
             console.log("submit voter", data);
-            NavigationService.callApiWithData("Voter/saveVoter", data, function (data) {
+            NavigationService.callApiWithData("Voter/save", data, function (data) {
+                console.log(data,"data");
                 if (data.value == true) {
                     console.log(data,"data");
-                    // $.jStorage.set("voter", data.data);
+                    console.log(data.data,"data11111111");
+                    $.jStorage.set("voter", data.data);
                     if (data.data._id) {
                         console.log("$scope.userId", data.data._id);
                         $scope.userId = data.data._id;
@@ -419,6 +483,10 @@ NavigationService.callApi("Awardcategory/search", function (data) {
             $scope.storeAwardData = data.data.results;
             console.log("$scope.storeAwardData", $scope.storeAwardData);
 
+
+     });
+
+
 NavigationService.callApi("Leadershipboard/search", function (data) {
             $scope.storeLeaderData = data.data.results;
 console.log("$scope.storeLeaderData", $scope.storeLeaderData);
@@ -426,17 +494,6 @@ console.log("$scope.storeLeaderData", $scope.storeLeaderData);
 
             
         });
-
-
-
-
-
-
-        });
-
-
-
-
 
 
  
