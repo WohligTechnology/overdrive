@@ -68679,12 +68679,16 @@ var myApp = angular.module('myApp', [
     'toastr',
     'duScroll',
 ]);
-if (!mainUrl) {
-    mainUrl = "";
-}
 
 // Define all the routes below
-myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
+myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        // Allow same origin resource loads.
+        'self',
+        // Allow loading from our assets domain.  Notice the difference between * and **.
+        'http://overdriveawards.in/**'
+    ]);
+
     var tempateURL = mainUrl + "views/template/template.html"; //Default Template URL
 
     // for http request with session
