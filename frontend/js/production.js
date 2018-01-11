@@ -68679,10 +68679,13 @@ var myApp = angular.module('myApp', [
     'toastr',
     'duScroll',
 ]);
+if (!mainUrl) {
+    mainUrl = "";
+}
 
 // Define all the routes below
 myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
-    var tempateURL = "views/template/template.html"; //Default Template URL
+    var tempateURL = mainUrl + "views/template/template.html"; //Default Template URL
 
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
@@ -68692,7 +68695,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'HomeCtrl'
         })
-         .state('nomination', {
+        .state('nomination', {
             url: "/nomination/:userId/:id",
             templateUrl: tempateURL,
             controller: 'NominationCtrl'
@@ -68981,22 +68984,22 @@ myApp.service('TemplateService', function () {
     this.meta = "";
     this.metadesc = "";
     this.class = "";
-    
+
 
     var d = new Date();
     this.year = d.getFullYear();
 
     this.init = function () {
-        this.header = "views/template/header.html";
-        this.menu = "views/template/menu.html";
-        this.content = "views/content/content.html";
-        this.footer = "views/template/footer.html";
+        this.header = mainUrl + "views/template/header.html";
+        this.menu = mainUrl + "views/template/menu.html";
+        this.content = mainUrl + "views/content/content.html";
+        this.footer = mainUrl + "views/template/footer.html";
     };
 
     this.getHTML = function (page) {
         this.init();
         var data = this;
-        data.content = "views/" + page;
+        data.content = mainUrl + "views/" + page;
         return data;
     };
 
@@ -69120,7 +69123,7 @@ myApp.factory('apiService', function ($http, $q, $timeout) {
 
     };
 });
-myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location, $uibModal, $state,$timeout) {
+myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationService, $timeout, $http, $stateParams, $location, $uibModal, $state, $timeout) {
         $scope.template = TemplateService.getHTML("content/home.html");
         TemplateService.title = "Home"; //This is the Title of the Website
         $scope.navigation = NavigationService.getNavigation();
@@ -69144,35 +69147,35 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
 
 
- $scope.removeUser = function () {
-console.log("in remove user");
+        $scope.removeUser = function () {
+            console.log("in remove user");
 
- $timeout(function () {
-                    $.jStorage.flush();
-                }, 3600000);
-
-
- };
- $scope.removeUser();
+            $timeout(function () {
+                $.jStorage.flush();
+            }, 3600000);
 
 
+        };
+        $scope.removeUser();
 
-$scope.videoEpisode = [{
+
+
+        $scope.videoEpisode = [{
             imageUrl: "r-sFYno9dmQ",
-            videoUrl:"r-sFYno9dmQ",
-            name:"TEASER"
+            videoUrl: "r-sFYno9dmQ",
+            name: "TEASER"
         }, {
             imageUrl: "eKv4BMYj9Wg",
-            videoUrl:"eKv4BMYj9Wg",
-            name:"CURTAIN RAISER"
+            videoUrl: "eKv4BMYj9Wg",
+            name: "CURTAIN RAISER"
         }, {
             imageUrl: "IFa2XGXJSeo",
-            videoUrl:"IFa2XGXJSeo",
-            name:"JURY PROMO ROUND"
+            videoUrl: "IFa2XGXJSeo",
+            name: "JURY PROMO ROUND"
         }, {
             imageUrl: "bxyPEIS6G6k",
-            videoUrl:"bxyPEIS6G6k",
-            name:"THE RACE HAS BEGUN"
+            videoUrl: "bxyPEIS6G6k",
+            name: "THE RACE HAS BEGUN"
         }]
 
 
@@ -69275,7 +69278,7 @@ $scope.videoEpisode = [{
             $scope.mySlides = data.data.results;
         });
 
-NavigationService.callApi("Leadershipboard/search", function (data) {
+        NavigationService.callApi("Leadershipboard/search", function (data) {
             console.log("Leadershipboard data", data);
             $scope.Leadershipboard = data.data.results;
         });
@@ -69351,74 +69354,71 @@ NavigationService.callApi("Leadershipboard/search", function (data) {
 
 
 
-if (!_.isEmpty($.jStorage.get('voter')))
-{
-console.log("voter already exist");
-console.log("userId",$.jStorage.get('voter')._id);
-$scope.userId=$.jStorage.get('voter')._id;
-// $state.go('nomination', {
-//                             'userId': $scope.userId,
-//                            'id': $scope.id
-//                         });
-$scope.vData={};
-$scope.userId=$.jStorage.get('voter')._id;
-if($.jStorage.get('voter').email){
-    console.log("voter in jstorage");
-$scope.vData.email=$.jStorage.get('voter').email;
-$scope.vData.name=$.jStorage.get('voter').name;
-$scope.vData.surname=$.jStorage.get('voter').surname;
-console.log($scope.vData,"$scope.vData");
-}
-
-
-            NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
-                console.log(data,"data");
-                if (data.value == true) {
-                    console.log(data,"data");
-                    console.log(data.data,"data11111111");
-                    if (data.data._id) {
-                        console.log("$scope.userId", data.data._id);
-                        $scope.userId = data.data._id;
-                        $state.go('nomination', {
-                            'userId': $scope.userId,
-                           'id': $scope.id
-                        });
-                    } else {
-                        $scope.errorVoterLogin = "Something Went Wrong!!!";
+                if (!_.isEmpty($.jStorage.get('voter'))) {
+                    console.log("voter already exist");
+                    console.log("userId", $.jStorage.get('voter')._id);
+                    $scope.userId = $.jStorage.get('voter')._id;
+                    // $state.go('nomination', {
+                    //                             'userId': $scope.userId,
+                    //                            'id': $scope.id
+                    //                         });
+                    $scope.vData = {};
+                    $scope.userId = $.jStorage.get('voter')._id;
+                    if ($.jStorage.get('voter').email) {
+                        console.log("voter in jstorage");
+                        $scope.vData.email = $.jStorage.get('voter').email;
+                        $scope.vData.name = $.jStorage.get('voter').name;
+                        $scope.vData.surname = $.jStorage.get('voter').surname;
+                        console.log($scope.vData, "$scope.vData");
                     }
+
+
+                    NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
+                        console.log(data, "data");
+                        if (data.value == true) {
+                            console.log(data, "data");
+                            console.log(data.data, "data11111111");
+                            if (data.data._id) {
+                                console.log("$scope.userId", data.data._id);
+                                $scope.userId = data.data._id;
+                                $state.go('nomination', {
+                                    'userId': $scope.userId,
+                                    'id': $scope.id
+                                });
+                            } else {
+                                $scope.errorVoterLogin = "Something Went Wrong!!!";
+                            }
+                        }
+                    });
+
+                } else {
+                    console.log("voter does not exist");
+                    $uibModal.open({
+                        animation: true,
+                        templateUrl: mainUrl + 'views/modal/signup.html',
+                        scope: $scope,
+                        size: 'md',
+
+                    });
                 }
             });
-        
-}
-
-else{
-    console.log("voter does not exist");
- $uibModal.open({
-                    animation: true,
-                    templateUrl: 'views/modal/signup.html',
-                    scope: $scope,
-                    size: 'md',
-
-                });
-}
-            });
         };
-       
+
 
         $scope.submitUser = function (data) {
             console.log("submit voter", data);
             NavigationService.callApiWithData("Voter/save", data, function (data) {
-                console.log(data,"data");
+                console.log(data, "data");
                 if (data.value == true) {
-                    console.log(data,"data");
-                    console.log(data.data,"data11111111");
+                    console.log(data, "data");
+                    console.log(data.data, "data11111111");
                     $.jStorage.set("voter", data.data);
                     if (data.data._id) {
                         console.log("$scope.userId", data.data._id);
                         $scope.userId = data.data._id;
                         $state.go('nomination', {
                             'userId': $scope.userId,
-                           'id': $scope.id
+                            'id': $scope.id
                         });
                     } else {
                         $scope.errorVoterLogin = "Something Went Wrong!!!";
@@ -69483,7 +69483,7 @@ else{
         //             $scope.currentHost = window.location.origin;
         //             $uibModal.open({
         //                 animation: true,
-        //                 templateUrl: 'views/content/login.html',
+        //                 templateUrl: mainUrl + 'views/content/login.html',
         //                 scope: $scope,
         //                 size: 'lg',
         //             });
@@ -69552,7 +69552,7 @@ else{
                             $("<a>").attr("href", $scope.facebookurl).attr("target", "_blank")[0].click();
                             $uibModal.open({
                                 animation: true,
-                                templateUrl: 'views/modal/success.html',
+                                templateUrl: mainUrl + 'views/modal/success.html',
                                 scope: $scope,
                                 size: 'lg',
                             });
@@ -69560,7 +69560,7 @@ else{
                             $("<a>").attr("href", $scope.twitterurl).attr("target", "_blank")[0].click();
                             $uibModal.open({
                                 animation: true,
-                                templateUrl: 'views/modal/success.html',
+                                templateUrl: mainUrl + 'views/modal/success.html',
                                 scope: $scope,
                                 size: 'lg',
                             });
@@ -69569,14 +69569,14 @@ else{
                             $("<a>").attr("href", $scope.linkedInurl).attr("target", "_blank")[0].click();
                             $uibModal.open({
                                 animation: true,
-                                templateUrl: 'views/modal/success.html',
+                                templateUrl: mainUrl + 'views/modal/success.html',
                                 scope: $scope,
                                 size: 'lg',
                             });
                         } else {
                             $uibModal.open({
                                 animation: true,
-                                templateUrl: 'views/modal/success.html',
+                                templateUrl: mainUrl + 'views/modal/success.html',
                                 scope: $scope,
                                 size: 'lg',
                             });
@@ -69599,27 +69599,27 @@ else{
 
 
 
-//to save votes in leadershipboard//
- 
-NavigationService.callApi("Awardcategory/search", function (data) {
+        //to save votes in leadershipboard//
+
+        NavigationService.callApi("Awardcategory/search", function (data) {
             $scope.storeAwardData = data.data.results;
             console.log("$scope.storeAwardData", $scope.storeAwardData);
 
 
-     });
-
-
-NavigationService.callApi("Leadershipboard/search", function (data) {
-            $scope.storeLeaderData = data.data.results;
-console.log("$scope.storeLeaderData", $scope.storeLeaderData);
-
-
-            
         });
 
 
- 
-//to save votes in leadershipboard end//
+        NavigationService.callApi("Leadershipboard/search", function (data) {
+            $scope.storeLeaderData = data.data.results;
+            console.log("$scope.storeLeaderData", $scope.storeLeaderData);
+
+
+
+        });
+
+
+
+        //to save votes in leadershipboard end//
 
 
 
@@ -69633,7 +69633,7 @@ console.log("$scope.storeLeaderData", $scope.storeLeaderData);
 
 
     })
-    .controller('navCtrl', function ($scope, $location, $anchorScroll,$state, $timeout) {
+    .controller('navCtrl', function ($scope, $location, $anchorScroll, $state, $timeout) {
         $scope.scrollTo = function (id) {
             document.querySelector('#' + id).scrollIntoView({
                 behavior: 'smooth'
@@ -69648,10 +69648,10 @@ console.log("$scope.storeLeaderData", $scope.storeLeaderData);
         };
 
 
-   $scope.goToAnchor = function (anchor, id) {
+        $scope.goToAnchor = function (anchor, id) {
             console.log("inside anchor")
             $state.go(anchor)
-                // $location.hash(anchor);
+            // $location.hash(anchor);
             if (id) {
                 $timeout(function () {
                     // $anchorScroll();
@@ -69708,8 +69708,8 @@ console.log("$scope.storeLeaderData", $scope.storeLeaderData);
    $scope.navigation = NavigationService.getNavigation();
    TemplateService.class = "nomination";
    $scope.formSubmitted = false;
-console.log("$stateParams.userId", $stateParams.userId);
-console.log("$stateParams.id", $stateParams.id);
+   console.log("$stateParams.userId", $stateParams.userId);
+   console.log("$stateParams.id", $stateParams.id);
 
 
    $scope.submitForm = function (data) {
@@ -69770,7 +69770,7 @@ console.log("$stateParams.id", $stateParams.id);
    //        $scope.currentHost = window.location.origin;
    //        $uibModal.open({
    //          animation: true,
-   //          templateUrl: 'views/content/login.html',
+   //          templateUrl: mainUrl + 'views/content/login.html',
    //          scope: $scope,
    //          size: 'lg',
    //        });
@@ -69830,7 +69830,7 @@ console.log("$stateParams.id", $stateParams.id);
          console.log("success");
          $uibModal.open({
            animation: true,
-           templateUrl: 'views/modal/thankyou.html',
+           templateUrl: mainUrl + 'views/modal/thankyou.html',
            scope: $scope,
            size: 'md',
 
@@ -69840,20 +69840,20 @@ console.log("$stateParams.id", $stateParams.id);
      }
 
 
-$scope.voterDetails={
-  firstName:$scope.VoterName  ,
-  lastName:$scope.VoterSurname,
-  email:$scope.VoterEmail,
-  company:$scope.companyName,
-  category:$scope.VoterCategory
-}
-console.log("$scope.voterDetails",$scope.voterDetails);
+     $scope.voterDetails = {
+       firstName: $scope.VoterName,
+       lastName: $scope.VoterSurname,
+       email: $scope.VoterEmail,
+       company: $scope.companyName,
+       category: $scope.VoterCategory
+     }
+     console.log("$scope.voterDetails", $scope.voterDetails);
 
-NavigationService.callApiWithData("VoterDetails/save", $scope.voterDetails, function (data) {
-               
-console.log("VoterDetails data",data);
+     NavigationService.callApiWithData("VoterDetails/save", $scope.voterDetails, function (data) {
 
-            });
+       console.log("VoterDetails data", data);
+
+     });
 
 
 
@@ -69880,14 +69880,14 @@ console.log("VoterDetails data",data);
    //for voter save//
 
 
-NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
+   NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
      console.log("getOne Category", data)
      $scope.VoterCategory = data.data.name;
      console.log("$scope.VoterCategory", $scope.VoterCategory)
    });
 
 
-NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data) {
+   NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data) {
      console.log("getOne Voter", data)
      $scope.VoterName = data.data.name;
      $scope.VoterEmail = data.data.email;
@@ -69898,7 +69898,7 @@ NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data)
    });
 
 
-NavigationService.callApiWithData("Company/getOne", $scope.userId, function (data) {
+   NavigationService.callApiWithData("Company/getOne", $scope.userId, function (data) {
      console.log("getOne Company", data)
      $scope.VoterCompany = data.data.name;
      console.log("$scope.VoterCompany", $scope.VoterCompany)

@@ -13,10 +13,13 @@ var myApp = angular.module('myApp', [
     'toastr',
     'duScroll',
 ]);
+if (!mainUrl) {
+    mainUrl = "";
+}
 
 // Define all the routes below
 myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
-    var tempateURL = "views/template/template.html"; //Default Template URL
+    var tempateURL = mainUrl + "views/template/template.html"; //Default Template URL
 
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
@@ -26,7 +29,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locat
             templateUrl: tempateURL,
             controller: 'HomeCtrl'
         })
-         .state('nomination', {
+        .state('nomination', {
             url: "/nomination/:userId/:id",
             templateUrl: tempateURL,
             controller: 'NominationCtrl'

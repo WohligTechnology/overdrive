@@ -4,8 +4,8 @@
    $scope.navigation = NavigationService.getNavigation();
    TemplateService.class = "nomination";
    $scope.formSubmitted = false;
-console.log("$stateParams.userId", $stateParams.userId);
-console.log("$stateParams.id", $stateParams.id);
+   console.log("$stateParams.userId", $stateParams.userId);
+   console.log("$stateParams.id", $stateParams.id);
 
 
    $scope.submitForm = function (data) {
@@ -66,7 +66,7 @@ console.log("$stateParams.id", $stateParams.id);
    //        $scope.currentHost = window.location.origin;
    //        $uibModal.open({
    //          animation: true,
-   //          templateUrl: 'views/content/login.html',
+   //          templateUrl: mainUrl + 'views/content/login.html',
    //          scope: $scope,
    //          size: 'lg',
    //        });
@@ -126,7 +126,7 @@ console.log("$stateParams.id", $stateParams.id);
          console.log("success");
          $uibModal.open({
            animation: true,
-           templateUrl: 'views/modal/thankyou.html',
+           templateUrl: mainUrl + 'views/modal/thankyou.html',
            scope: $scope,
            size: 'md',
 
@@ -136,20 +136,20 @@ console.log("$stateParams.id", $stateParams.id);
      }
 
 
-$scope.voterDetails={
-  firstName:$scope.VoterName  ,
-  lastName:$scope.VoterSurname,
-  email:$scope.VoterEmail,
-  company:$scope.companyName,
-  category:$scope.VoterCategory
-}
-console.log("$scope.voterDetails",$scope.voterDetails);
+     $scope.voterDetails = {
+       firstName: $scope.VoterName,
+       lastName: $scope.VoterSurname,
+       email: $scope.VoterEmail,
+       company: $scope.companyName,
+       category: $scope.VoterCategory
+     }
+     console.log("$scope.voterDetails", $scope.voterDetails);
 
-NavigationService.callApiWithData("VoterDetails/save", $scope.voterDetails, function (data) {
-               
-console.log("VoterDetails data",data);
+     NavigationService.callApiWithData("VoterDetails/save", $scope.voterDetails, function (data) {
 
-            });
+       console.log("VoterDetails data", data);
+
+     });
 
 
 
@@ -176,14 +176,14 @@ console.log("VoterDetails data",data);
    //for voter save//
 
 
-NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
+   NavigationService.callApiWithData("Awardcategory/getOne", $scope.dataId, function (data) {
      console.log("getOne Category", data)
      $scope.VoterCategory = data.data.name;
      console.log("$scope.VoterCategory", $scope.VoterCategory)
    });
 
 
-NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data) {
+   NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data) {
      console.log("getOne Voter", data)
      $scope.VoterName = data.data.name;
      $scope.VoterEmail = data.data.email;
@@ -194,7 +194,7 @@ NavigationService.callApiWithData("Voter/getOne", $scope.userId, function (data)
    });
 
 
-NavigationService.callApiWithData("Company/getOne", $scope.userId, function (data) {
+   NavigationService.callApiWithData("Company/getOne", $scope.userId, function (data) {
      console.log("getOne Company", data)
      $scope.VoterCompany = data.data.name;
      console.log("$scope.VoterCompany", $scope.VoterCompany)
