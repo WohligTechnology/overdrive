@@ -2964,17 +2964,13 @@ body.fancybox-iosfix {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 99993;
+  z-index: 99992;
   -webkit-tap-highlight-color: transparent;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
-
-/* Make sure that the first one is on the top */
-.fancybox-container ~ .fancybox-container {
-  z-index: 99992; }
 
 .fancybox-outer,
 .fancybox-inner,
@@ -3050,6 +3046,9 @@ body.fancybox-iosfix {
   direction: ltr;
   z-index: 99994;
   -webkit-transform: translate3d(0, 0, 0); }
+
+.fancybox-is-closing .fancybox-stage {
+  overflow: visible; }
 
 .fancybox-slide {
   position: absolute;
@@ -3144,7 +3143,10 @@ body.fancybox-iosfix {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform; }
 
 .fancybox-can-zoomOut .fancybox-image-wrap {
   cursor: -webkit-zoom-out;
@@ -3215,18 +3217,6 @@ body.fancybox-iosfix {
   font-size: 16px;
   line-height: 20px; }
 
-.fancybox-slide--iframe .fancybox-close-small {
-  top: 0;
-  right: -44px; }
-
-.fancybox-slide--iframe .fancybox-close-small:after {
-  font-size: 35px;
-  color: #aaa; }
-
-.fancybox-slide--iframe .fancybox-close-small:hover:after {
-  color: #fff;
-  background: transparent; }
-
 /* Buttons */
 .fancybox-button {
   box-sizing: border-box;
@@ -3239,16 +3229,23 @@ body.fancybox-iosfix {
   border: 0;
   border-radius: 0;
   background: rgba(30, 30, 30, 0.6);
-  color: #ccc;
   transition: color .3s ease;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
+
+.fancybox-button,
+.fancybox-button:visited,
+.fancybox-button:link {
+  color: #ccc; }
+
+.fancybox-button:focus,
+.fancybox-button:hover {
+  color: #fff; }
 
 .fancybox-button[disabled] {
+  color: #ccc;
   cursor: default;
   opacity: 0.6; }
-
-.fancybox-button:hover:not([disabled]) {
-  color: #fff; }
 
 .fancybox-button svg {
   display: block;
@@ -3270,6 +3267,9 @@ body.fancybox-iosfix {
 
 .fancybox-button--pause svg path:nth-child(1) {
   display: none; }
+
+.fancybox-button--zoom svg path {
+  fill: transparent; }
 
 /* Navigation arrows */
 .fancybox-navigation {
@@ -3345,6 +3345,25 @@ body.fancybox-iosfix {
 .fancybox-close-small:hover:after {
   color: #555;
   background: #eee; }
+
+.fancybox-slide--image .fancybox-close-small,
+.fancybox-slide--iframe .fancybox-close-small {
+  top: 0;
+  right: -44px; }
+
+.fancybox-slide--image .fancybox-close-small:after,
+.fancybox-slide--iframe .fancybox-close-small:after {
+  font-size: 35px;
+  color: #aaa; }
+
+.fancybox-slide--image .fancybox-close-small:hover:after,
+.fancybox-slide--iframe .fancybox-close-small:hover:after {
+  color: #fff;
+  background: transparent; }
+
+.fancybox-is-scaling .fancybox-close-small,
+.fancybox-is-zoomable.fancybox-can-drag .fancybox-close-small {
+  display: none; }
 
 /* Caption */
 .fancybox-caption-wrap {
@@ -3519,13 +3538,17 @@ body.fancybox-iosfix {
   padding: 0;
   text-align: center; }
 
+.fancybox-share p:first-of-type {
+  margin-right: -10px; }
+
 .fancybox-share_button {
   display: inline-block;
   text-decoration: none;
   margin: 0 10px 10px 0;
   padding: 10px 20px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: 0;
   border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
   background: #fff;
   white-space: nowrap;
   font-size: 16px;
@@ -3535,20 +3558,32 @@ body.fancybox-iosfix {
   -ms-user-select: none;
   user-select: none;
   min-width: 140px;
-  color: #888;
+  color: #707070;
   transition: all .2s; }
 
 .fancybox-share_button:focus,
 .fancybox-share_button:hover {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   text-decoration: none;
-  color: #555; }
+  color: #333;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3); }
 
 .fancybox-share_button svg {
   margin-right: 5px;
-  width: 23px;
-  height: 23px;
-  vertical-align: top; }
+  width: 20px;
+  height: 20px;
+  vertical-align: text-bottom; }
+
+.fancybox-share input {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5px 0 0 0;
+  padding: 10px 15px;
+  border: 1px solid #d7d7d7;
+  border-radius: 3px;
+  background: #ebebeb;
+  color: #5d5b5b;
+  font-size: 14px;
+  outline: none; }
 
 /* Thumbs */
 .fancybox-thumbs {
@@ -3559,13 +3594,17 @@ body.fancybox-iosfix {
   right: 0;
   width: 212px;
   margin: 0;
-  padding: 2px;
+  padding: 2px 2px 4px 2px;
   background: #fff;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   box-sizing: border-box;
   z-index: 99995; }
+
+.fancybox-thumbs-x {
+  overflow-y: hidden;
+  overflow-x: auto; }
 
 .fancybox-show-thumbs .fancybox-thumbs {
   display: block; }
@@ -3585,6 +3624,21 @@ body.fancybox-iosfix {
   overflow-y: auto;
   font-size: 0;
   white-space: nowrap; }
+
+.fancybox-thumbs-x > ul {
+  overflow: hidden; }
+
+.fancybox-thumbs-y > ul::-webkit-scrollbar {
+  width: 7px; }
+
+.fancybox-thumbs-y > ul::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+.fancybox-thumbs-y > ul::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px; }
 
 .fancybox-thumbs > ul > li {
   float: left;
@@ -3610,8 +3664,6 @@ li.fancybox-thumbs-loading {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
   max-width: none;
   max-height: none;
   -webkit-touch-callout: none;
@@ -4172,7 +4224,7 @@ div[toast].ng-leave.ng-leave-active {
     width: 25em; } }
 
 /**
- * Swiper 4.0.5
+ * Swiper 4.0.6
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://www.idangero.us/swiper/
  *
@@ -4180,7 +4232,7 @@ div[toast].ng-leave.ng-leave-active {
  *
  * Released under the MIT License
  *
- * Released on: November 7, 2017
+ * Released on: November 13, 2017
  */
 .swiper-container {
   margin: 0 auto;
@@ -11462,13 +11514,13 @@ header {
     transform: translateY(4.5rem);
     animation: bounce 1s infinite cubic-bezier(0, 0, 0, 1); }
     .barz li:nth-of-type(1) {
-      animation-delay: 1s; }
+      animation-delay: 1.1s; }
     .barz li:nth-of-type(2) {
       animation-delay: 1s; }
     .barz li:nth-of-type(3) {
-      animation-delay: 0.9s; }
+      animation-delay: 0.3s; }
     .barz li:nth-of-type(4) {
-      animation-delay: 0.8s; }
+      animation-delay: 0.2s; }
     .barz li .percent-label {
       position: absolute;
       left: -5px;
@@ -12315,5 +12367,3 @@ footer .border-white {
     background-image: url(../img/fancybox_sprite.png); }
   .video-icon {
     top: 50%; } }
-
-/*# sourceMappingURL=import.css.map */
