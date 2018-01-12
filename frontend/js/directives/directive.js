@@ -5,7 +5,7 @@ myApp.directive('img', function ($compile, $parse) {
             link: function ($scope, element, attrs) {
                 var $element = $(element);
                 if (!attrs.noloading) {
-                    $element.after("<img src='img/loading.gif' class='loading' />");
+                    $element.after("<img src='http://overdriveawards.in/img/loading.gif' class='loading' />");
                     var $loading = $element.next(".loading");
                     $element.load(function () {
                         $loading.remove();
