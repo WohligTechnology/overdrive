@@ -39,7 +39,7 @@
         <div class="nomination-section">
             <!--<pre>{{singleCatData}}</pre>-->
             <div class="d-flex justify-content-center">
-                <div class="flex-item" ng-repeat="i in singleCatData.company track by $index">
+                <div class="flex-item" ng-repeat="i in singleCatData.company | orderBy:'companyObj.name'">
                     <div class="nomination-flip">
                         <div class="flipDiv" ng-class="class[$index]">
                             <figure>
