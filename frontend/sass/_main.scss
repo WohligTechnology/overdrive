@@ -189,9 +189,11 @@ body {
 .block1 {
     height: 700px
 }
-.block-video{
-height: auto;
+
+.block-video {
+    height: auto;
 }
+
 .block-gallery {
     height: 550px;
 }
@@ -813,6 +815,7 @@ header {
     position: relative;
     z-index: 9;
 }
+
 .smoke {
     position: absolute;
     z-index: 4;
@@ -820,7 +823,6 @@ header {
     left: 90px;
     width: 110px;
 }
-
 
 .blade1 {
     position: absolute;
@@ -1420,7 +1422,16 @@ footer .border-white {
         border: 2px solid red;
         padding: 35px 0;
         overflow: hidden;
+        padding-bottom: 10px;
     }
+    .thank-vote{
+        padding: 15px;
+        /* text-align: left; */
+        padding-bottom: 0px;
+        color: #ef1e00;
+        
+    }
+   
     h4 {
         color: red;
         letter-spacing: 1px;
@@ -1478,13 +1489,14 @@ footer .border-white {
 }
 
 .episodes {
-    position: relative;
-    // margin-bottom: 20px;
+    position: relative; // margin-bottom: 20px;
 }
-.ep-img{
-        border: 3px solid white;
+
+.ep-img {
+    border: 3px solid white;
     box-shadow: 0 0 25px #FF0000;
 }
+
 .video-icon {
     position: absolute;
     top: 50%;
@@ -1492,13 +1504,20 @@ footer .border-white {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-.video-name{
-    p{   margin-top: 10px;
-        color:#FF0000;
+
+.video-name {
+    p {
+        margin-top: 10px;
+        color: #FF0000;
         font-weight: 700;
         text-transform: uppercase;
     }
 }
+
+.pd_20 {
+    padding: 20px;
+}
+
 // .back-games{
 // .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
 //     left:0 !important;
