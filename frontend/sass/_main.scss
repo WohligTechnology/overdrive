@@ -1513,11 +1513,16 @@ footer .border-white {
         text-transform: uppercase;
     }
 }
-
 .pd_20 {
     padding: 20px;
+        
 }
-
+.cor{
+color: red;
+a{
+    text-decoration: underline;
+}
+}
 // .back-games{
 // .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
 //     left:0 !important;
@@ -1537,4 +1542,4 @@ footer .border-white {
 //     background-position: center;
 //     background-repeat: no-repeat;
 // }
-// }
+// } 
