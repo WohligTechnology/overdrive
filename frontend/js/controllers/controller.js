@@ -4,34 +4,25 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
         $scope.navigation = NavigationService.getNavigation();
         TemplateService.class = "";
 
-        // $scope.mySlides = [{
-        //     url: 'img/slider/1.png',
-        //     url1: 'img/slider/1-m.png',
-        //     name: "CARS"
-        // }, {
-        //     url: 'img/slider/2.png',
-        //     url1: 'img/slider/2-m.png',
-        //     name: "SCOOTERS"
-        // }, {
-        //     url: 'img/slider/3.png',
-        //     url1: 'img/slider/3-m.png',
-        //     name: "MOTOBIKES"
-        // }];
+   
+        // $scope.removeUser = function () {
+        //     console.log("in remove user");
+
+        //     $timeout(function () {
+        //         $.jStorage.flush('voter');
+        //     }, 3600000);
 
 
+        // };
+        // $scope.removeUser();
 
 
+$scope.checkEmail=function(){
+    if($scope.formData.email){
+        $scope.emailExist=false;
+    }
+}
 
-        $scope.removeUser = function () {
-            console.log("in remove user");
-
-            $timeout(function () {
-                $.jStorage.flush('voter');
-            }, 3600000);
-
-
-        };
-        $scope.removeUser();
 
 
 
@@ -215,218 +206,501 @@ myApp.controller('HomeCtrl', function ($scope, TemplateService, NavigationServic
 
         //for category img change end//
 
+        //         $scope.getCompany = function (awardcategoryId) {
+        //             console.log("catClicked");
+        //             console.log("awardcategoryId", awardcategoryId);
+        // $scope.id = awardcategoryId;
+        // console.log("awardcategoryId", awardcategoryId);
+
+        //  if (!_.isEmpty($.jStorage.get('catStore'))){
+        // console.log("$scope.id", $scope.id);
+
+        // if($scope.id==($.jStorage.get('catStore').bike))
+        // {
+        //     console.log("have already voted for bike ");
+        //     $uibModal.open({
+        //                         animation: true,
+        //                         templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+        //                         scope: $scope,
+        //                         size: 'md',
+
+        //                     });
+        // }
+
+        // else if($scope.id==($.jStorage.get('catStore').car))
+        // {
+        //     console.log("have already voted for car ");
+        //        $uibModal.open({
+        //                         animation: true,
+        //                         templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+        //                         scope: $scope,
+        //                         size: 'md',
+
+        //                     });
+        // }
+
+        // else if($scope.id==($.jStorage.get('catStore').scooter))
+        // {
+        //     console.log("have already voted for scooter ");
+        //        $uibModal.open({
+        //                         animation: true,
+        //                         templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+        //                         scope: $scope,
+        //                         size: 'md',
+
+        //                     });
+        // }
+
+
+        // else{
+        //             console.log("$stateParams", $scope.id);
+        //             $scope.company = [];
+        //             NavigationService.callApiWithData('Awardcategory/getOne', {
+        //                 _id: awardcategoryId
+        //             }, function (data) {
+        //                 $scope.companyView = true;
+        //                 $scope.currentHost = window.location.origin;
+
+
+
+        //                 if (!_.isEmpty($.jStorage.get('voter'))) {
+        //                     console.log("voter already exist");
+        //                     console.log("userId", $.jStorage.get('voter')._id);
+        //                     $scope.userId = $.jStorage.get('voter')._id;
+        //                     // $state.go('nomination', {
+        //                     //                             'userId': $scope.userId,
+        //                     //                            'id': $scope.id
+        //                     //                         });
+        //                     $scope.vData = {};
+        //                     $scope.userId = $.jStorage.get('voter')._id;
+        //                     if ($.jStorage.get('voter').email) {
+        //                         console.log("voter in jstorage");
+        //                         $scope.vData.email = $.jStorage.get('voter').email;
+        //                         $scope.vData.name = $.jStorage.get('voter').name;
+        //                         $scope.vData.surname = $.jStorage.get('voter').surname;
+        //                         console.log($scope.vData, "$scope.vData");
+        //                     }
+
+
+        //                     NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
+        //                         console.log(data, "data");
+        //                         if (data.value == true) {
+        //                             console.log(data, "data");
+        //                             console.log(data.data, "data11111111");
+        //                             if (data.data._id) {
+        //                                 console.log("$scope.userId", data.data._id);
+        //                                 $scope.userId = data.data._id;
+        //                                 $state.go('nomination', {
+        //                                     'userId': $scope.userId,
+        //                                     'id': $scope.id
+        //                                 });
+        //                             } else {
+        //                                 $scope.errorVoterLogin = "Something Went Wrong!!!";
+        //                             }
+        //                         }
+        //                     });
+
+        //                 } else {
+        //                     console.log("voter does not exist");
+        //                     $uibModal.open({
+        //                         animation: true,
+        //                         templateUrl: mainUrl + 'views/modal/signup.html',
+        //                         scope: $scope,
+        //                         size: 'md',
+
+        //                     });
+        //                 }
+        //             });
+
+
+        // }
+        //  }
+
+        //  else{
+        //             console.log("$stateParams", $scope.id);
+        //             $scope.company = [];
+        //             NavigationService.callApiWithData('Awardcategory/getOne', {
+        //                 _id: awardcategoryId
+        //             }, function (data) {
+        //                 $scope.companyView = true;
+        //                 $scope.currentHost = window.location.origin;
+
+
+
+        //                 if (!_.isEmpty($.jStorage.get('voter'))) {
+        //                     console.log("voter already exist");
+        //                     console.log("userId", $.jStorage.get('voter')._id);
+        //                     $scope.userId = $.jStorage.get('voter')._id;
+        //                     // $state.go('nomination', {
+        //                     //                             'userId': $scope.userId,
+        //                     //                            'id': $scope.id
+        //                     //                         });
+        //                     $scope.vData = {};
+        //                     $scope.userId = $.jStorage.get('voter')._id;
+        //                     if ($.jStorage.get('voter').email) {
+        //                         console.log("voter in jstorage");
+        //                         $scope.vData.email = $.jStorage.get('voter').email;
+        //                         $scope.vData.name = $.jStorage.get('voter').name;
+        //                         $scope.vData.surname = $.jStorage.get('voter').surname;
+        //                         console.log($scope.vData, "$scope.vData");
+        //                     }
+
+
+        //                     NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
+        //                         console.log(data, "data");
+        //                         if (data.value == true) {
+        //                             console.log(data, "data");
+        //                             console.log(data.data, "data11111111");
+        //                             if (data.data._id) {
+        //                                 console.log("$scope.userId", data.data._id);
+        //                                 $scope.userId = data.data._id;
+        //                                 $state.go('nomination', {
+        //                                     'userId': $scope.userId,
+        //                                     'id': $scope.id
+        //                                 });
+        //                             } else {
+        //                                 $scope.errorVoterLogin = "Something Went Wrong!!!";
+        //                             }
+        //                         }
+        //                     });
+
+        //                 } else {
+        //                     console.log("voter does not exist");
+        //                     $uibModal.open({
+        //                         animation: true,
+        //                         templateUrl: mainUrl + 'views/modal/signup.html',
+        //                         scope: $scope,
+        //                         size: 'md',
+
+        //                     });
+        //                 }
+        //             });
+
+
+        // }
+        //         };
+
+
+
+
+$scope.modalInstance={};
+$scope.formData={};
+
+
         $scope.getCompany = function (awardcategoryId) {
+            $scope.formData = {};
+            $scope.signupform={};
             console.log("catClicked");
             console.log("awardcategoryId", awardcategoryId);
-$scope.id = awardcategoryId;
-console.log("awardcategoryId", awardcategoryId);
+            $scope.id = awardcategoryId;
+            console.log("awardcategoryId", awardcategoryId);
 
- if (!_.isEmpty($.jStorage.get('catStore'))){
-console.log("$scope.id", $scope.id);
+            if (!_.isEmpty($.jStorage.get('catStore'))) {
+                console.log("$scope.id", $scope.id);
 
-if($scope.id==($.jStorage.get('catStore').bike))
-{
-    console.log("have already voted for bike ");
-    $uibModal.open({
-                        animation: true,
-                        templateUrl: mainUrl + 'views/modal/user_already_exist.html',
-                        scope: $scope,
-                        size: 'md',
+                if ($scope.id == ($.jStorage.get('catStore').bike)) {
+                    console.log("have already voted for bike ");
+                    $uibModal.open({
+                                        animation: true,
+                                        templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+                                        scope: $scope,
+                                        size: 'md',
 
-                    });
-}
-
-else if($scope.id==($.jStorage.get('catStore').car))
-{
-    console.log("have already voted for car ");
-       $uibModal.open({
-                        animation: true,
-                        templateUrl: mainUrl + 'views/modal/user_already_exist.html',
-                        scope: $scope,
-                        size: 'md',
-
-                    });
-}
-
-else if($scope.id==($.jStorage.get('catStore').scooter))
-{
-    console.log("have already voted for scooter ");
-       $uibModal.open({
-                        animation: true,
-                        templateUrl: mainUrl + 'views/modal/user_already_exist.html',
-                        scope: $scope,
-                        size: 'md',
-
-                    });
-}
-
-
-else{
-            console.log("$stateParams", $scope.id);
-            $scope.company = [];
-            NavigationService.callApiWithData('Awardcategory/getOne', {
-                _id: awardcategoryId
-            }, function (data) {
-                $scope.companyView = true;
-                $scope.currentHost = window.location.origin;
+                                    });
 
 
 
-                if (!_.isEmpty($.jStorage.get('voter'))) {
-                    console.log("voter already exist");
-                    console.log("userId", $.jStorage.get('voter')._id);
-                    $scope.userId = $.jStorage.get('voter')._id;
-                    // $state.go('nomination', {
-                    //                             'userId': $scope.userId,
-                    //                            'id': $scope.id
-                    //                         });
-                    $scope.vData = {};
-                    $scope.userId = $.jStorage.get('voter')._id;
-                    if ($.jStorage.get('voter').email) {
-                        console.log("voter in jstorage");
-                        $scope.vData.email = $.jStorage.get('voter').email;
-                        $scope.vData.name = $.jStorage.get('voter').name;
-                        $scope.vData.surname = $.jStorage.get('voter').surname;
-                        console.log($scope.vData, "$scope.vData");
-                    }
+            //    $scope.modalInstance=$uibModal.open({
+            //             animation: true,
+            //             templateUrl: mainUrl + 'views/modal/signup.html',
+            //             scope: $scope,
+            //             size: 'md',
+
+            //         });
 
 
-                    NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
-                        console.log(data, "data");
-                        if (data.value == true) {
-                            console.log(data, "data");
-                            console.log(data.data, "data11111111");
-                            if (data.data._id) {
-                                console.log("$scope.userId", data.data._id);
-                                $scope.userId = data.data._id;
-                                $state.go('nomination', {
-                                    'userId': $scope.userId,
-                                    'id': $scope.id
-                                });
-                            } else {
-                                $scope.errorVoterLogin = "Something Went Wrong!!!";
+                } else if ($scope.id == ($.jStorage.get('catStore').car)) {
+                    console.log("have already voted for car ");
+                       $uibModal.open({
+                                        animation: true,
+                                        templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+                                        scope: $scope,
+                                        size: 'md',
+
+                                    });
+                //    $scope.modalInstance= $uibModal.open({
+                //         animation: true,
+                //         templateUrl: mainUrl + 'views/modal/signup.html',
+                //         scope: $scope,
+                //         size: 'md',
+
+                //     });
+                } else if ($scope.id == ($.jStorage.get('catStore').scooter)) {
+                    console.log("have already voted for scooter ");
+                       $uibModal.open({
+                                        animation: true,
+                                        templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+                                        scope: $scope,
+                                        size: 'md',
+
+                                    });
+            //   $scope.modalInstance=      $uibModal.open({
+            //             animation: true,
+            //             templateUrl: mainUrl + 'views/modal/signup.html',
+            //             scope: $scope,
+            //             size: 'md',
+
+            //         });
+                } else {
+                    console.log("$stateParams", $scope.id);
+                    $scope.company = [];
+                    NavigationService.callApiWithData('Awardcategory/getOne', {
+                        _id: awardcategoryId
+                    }, function (data) {
+                        $scope.companyView = true;
+                        $scope.currentHost = window.location.origin;
+
+
+
+                        if (!_.isEmpty($.jStorage.get('voter'))) {
+                            console.log("voter already exist");
+                            console.log("userId", $.jStorage.get('voter')._id);
+                            $scope.userId = $.jStorage.get('voter')._id;
+                            // $state.go('nomination', {
+                            //                             'userId': $scope.userId,
+                            //                            'id': $scope.id
+                            //                         });
+                            $scope.vData = {};
+                            $scope.userId = $.jStorage.get('voter')._id;
+                            if ($.jStorage.get('voter').email) {
+                                console.log("voter in jstorage");
+                                $scope.vData.email = $.jStorage.get('voter').email;
+                                $scope.vData.name = $.jStorage.get('voter').name;
+                                $scope.vData.surname = $.jStorage.get('voter').surname;
+                                console.log($scope.vData, "$scope.vData");
                             }
+
+
+                            NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
+                                console.log(data, "data");
+                                if (data.value == true) {
+                                    console.log(data, "data");
+                                    console.log(data.data, "data11111111");
+                                    if (data.data._id) {
+                                        console.log("$scope.userId", data.data._id);
+                                        $scope.userId = data.data._id;
+                                        $state.go('nomination', {
+                                            'userId': $scope.userId,
+                                            'id': $scope.id
+                                        });
+                                    } else {
+                                        $scope.errorVoterLogin = "Something Went Wrong!!!";
+                                    }
+                                }
+                            });
+
+                        } else {
+                            console.log("voter does not exist");
+                        $scope.modalInstance=    $uibModal.open({
+                                animation: true,
+                                templateUrl: mainUrl + 'views/modal/signup.html',
+                                scope: $scope,
+                                size: 'md',
+
+                            });
                         }
                     });
 
-                } else {
-                    console.log("voter does not exist");
-                    $uibModal.open({
-                        animation: true,
-                        templateUrl: mainUrl + 'views/modal/signup.html',
-                        scope: $scope,
-                        size: 'md',
 
-                    });
                 }
-            });
-
-
-}
- }
-
- else{
-            console.log("$stateParams", $scope.id);
-            $scope.company = [];
-            NavigationService.callApiWithData('Awardcategory/getOne', {
-                _id: awardcategoryId
-            }, function (data) {
-                $scope.companyView = true;
-                $scope.currentHost = window.location.origin;
+            } else {
+                console.log("$stateParams", $scope.id);
+                $scope.company = [];
+                NavigationService.callApiWithData('Awardcategory/getOne', {
+                    _id: awardcategoryId
+                }, function (data) {
+                    $scope.companyView = true;
+                    $scope.currentHost = window.location.origin;
 
 
 
-                if (!_.isEmpty($.jStorage.get('voter'))) {
-                    console.log("voter already exist");
-                    console.log("userId", $.jStorage.get('voter')._id);
-                    $scope.userId = $.jStorage.get('voter')._id;
-                    // $state.go('nomination', {
-                    //                             'userId': $scope.userId,
-                    //                            'id': $scope.id
-                    //                         });
-                    $scope.vData = {};
-                    $scope.userId = $.jStorage.get('voter')._id;
-                    if ($.jStorage.get('voter').email) {
-                        console.log("voter in jstorage");
-                        $scope.vData.email = $.jStorage.get('voter').email;
-                        $scope.vData.name = $.jStorage.get('voter').name;
-                        $scope.vData.surname = $.jStorage.get('voter').surname;
-                        console.log($scope.vData, "$scope.vData");
-                    }
-
-
-                    NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
-                        console.log(data, "data");
-                        if (data.value == true) {
-                            console.log(data, "data");
-                            console.log(data.data, "data11111111");
-                            if (data.data._id) {
-                                console.log("$scope.userId", data.data._id);
-                                $scope.userId = data.data._id;
-                                $state.go('nomination', {
-                                    'userId': $scope.userId,
-                                    'id': $scope.id
-                                });
-                            } else {
-                                $scope.errorVoterLogin = "Something Went Wrong!!!";
-                            }
+                    if (!_.isEmpty($.jStorage.get('voter'))) {
+                        console.log("voter already exist");
+                        console.log("userId", $.jStorage.get('voter')._id);
+                        $scope.userId = $.jStorage.get('voter')._id;
+                        // $state.go('nomination', {
+                        //                             'userId': $scope.userId,
+                        //                            'id': $scope.id
+                        //                         });
+                        $scope.vData = {};
+                        $scope.userId = $.jStorage.get('voter')._id;
+                        if ($.jStorage.get('voter').email) {
+                            console.log("voter in jstorage");
+                            $scope.vData.email = $.jStorage.get('voter').email;
+                            $scope.vData.name = $.jStorage.get('voter').name;
+                            $scope.vData.surname = $.jStorage.get('voter').surname;
+                            console.log($scope.vData, "$scope.vData");
                         }
-                    });
-
-                } else {
-                    console.log("voter does not exist");
-                    $uibModal.open({
-                        animation: true,
-                        templateUrl: mainUrl + 'views/modal/signup.html',
-                        scope: $scope,
-                        size: 'md',
-
-                    });
-                }
-            });
 
 
-}
+                        NavigationService.callApiWithData("Voter/save", $scope.vData, function (data) {
+                            console.log(data, "data");
+                            if (data.value == true) {
+                                console.log(data, "data");
+                                console.log(data.data, "data11111111");
+                                if (data.data._id) {
+                                    console.log("$scope.userId", data.data._id);
+                                    $scope.userId = data.data._id;
+                                    $state.go('nomination', {
+                                        'userId': $scope.userId,
+                                        'id': $scope.id
+                                    });
+                                } else {
+                                    $scope.errorVoterLogin = "Something Went Wrong!!!";
+                                }
+                            }
+                        });
+
+                    } else {
+                        console.log("voter does not exist");
+                      $scope.modalInstance=  $uibModal.open({
+                            animation: true,
+                            templateUrl: mainUrl + 'views/modal/signup.html',
+                            scope: $scope,
+                            size: 'md',
+
+                        });
+                    }
+                });
+
+
+            }
         };
 
 
-$scope.goBack = function (data) {
-console.log("go back and login");
-$.jStorage.flush('voter');
-                    $uibModal.open({
-                        animation: true,
-                        templateUrl: mainUrl + 'views/modal/signup.html',
-                        scope: $scope,
-                        size: 'md',
-
-                    });
 
 
-}
+
+
+
+        $scope.goBack = function (data) {
+            console.log("go back and login");
+            $.jStorage.flush('voter');
+$scope.formData = {};
+console.log("$scope.modalInstance",$scope.modalInstance);
+// $scope.modalInstance.close();
+//  $scope.modalInstance=$uibModal.open({
+//                 animation: true,
+//                 templateUrl: mainUrl + 'views/modal/signup.html',
+//                 scope: $scope,
+//                 size: 'md',
+
+//             });
+                                              $uibModal.open({
+                animation: true,
+                templateUrl: mainUrl + 'views/modal/signup.html',
+                scope: $scope,
+                size: 'md',
+
+            });
+// $scope.formData.$setPristine();
+        }
+
+
+
+ $scope.go = function (data) {
+            console.log("go back");
+            $scope.formData = {};
+$scope.modalInstance.close();
+$scope.modalInstance=$uibModal.open({
+                animation: true,
+                templateUrl: mainUrl + 'views/modal/signup.html',
+                scope: $scope,
+                size: 'md',
+
+            });
+ 
+        }
+
 
 
 
 
         $scope.submitUser = function (data) {
-            console.log("submit voter", data);
-            NavigationService.callApiWithData("Voter/save", data, function (data) {
-                console.log(data, "data");
-                if (data.value == true) {
-                    console.log(data, "data");
-                    console.log(data.data, "data11111111");
-                    $.jStorage.set("voter", data.data);
-                    if (data.data._id) {
-                        console.log("$scope.userId", data.data._id);
-                        $scope.userId = data.data._id;
-                        $state.go('nomination', {
-                            'userId': $scope.userId,
-                            'id': $scope.id
-                        });
+            console.log("data of voter", data);
+
+
+            // $scope.clickedCategory=$scope.id;
+console.log("$scope.id", $scope.id)
+            $scope.votrEmail = data.email;
+            $scope.votrName = data.name;
+            $scope.votrSurname = data.surname;
+            $scope.votrCategoryId = $scope.id;
+            console.log("$scope.votrEmail", $scope.votrEmail)
+            console.log("$scope.votrcategory", $scope.votrcategory)
+            console.log("$scope.id", $scope.id)
+
+
+
+            NavigationService.callApiWithData('Awardcategory/getOne', {
+                _id: $scope.id
+            }, function (data) {
+                console.log("data in get one id", data)
+                console.log("name data in findone", data.data.name);
+                $scope.votrCategoryName = data.data.name;
+
+
+                $scope.formData1 = {};
+                $scope.formData1.email = $scope.votrEmail;
+                $scope.formData1.name = $scope.votrName;
+                $scope.formData1.surname = $scope.votrSurname;
+                $scope.formData1.category = $scope.votrCategoryName;
+                console.log("formData1", $scope.formData1);
+
+                NavigationService.callApiWithData("VoterDetails/findVoter", $scope.formData1, function (data) {
+                    console.log(data);
+                    console.log("data.value in findvoter",data.value);
+                    if (data.data != "noDataound") {
+                        console.log("userhas voted with this category");
+                        $scope.emailExist=true;
+                        // $uibModal.open({
+                        //     animation: true,
+                        //     templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+                        //     scope: $scope,
+                        //     size: 'md',
+
+                        // });
+        
+
+
+
                     } else {
-                        $scope.errorVoterLogin = "Something Went Wrong!!!";
+                         $scope.emailExist=false;
+                        console.log("with new email id");
+
+                        NavigationService.callApiWithData("Voter/save", $scope.formData1, function (data) {
+                            console.log(data, "data");
+                            if (data.value == true) {
+                                console.log(data, "data");
+                                console.log(data.data, "data11111111");
+                                $.jStorage.set("voter", data.data);
+                                if (data.data._id) {
+                                    console.log("$scope.userId", data.data._id);
+                                    $scope.userId = data.data._id;
+                                    $state.go('nomination', {
+                                        'userId': $scope.userId,
+                                        'id': $scope.id
+                                    });
+                                } else {
+                                    $scope.errorVoterLogin = "Something Went Wrong!!!";
+                                }
+                            }
+                        });
                     }
-                }
+                });
+
             });
+
         }
 
 

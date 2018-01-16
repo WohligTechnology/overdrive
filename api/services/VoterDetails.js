@@ -49,6 +49,54 @@ var model = {
 
     },
 
+
+// findVoter: function (data, callback) {
+//         VoterDetails.findOne({
+//             email: data.email,
+//             category: data.category
+//         }).exec(function (err, found) {
+//             if (err) {
+
+//                 callback(err, null);
+//             } else {
+//                 if (!_.isEmpty(found)) {
+//                     var foundObj = found.toObject();
+//                     callback(null, foundObj);
+//                 } else {
+//                     callback("Already voted!", null);
+//                 }
+//             }
+
+//         });
+//     },
+
+
+    findVoter: function (data, callback) {
+        console.log("inside api", data)
+        VoterDetails.findOne({
+           email: data.email,
+           category: data.category
+        }).deepPopulate("").exec(function (err, found) {
+            console.log("Found: ", found);
+            if (err) {
+                callback(err, null);
+            } else if (_.isEmpty(found)) {
+                callback(null, "noDataound");
+            } else {
+                console.log("Data ", found);
+                callback(null, found);
+            }
+
+        });
+    },
+
+
+
+
+
+
+
+
     search1: function (data, callback) {
         var maxCount = Config.maxRow;
         var maxRow = maxCount

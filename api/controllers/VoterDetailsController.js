@@ -16,6 +16,37 @@ var controller = {
         });
     },
 
+
+// findVoter: function (req, res) {
+//         if (req.body) {
+//             VoterDetails.findVoter(req.body, res.callback);
+//         } else {
+//             res.json({
+//                 value: false,
+//                 data: {
+//                     message: "Invalid Request"
+//                 }
+//             })
+//         }
+//     },
+
+
+
+ findVoter: function (req, res) {
+        if (req.body) {
+            VoterDetails.findVoter(req.body, res.callback);
+        } else {
+            res.json({
+                value: false,
+                data: {
+                    message: "Invalid Request"
+                }
+            })
+        }
+    },
+
+
+
        search1: function (req, res) {
     console.log("inside voter ctrl")
         if (req.body) {
