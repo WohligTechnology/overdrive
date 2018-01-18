@@ -73,7 +73,7 @@ var model = {
 
                 var comp = '';
                 var vote = '';
-                if (mainData.name == "CARS") {
+                if (mainData.name == "CAR OF THE YEAR") {
                     var myVal1 = '';
                     var foo1 = '';
                     _.forEach(mainData.company, function (pro1) {
@@ -98,7 +98,7 @@ var model = {
 
 
 
-                if (mainData.name == "SCOOTERS") {
+                if (mainData.name == "SCOOTER OF THE YEAR") {
                     var myVal1 = '';
                     var foo1 = '';
                     _.forEach(mainData.company, function (pro1) {
@@ -120,7 +120,7 @@ var model = {
                     })
                 }
 
-                if (mainData.name == "MOTOBIKES") {
+                if (mainData.name == "BIKE OF THE YEAR") {
                     var myVal1 = '';
                     var foo1 = '';
                     _.forEach(mainData.company, function (pro1) {
