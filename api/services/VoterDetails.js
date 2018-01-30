@@ -45,7 +45,7 @@ var model = {
             obj["CATEGORY"] = mainData.category;
             retVal.push(obj);
         });
-        callback(null, obj);
+        callback(null, retVal);
 
     },
 
