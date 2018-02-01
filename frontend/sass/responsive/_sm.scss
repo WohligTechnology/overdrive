@@ -1,6 +1,9 @@
 @media (max-width: $screen-sm-max) {
     // Tablet.
     //transform animation doest work well with position fixed(navbar) so removing animation on tablet
+    .sponser h4{
+        font-size: 14px;
+    }
     .anime1 {
         display: none;
     }
