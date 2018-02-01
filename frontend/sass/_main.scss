@@ -1380,7 +1380,9 @@ footer .border-white {
     }
 }
 
-.knowmore-btn a {
+.knowmore-btn{
+    margin-top:20px;
+ a {
     background: #812115;
     border: none;
     padding: 8px 20px;
@@ -1395,6 +1397,7 @@ footer .border-white {
         outline: none !important;
         text-decoration: none;
     }
+}
 }
 
 .thumb img {

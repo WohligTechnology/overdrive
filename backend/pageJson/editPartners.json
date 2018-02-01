@@ -25,7 +25,15 @@
         "id": "name",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }],
+    },{
+           "name": "Link",
+           "type": "text",
+           "tableRef": "link",
+           "placeholder": "Enter Link ",
+           "id": "link",
+           "validation": ["required"],
+           "url": ""
+       }],
     "action": [{
         "name": "submit",
         "action": "submitPartners",

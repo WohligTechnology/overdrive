@@ -14,7 +14,12 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
-    }],
+    },
+    {
+           "name": "Link",
+           "isSort": "",
+           "tableRef": "link"
+       }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
