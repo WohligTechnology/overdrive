@@ -636,82 +636,82 @@ $scope.modalInstance=$uibModal.open({
 
 
 
-        $scope.submitUser = function (data) {
-            console.log("data of voter", data);
+//         $scope.submitUser = function (data) {
+//             console.log("data of voter", data);
 
 
-            // $scope.clickedCategory=$scope.id;
-console.log("$scope.id", $scope.id)
-            $scope.votrEmail = data.email;
-            $scope.votrName = data.name;
-            $scope.votrSurname = data.surname;
-            $scope.votrCategoryId = $scope.id;
-            console.log("$scope.votrEmail", $scope.votrEmail)
-            console.log("$scope.votrcategory", $scope.votrcategory)
-            console.log("$scope.id", $scope.id)
+//             // $scope.clickedCategory=$scope.id;
+// console.log("$scope.id", $scope.id)
+//             $scope.votrEmail = data.email;
+//             $scope.votrName = data.name;
+//             $scope.votrSurname = data.surname;
+//             $scope.votrCategoryId = $scope.id;
+//             console.log("$scope.votrEmail", $scope.votrEmail)
+//             console.log("$scope.votrcategory", $scope.votrcategory)
+//             console.log("$scope.id", $scope.id)
 
 
 
-            NavigationService.callApiWithData('Awardcategory/getOne', {
-                _id: $scope.id
-            }, function (data) {
-                console.log("data in get one id", data)
-                console.log("name data in findone", data.data.name);
-                $scope.votrCategoryName = data.data.name;
+//             NavigationService.callApiWithData('Awardcategory/getOne', {
+//                 _id: $scope.id
+//             }, function (data) {
+//                 console.log("data in get one id", data)
+//                 console.log("name data in findone", data.data.name);
+//                 $scope.votrCategoryName = data.data.name;
 
 
-                $scope.formData1 = {};
-                $scope.formData1.email = $scope.votrEmail;
-                $scope.formData1.name = $scope.votrName;
-                $scope.formData1.surname = $scope.votrSurname;
-                $scope.formData1.category = $scope.votrCategoryName;
-                console.log("formData1", $scope.formData1);
+//                 $scope.formData1 = {};
+//                 $scope.formData1.email = $scope.votrEmail;
+//                 $scope.formData1.name = $scope.votrName;
+//                 $scope.formData1.surname = $scope.votrSurname;
+//                 $scope.formData1.category = $scope.votrCategoryName;
+//                 console.log("formData1", $scope.formData1);
 
-                NavigationService.callApiWithData("VoterDetails/findVoter", $scope.formData1, function (data) {
-                    console.log(data);
-                    console.log("data.value in findvoter",data.value);
-                    if (data.data != "noDataound") {
-                        console.log("userhas voted with this category");
-                        $scope.emailExist=true;
-                        // $uibModal.open({
-                        //     animation: true,
-                        //     templateUrl: mainUrl + 'views/modal/user_already_exist.html',
-                        //     scope: $scope,
-                        //     size: 'md',
+//                 NavigationService.callApiWithData("VoterDetails/findVoter", $scope.formData1, function (data) {
+//                     console.log(data);
+//                     console.log("data.value in findvoter",data.value);
+//                     if (data.data != "noDataound") {
+//                         console.log("userhas voted with this category");
+//                         $scope.emailExist=true;
+//                         // $uibModal.open({
+//                         //     animation: true,
+//                         //     templateUrl: mainUrl + 'views/modal/user_already_exist.html',
+//                         //     scope: $scope,
+//                         //     size: 'md',
 
-                        // });
+//                         // });
         
 
 
 
-                    } else {
-                         $scope.emailExist=false;
-                        console.log("with new email id");
+//                     } else {
+//                          $scope.emailExist=false;
+//                         console.log("with new email id");
 
-                        NavigationService.callApiWithData("Voter/save", $scope.formData1, function (data) {
-                            console.log(data, "data");
-                            if (data.value == true) {
-                                console.log(data, "data");
-                                console.log(data.data, "data11111111");
-                                $.jStorage.set("voter", data.data);
-                                if (data.data._id) {
-                                    console.log("$scope.userId", data.data._id);
-                                    $scope.userId = data.data._id;
-                                    $state.go('nomination', {
-                                        'userId': $scope.userId,
-                                        'id': $scope.id
-                                    });
-                                } else {
-                                    $scope.errorVoterLogin = "Something Went Wrong!!!";
-                                }
-                            }
-                        });
-                    }
-                });
+//                         NavigationService.callApiWithData("Voter/save", $scope.formData1, function (data) {
+//                             console.log(data, "data");
+//                             if (data.value == true) {
+//                                 console.log(data, "data");
+//                                 console.log(data.data, "data11111111");
+//                                 $.jStorage.set("voter", data.data);
+//                                 if (data.data._id) {
+//                                     console.log("$scope.userId", data.data._id);
+//                                     $scope.userId = data.data._id;
+//                                     $state.go('nomination', {
+//                                         'userId': $scope.userId,
+//                                         'id': $scope.id
+//                                     });
+//                                 } else {
+//                                     $scope.errorVoterLogin = "Something Went Wrong!!!";
+//                                 }
+//                             }
+//                         });
+//                     }
+//                 });
 
-            });
+//             });
 
-        }
+//         }
 
 
 
