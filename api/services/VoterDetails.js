@@ -34,48 +34,48 @@ var model = {
         })
     },
     generateExcelVoter: function (match, callback) {
-        async.concatSeries(match, function (mainData, callback) {
-                var obj = {};
-                obj["FIRST NAME"] = mainData.firstName;
-                obj["LAST NAME"] = mainData.lastName;
-                obj["EMAIL"] = mainData.email;
-                obj["COMAPNY"] = mainData.company;
-                obj["CATEGORY"] = mainData.category;
-                callback(null, obj);
-            },
-            function (err, singleData) {
-                callback(null, singleData);
-            });
+        var obj = {};
+        var retVal = [];
+        _.each(match, function (mainData) {
+            obj = {};
+            obj["FIRST NAME"] = mainData.firstName;
+            obj["LAST NAME"] = mainData.lastName;
+            obj["EMAIL"] = mainData.email;
+            obj["COMAPNY"] = mainData.company;
+            obj["CATEGORY"] = mainData.category;
+            retVal.push(obj);
+        });
+        callback(null, retVal);
 
     },
 
 
-// findVoter: function (data, callback) {
-//         VoterDetails.findOne({
-//             email: data.email,
-//             category: data.category
-//         }).exec(function (err, found) {
-//             if (err) {
+    // findVoter: function (data, callback) {
+    //         VoterDetails.findOne({
+    //             email: data.email,
+    //             category: data.category
+    //         }).exec(function (err, found) {
+    //             if (err) {
 
-//                 callback(err, null);
-//             } else {
-//                 if (!_.isEmpty(found)) {
-//                     var foundObj = found.toObject();
-//                     callback(null, foundObj);
-//                 } else {
-//                     callback("Already voted!", null);
-//                 }
-//             }
+    //                 callback(err, null);
+    //             } else {
+    //                 if (!_.isEmpty(found)) {
+    //                     var foundObj = found.toObject();
+    //                     callback(null, foundObj);
+    //                 } else {
+    //                     callback("Already voted!", null);
+    //                 }
+    //             }
 
-//         });
-//     },
+    //         });
+    //     },
 
 
     findVoter: function (data, callback) {
         console.log("inside api", data)
         VoterDetails.findOne({
-           email: data.email,
-           category: data.category
+            email: data.email,
+            category: data.category
         }).deepPopulate("").exec(function (err, found) {
             console.log("Found: ", found);
             if (err) {
@@ -109,7 +109,7 @@ var model = {
             field: data.field,
             filters: {
                 keyword: {
-                    fields: ['firstName','lastName','company','category'],
+                    fields: ['firstName', 'lastName', 'company', 'category'],
                     term: data.keyword
                 }
             },

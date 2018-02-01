@@ -125,75 +125,64 @@
        }, function (data) {
          console.log("success");
 
-console.log("$stateParams.id",$stateParams.id);
-$scope.id=$stateParams.id;
+         console.log("$stateParams.id", $stateParams.id);
+         $scope.id = $stateParams.id;
 
-console.log("$scope.id", $scope.id);
+         console.log("$scope.id", $scope.id);
 
-$scope.cData={};
+         $scope.cData = {};
 
-if($scope.id == "5a0425988af3e51508368f70")
-{
-    console.log("car Clicked");
-   $scope.cData.car=$scope.id;
-   if (_.isEmpty($.jStorage.get('catStore'))){
-$.jStorage.set("catStore", $scope.cData);
-   }
-   else{
-     $scope.cData = $.jStorage.get("catStore");
-     $scope.cData.car=$scope.id;
-     $.jStorage.set("catStore", $scope.cData);
-   }
-    
-}
-else if($scope.id == "5a0426128af3e51508368f82")
-{
-    console.log("bike Clicked");
-    $scope.cData.bike=$scope.id;
-      if (_.isEmpty($.jStorage.get('catStore'))){
-$.jStorage.set("catStore", $scope.cData);
-   }
-   else{
-     $scope.cData = $.jStorage.get("catStore");
-     $scope.cData.bike=$scope.id;
-     $.jStorage.set("catStore", $scope.cData);
-   }
-}
-else if($scope.id == "5a0425fc8af3e51508368f79")
-{
-    console.log("scooter Clicked");
-    $scope.cData.scooter=$scope.id;
-      if (_.isEmpty($.jStorage.get('catStore'))){
-$.jStorage.set("catStore", $scope.cData);
-   }
-   else{
-     $scope.cData = $.jStorage.get("catStore");
-     $scope.cData.scooter=$scope.id;
-     $.jStorage.set("catStore", $scope.cData);
-   }
-}
+         if ($scope.id == "5a0425988af3e51508368f70") {
+           console.log("car Clicked");
+           $scope.cData.car = $scope.id;
+           if (_.isEmpty($.jStorage.get('catStore'))) {
+             $.jStorage.set("catStore", $scope.cData);
+           } else {
+             $scope.cData = $.jStorage.get("catStore");
+             $scope.cData.car = $scope.id;
+             $.jStorage.set("catStore", $scope.cData);
+           }
+
+         } else if ($scope.id == "5a0426128af3e51508368f82") {
+           console.log("bike Clicked");
+           $scope.cData.bike = $scope.id;
+           if (_.isEmpty($.jStorage.get('catStore'))) {
+             $.jStorage.set("catStore", $scope.cData);
+           } else {
+             $scope.cData = $.jStorage.get("catStore");
+             $scope.cData.bike = $scope.id;
+             $.jStorage.set("catStore", $scope.cData);
+           }
+         } else if ($scope.id == "5a0425fc8af3e51508368f79") {
+           console.log("scooter Clicked");
+           $scope.cData.scooter = $scope.id;
+           if (_.isEmpty($.jStorage.get('catStore'))) {
+             $.jStorage.set("catStore", $scope.cData);
+           } else {
+             $scope.cData = $.jStorage.get("catStore");
+             $scope.cData.scooter = $scope.id;
+             $.jStorage.set("catStore", $scope.cData);
+           }
+         }
 
 
-if($scope.id == "5a0425988af3e51508368f70")
-{
-  $scope.first="Scooter";
-  $scope.second="Bike";
-}
+         if ($scope.id == "5a0425988af3e51508368f70") {
+           $scope.first = "Scooter";
+           $scope.second = "Bike";
+         }
 
 
-if($scope.id == "5a0426128af3e51508368f82")
-{
-  $scope.first="Scooter";
-  $scope.second="Car";
-}
+         if ($scope.id == "5a0426128af3e51508368f82") {
+           $scope.first = "Scooter";
+           $scope.second = "Car";
+         }
 
 
 
-if($scope.id == "5a0425fc8af3e51508368f79")
-{
-  $scope.first="Car";
-  $scope.second="Bike";
-}
+         if ($scope.id == "5a0425fc8af3e51508368f79") {
+           $scope.first = "Car";
+           $scope.second = "Bike";
+         }
 
 
 
